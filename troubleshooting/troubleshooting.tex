@@ -1,0 +1,260 @@
+% Chapter 8 - Elan Kugelmass
+% Superedited on Sunday, March 21; chapter is ready for writing freeze and general copyediting -- b^2
+
+\chapter{Troubleshooting}
+\label{ch:troubleshooting}
+
+\section{Resolving problems}
+\label{sec:troubleshooting:resolving-problems}
+Sometimes, things simply do not work as they should. Luckily, problems encountered while working with Ubuntu are easily fixed. Below, we offer a guide to resolving basic problems that users may encounter while using Ubuntu. If you exhaust the troubleshooting advice below, see \seclink{sec:troubleshooting:getting-more-help} to learn about seeking support from the Ubuntu community.
+
+\section{Troubleshooting guide}
+\label{sec:troubleshooting:troubleshooting-guide}
+
+The key to effective troubleshooting is working slowly and methodically, documenting changes you make to your Ubuntu system at every step. This way, you will always be able to roll back your work \dash and give fellow users information about your previous attempts, in the unlikely event that you should need to turn to the community for support.
+
+\subsection{Ubuntu fails to start after I've installed Windows}
+%This guide is based off of the instructions on the ubuntu community docs site.
+%https://help.ubuntu.com/community/RecoveringUbuntuAfterInstallingWindows
+%This guide recreates the linux bootloader, since this is much more flexible than maintaining the Windows bootloader
+Occasionally you may install Ubuntu and then decide to install Microsoft Windows as a second operating system running side-by-side with Ubuntu. 
+While this is supported by Ubuntu, you may find that after installing Windows you may no longer be able to start Ubuntu.
+
+When you first turn on your computer, a program called a ``bootloader'' must start Ubuntu or another operating system. 
+\marginnote{A \textbf{bootloader} is the initial software that loads the operating system when you turn on the computer.}
+When you installed Ubuntu, you installed an advanced bootloader called \textbf{\acronym{GRUB}} that allowed you to choose between the various operating systems on your computer, such as Ubuntu, Windows and others. 
+However, when you installed Windows, it replaced \acronym{GRUB} with its own bootloader, thus removing the ability to choose which operating system you'd like to use.
+You can easily restore \acronym{GRUB} \dash and regain the ability to choose your operating system \dash by using the same \acronym{CD} you used to install Ubuntu.
+
+First, insert your Ubuntu \acronym{CD} into your computer and restart it, making sure to have your computer start the operating system that is on the \acronym{CD} itself (see \chaplink{ch:installation}).
+Next, choose your language and select \textbf{Try Ubuntu}.
+Wait while the software loads.
+You will need to type some code to restore your bootloader. On the \textbf{Applications} menu, click \textbf{Accessories}, and then click the \textbf{Terminal} item.
+Enter the following:
+\begin{terminal}
+\prompt \userinput{sudo fdisk -l}
+\begin{verbatim}
+Disk /dev/hda: 120.0 GB, 120034123776 bytes
+255 heads, 63 sectors/track, 14593 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1               1        1224       64228+  83  Linux
+/dev/sda2   *        1225        2440     9767520   a5  Windows
+/dev/sda3            2441       14593    97618972+   5  Extended
+/dev/sda4           14532       14593      498015   82  Linux swap
+
+Partition table entries are not in disk order
+\end{verbatim}
+\end{terminal}
+
+\marginnote{The device (/dev/sda1, /dev/sda2, etc) we are looking for is identified by the word ``Linux'' in the System column. 
+Modify the instructions below if necessary, replacing /dev/sda1 with the name of your Linux device.}
+This output means that your system (Linux, on which Ubuntu is based) is installed on device /dev/sda1, but your computer is booting to /dev/sda2 (where Windows is located).  We need to rectify this by telling the computer to boot to the Linux device instead.
+
+To do this, first create a place to manipulate your Ubuntu installation:
+
+\begin{terminal}
+\prompt \userinput{sudo mkdir /media/root}
+\end{terminal}
+
+Next, link your Ubuntu installation and this new folder:
+
+\begin{terminal}
+\prompt \userinput{sudo mount /dev/sda1 /media/root}
+\end{terminal}
+
+If you've done this correctly, then you should see the following:
+
+\begin{terminal}
+\prompt \userinput{ls /media/root}
+bin    dev      home        lib    mnt   root     srv  usr
+boot   etc      initrd      lib64  opt   sbin     sys  var
+cdrom  initrd.img  media  proc  selinux  tmp  vmlinuz
+\end{terminal}
+
+Now, you can reinstall \acronym{GRUB}:
+
+\begin{terminal}
+\prompt \userinput{sudo grub-install --root-directory=/media/root /dev/sda}
+Installation finished. No error reported.
+This is the contents of the device map /boot/grub/device.map.
+Check if this is correct or not. If any of the lines is incorrect,
+fix it and re-run the script \commandlineapp{grub-install}.
+
+(hd0)   /dev/sda
+\end{terminal}
+
+Finally, remove the Ubuntu disc from your \acronym{CD-ROM} drive, reboot your computer, and enjoy your Ubuntu system once again.
+
+This guide may not work for all Ubuntu users due to differences in system configuration. 
+Still, this is the recommended method, and the most successful method, for restoring the \acronym{GRUB} bootloader.
+If following this guide does not restore \acronym{GRUB} on your computer, please consider trying some of the other troubleshooting methods at \url{https://help.ubuntu.com/community/RecoveringUbuntuAfterInstallingWindows}.
+When following the instructions, please note that your Ubuntu installation uses Grub2.
+This guide replicates the method described in the first section of the referenced web page.
+Please consider starting with the third section, \url{https://help.ubuntu.com/community/RecoveringUbuntuAfterInstallingWindows}.
+
+\subsection{Ubuntu doesn't present the login screen when my computer boots}
+
+The simplest and easiest way to correct this issue is to order Ubuntu to reset the graphics configuration.
+Press and hold \textbf{Control}, \textbf{Alt} and \textbf{F1}.
+You should now see a black and white screen with a prompt for your username and password.
+%Due to difculites of caputing this at the correct rsolution it is not included in the manual - ubuntujenkins luke jennings
+%\screenshotTODO{Screenshot of a virtual terminal (i.e. ctrl-alt-F1)}
+
+Enter your username, press \textbf{Enter}, and then enter your password. (Characters \textit{will not} appear on the screen as you enter your password. Don't worry\dash this behavior is normal and was implemented for security purposes).
+Next, enter the following commands. Your password will be needed again.
+\begin{terminal}
+\prompt \userinput{sudo cd /etc/X11}
+\prompt \userinput{sudo mv ./xorg.conf ./xorg.conf\_old}
+\prompt \userinput{sudo service gdm stop}
+\prompt \userinput{sudo X -configure}
+\prompt \userinput{sudo mv ./xorg.conf.new ./xorg.conf}
+\prompt \userinput{sudo reboot now}
+\end{terminal}
+Ubuntu will reboot, and your login screen should be restored.
+
+\subsection{I forgot my password}
+If you forget your password in Ubuntu, you will need to reset it using ``Recovery mode.''
+
+To start Recovery mode, shut down your computer, then power it up.
+As the computer starts up, press \textbf{Shift} (Grub2) {Esc} (Grub1) when you see the white-on-black screen with a countdown (the \acronym{GRUB} prompt).
+Select the \textbf{Recovery mode} option using the arrow keys on your keyboard. Recovery mode should be the second item in the list.
+%\screenshotTODO{GRUB screen with Recovery Mode option highlighted}
+\screenshot{08-grub-boot-screen.png}{ss:grub-boot-screen}{This is the grub screen in which you can choose recovery mode.}
+
+
+Wait while Ubuntu starts up. You \textit{will not} see a normal login screen.
+Instead, you will be presented with a terminal prompt that looks something like:
+\begin{terminal}
+root@something\#
+\end{terminal}
+To reset your password, enter:
+\begin{terminal}
+\prompt \userinput{passwd \emph{username}}
+\end{terminal}
+Replace ``username'' above with your username.
+Ubuntu will prompt you for a new password. 
+Enter your desired password, press enter and then type your password again, pressing enter after you are done. (Ubuntu asks for your password twice to make sure you did not make a mistake while typing).
+Once you have restored your password, return to the normal system environment by entering:
+\begin{terminal}
+\prompt \userinput{init 2}
+\end{terminal}
+Login as usual and continue enjoying Ubuntu.
+
+
+%Section should be withheld until procedure can be verified -- b^2
+%I know for sure that this works on karmic, and has been a standard fix for several releases -- epkugelmass
+%\subsection{Some text looks incorrect or corrupted}
+
+%If you are seeing text that looks odd or fails to display entirely, the designer probably intended it to be viewed using fonts that are not installed
+%on your computer. This can be fixed by installing the missing fonts, available in the Universe repository. See \chaplink{ch:software-management} (Configuring the %%Ubuntu Repositories) to enable this repository.
+
+%Open the \application{Synaptic Package Manager} \todo{Determine if this is possible to perform with the Software Center in Lucid} by navigating to the \menu{System} menu in the top-left corner of the screen and choosing 
+%\menu{Administration} and then \menu{Synaptic Package Manager}.
+%Enter your password when prompted.
+%In the search box in the top toolbar of the application, enter \textbf{mscorefonts}.
+%Mark the package \textbf{ttf-mscorefonts-installer} for installation.
+%Click \textbf{Apply} in the top toolbar, then wait while Ubuntu installs the fonts.
+
+%%I don't think a manual fc-cache is necesary.
+%%\begin{terminal}
+%%\prompt \userinput{sudo fc-cache -fv}
+%%\end{terminal}
+
+%Refreshing the troublesome page or reopening the offending document should fix the problem.
+
+%---End section witholding
+
+
+\subsection{I accidentally deleted some files that I need}
+
+If you've deleted a file by accident, you may be able to recover it from Ubuntu's trash folder. This is a special folder where Ubuntu stores deleted files before they are permanently removed from your computer.
+
+\marginnote{The Wastebasket is called different things in various parts of the desktop. This could cause confusion. This is a known issue and will be resolved in the next version of \acronym{GNOME}. The Wastebasket could also be know as the ``Deleted Items Folder``.}
+
+To access the trash folder, select \menu{Places \then Computer} from the top panel, then choose \menu{Trash} from the list of places in the left-hand sidebar of the window that appears (alternatively, click on the trash applet at the far right of the bottom panel). To remove items from this folder and restore them to your computer, right-click on the items you want and select \button{Restore}, or otherwise drag them wherever you would like (we recommend a memorable location, such as your home folder or desktop).
+
+\subsection{How do I clean Ubuntu?}
+
+Over time, Ubuntu's software packaging system can accumulate unused packages or temporary files. These temporary files, also called caches, contain package files from all of the packages that you have ever installed.  Eventually, this cache can grow quite large.  Removing them allows you to reclaim space on your computer's hard drive for storing your documents, music, photographs, or other files.
+
+To clear the cache, you can use either the \code{clean}, or the \code{autoclean}
+option for a command-line program called \commandlineapp{apt-get}. The
+\code{clean} command will remove every single cached item, while the
+\code{autoclean} command only removes cached items that can no longer be
+downloaded (these items are often unnecessary).  To run \code{clean}, open \textbf{Terminal} and type:
+
+\begin{terminal}
+\prompt \userinput{sudo apt-get clean}
+\end{terminal}
+      
+Packages can also become unused over time. If a package was installed to assist
+with running another program \dash and that program was subsequently removed
+\dash you no longer need the supporting package.  You can remove it with \code{autoremove}.
+
+Load \textbf{Terminal} and type:
+
+\begin{terminal}
+\prompt \userinput{sudo apt-get autoremove}
+\end{terminal}
+
+to remove the unnecessary packages.
+
+%Future iterations of this section might contain instructions for using the ``purge'' command. -- b^2
+
+
+\subsection{I can't play certain audio or video files}
+
+Many of the formats used to deliver rich media content are \textbf{proprietary}, meaning they are not free to use, modify and distribute with an open-source operating system like Ubuntu. Therefore, Ubuntu does not include the capability to use these formats by default; however, users can easily configure Ubuntu to use these proprietary formats. For more information about the differences between open source and proprietary software, see \chaplink{ch:learning-more}.
+
+If you find yourself in need of a proprietary format, you may install the files necessary for using this format with one command. Before initiating this command, ensure that you have Universe and Multiverse repositories enabled. See the \seclink{sec:synaptic} section to learn how to do this.
+
+Open the \application{Ubuntu Software Center} by selecting it from \menu{Applications}.
+Search for \textbf{ubuntu-restricted-extras} by typing ``ubuntu restricted extras'' in the search box on the right-hand side of the Ubuntu Software Center's main window.
+When the Software Center finds the appropriate software, click the arrow next to its title.
+Click \button{Install}, then wait while Ubuntu installs the appropriate software.
+
+Once Ubuntu has successfully installed software, your rich media content should work properly.
+
+\subsection{How can I change my screen resolution?}
+
+The image on every monitor is composed of millions of little colored dots called pixels. Changing the number of pixels displayed on your monitor is called ``changing the resolution.'' Increasing the resolution will make the displayed images sharper, but will also tend to make them smaller. The opposite is true when screen resolution is decreased. Most monitors have a ``native resolution,'' which is a resolution that most closely matches the number of pixels in the monitor. Your display will usually be sharpest when your operating system uses a resolution that matches your display's native resolution.
+
+The Ubuntu configuration utility \textbf{Monitors} allows users to change the resolution.
+Open it by choosing \menu{System} from the Main Menu, then choosing \menu{Preferences} and then \menu{Monitors}.
+The resolution can be changed using the drop down list within the program.
+Picking options higher up on the list (for example, those with larger numbers) will increase the resolution.
+%\screenshotTODO{gnome-display-properties screenshot with resolution dropdown open}
+\screenshot{08-display-properties.png}{ss:display-properties}{You can change your display settings.}
+
+You can experiment with various resolutions by clicking \button{Apply} at the bottom of the window until you find one that's comfortable for you. Typically the highest resolution will be the native resolution. Selecting a resolution and clicking \textbf{Apply} will temporarily change the screen resolution to the selected value.
+A dialog box will also be displayed. It allows you to revert to the previous resolution setting or keep the new resolution. The dialog box will disappear in 30 seconds, restoring the old resolution.
+%\screenshotTODO{gnome-display-properties screenshot of confirm or revert dialog}
+\screenshot{08-display-properties-confirm.png}{ss:08-display-properties-confirm}{You can revert back to your old settings if you need to.} This feature was implemented to prevent someone from being locked out of the computer by a resolution that distorts the monitor and makes it unusable. When you have finished setting the screen resolution, click \textbf{Close}.
+
+% Section witheld for future manual version
+%\subsection{Performing a file system check}
+
+%---End witheld section -- b^2
+
+\subsection{Ubuntu is not working properly on my Apple MacBook or MacBook Pro}
+
+When installed on notebook computers from Apple \dash such as the MacBook or MacBook Pro \dash Ubuntu does not always enable all of the computer's built-in components, including the iSight camera and the Airport wireless Internet adapter. Luckily, the Ubuntu community offers documentation on fixing these and other problems. If you are having trouble installing or using Ubuntu on your Apple notebook computer, please follow the instructions at \url{https://help.ubuntu.com/community/MacBook}. You can select the appropriate guide after identifying your computer's model number. For instructions on doing this, visit the web page above.
+
+\subsection{Ubuntu is not working properly on my Asus EeePC}
+
+When installed on netbook computers from Asus \dash such as the EeePC \dash Ubuntu does not always enable all of the computer's built-in components, including the keyboard shortcut keys and the wireless Internet adapter. The Ubuntu community offers documentation on enabling these components and fixing other problems. If you are having trouble installing or using Ubuntu on your Asus EeePC, please follow the instructions at \url{https://help.ubuntu.com/community/EeePC}. 
+This documentation page contains information pertaining specifically to EeePC netbooks.
+
+\subsection{My hardware is not working properly}
+
+Ubuntu occasionally has difficulty running on certain computers, generally when hardware manufacturers use non-standard or proprietary components. The Ubuntu community offers documentation to help you troubleshoot many issues that may arise from this situation, including problems with wireless cards, scanners, mice and printers. You can find the complete hardware troubleshooting guide on Ubuntu's support wiki, accessible at \url{https://wiki.ubuntu.com/HardwareSupport}. If your hardware problems persist, please see \seclink{sec:troubleshooting:getting-more-help} for more troubleshooting options or information on obtaining support or assistance from an Ubuntu user.
+
+\section{Getting more help}
+\label{sec:troubleshooting:getting-more-help}
+
+This guide does not cover every possible workflow, task or issue in Ubuntu.
+If you require assistance beyond the information in the manual, you can find a variety of support opportunities online.
+You can access extensive and free documentation, buy professional support services, query the community for free support or explore technical solutions.
+More information is available here: \url{http://www.ubuntu.com/support}

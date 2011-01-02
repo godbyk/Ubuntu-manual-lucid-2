@@ -1,0 +1,240 @@
+%written by Luke Jennings ubuntujenkins@googlemail.com
+
+%TODO not sure on the order yet, basically done but not 100% happy with it.
+
+\section{Viewing and editing photos}
+
+To view and edit photos in Ubuntu, you can use the \application{F-Spot} Photo
+Manager application. To start F-Spot, open the \menu{Applications} menu, then
+choose \menu{Graphics}, then \menu{F-Spot Photo Manager}.  When you start F-Spot
+for the first time, you will see the \window{Import} window\dash how to use
+this is covered in \textbf{`Importing'}.
+
+By default, F-Spot displays your photos by date. You can view photos from a 
+specific month by clicking on that month in the timeline near the top of the 
+window.
+
+You can also play slide shows of your pictures by clicking on the Play button
+on the toolbar (this button looks like a green triangle).
+
+%\screenshotTODO{Main F-Spot window}
+\screenshot{03-f-spot.png}{ss:f-spot}{F-Spot lets you store, tag, and edit your photos.}
+
+This guide often refers to the side bar on the left. If you can't see it,  
+open the \menu{View} menu, then choose \menu{Components}, and choose 
+\menu{Sidebar}\dash making sure the option is selected. 
+
+\subsection{Version system}
+
+When you edit a photo, F-Spot creates a new version so that the original is 
+not lost. You can create a new version by opening the \menu{Photo} menu, then 
+choosing \menu{Create New Version\ldots}. This opens the \window{Create New Version} 
+window. In the \textfield{Name} text field you can type what you would like to 
+call the version and then click \button{OK}. A new version will then be created.
+
+You can view previous versions of photos by clicking on the photo that you wish 
+to view, then clicking on the \button{Edit Image} button. This changes the side 
+bar on the left to the ``Edit'' side bar. In the bottom left, the 
+\dropdown{Version} drop-down list allows you to choose previous versions of the 
+photo. 
+
+You might want to rename a version so that you remember which version is which.
+ To rename a version, click on the photo that you want to change, then click on 
+the \button{Edit Image} button. This changes the side bar on the left to the 
+``Edit'' side bar. In the bottom left the \dropdown{Version} drop-down list lets 
+you choose the version of the photo that you want to rename. 
+
+Open the \menu{Photo} menu, then choose \menu{Rename Version}. This will open the 
+\window{Rename Version} window. Enter the new name in the \textfield{New name} 
+text field, then if you want to rename the version click \button{OK}. If you don't 
+want to rename the version, click \button{Cancel}.
+
+When editing photos, you may make a mistake and may decide to remove that version
+as you no longer need it. To delete a version, click on the photo that you want 
+to change, then click on the \button{Edit Image} button. This changes the side 
+bar on the left to the ``Edit'' side bar. In the bottom left the 
+\dropdown{Version} drop-down list choose the version of the photo that you want 
+to delete. Then open the \menu{Photo} menu, then choose \menu{Delete Version}. 
+This will open the \window{Really Delete?} window. If you want to delete the 
+version click \button{Delete}. If you don't want to delete the version, click 
+\button{Cancel}.
+
+\subsection{Importing}
+
+When you launch F-Spot for the first time you will see the \window{Import} window.
+After the first launch you can import more photos by clicking on the 
+\button{Import} button. 
+
+When you import some photos, only the photos that you have just imported are 
+shown. To show all of your photos, click on the gray \textbf{X} to the right 
+of the blue \textbf{Find}.
+
+\subsubsection{Choosing where F-Spot saves photos}
+
+When importing pictures in the \window{Import} window, the 
+\checkbox{Copy files to the Photos folder} option determines where the photos 
+are saved. 
+
+If the \checkbox{Copy files to the Photos folder} option is selected then F-Spot 
+will copy the photos into the \textbf{Photos} folder, which is within your 
+\textbf{Pictures} folder. The pictures are then sorted by year, month and then 
+date.
+
+If the \checkbox{Copy files to the Photos folder} option is unselected then 
+F-Spot will not copy the pictures into the \textbf{Photos} folder.
+
+\subsubsection{Importing from file}
+
+%\screenshotTODO{Import window F-Spot}
+
+\screenshot{03-fspot-import.png}{ss:f-spot-import}{You can import all of your photos.}
+
+To import photos that are saved on your computer, choose \dropdown{Select Folder} 
+from the \dropdown{Import Source} drop-down list. This opens the \window{Import} 
+window. Navigate to the folder containing your photos and click \button{Open}.
+
+When the loading bar says ``Done Loading'' all the photos in that folder and any 
+sub-folders are then displayed in the \window{Import} window. You can exclude 
+importing photos from sub-folders by deselecting the 
+\checkbox{Include subfolders} option.
+
+All of the photos are imported by default, but you can choose to import only
+some photos. To do so, press-and-hold the \textbf{Ctrl} key while clicking 
+the photos you do not want to import. Duplicates are automatically detected when
+ the \checkbox{Detect duplicates} option is selected.
+
+You can attach tags by typing the names of the your current tags in the 
+\textfield{Attach Tags} text field. If you want to use multiple tags then 
+separate them with a comma.
+
+Once you have chosen the photos that you want to import, click on the 
+\button{Import} button.
+
+\subsubsection{From digital camera}
+
+To import photos from a digital camera, plug your camera into the \acronym{USB} port of 
+your computer, and turn your camera on. If your camera is detected, Ubuntu should 
+open a new window prompting you to import photos. Ensure that 
+\dropdown{Open F-Spot} is chosen in the drop-down list and click \button{OK}. 
+This will show the \window{Import} window. In the \dropdown{Import Source} 
+drop-down list choose the option that looks like \dropdown{\ldots Camera}.
+  
+A \window{Select Photos to Copy from Camera\ldots} window will open. You can then 
+click the photos that you want to copy. All of the photos are selected by default 
+but you can add or remove individual photos by pressing-and-holding 
+the \textbf{Ctrl} key while clicking on photos to deselect them. 
+
+You can attach tags to all of them by clicking on the \checkbox{Attach tag} option
+and choosing the tag in the \dropdown{Attach tag:} drop-down list. For more 
+information about tags see \seclink{sec:organizing-photos}.
+
+You can change where the files are saved in the \dropdown{Target location} 
+drop-down list. The default is the \dropdown{Photos} folder \dash this is where 
+F-Spot saves the photos.
+
+Once you have chosen the photos that you want to import, click on the 
+\button{Copy} button. The \window{Transferring Pictures} window should open, 
+and will show the copying progress. When copying is complete, the progress bar 
+will display \textbf{Download Complete}. Finally, click \button{OK} to show 
+your photos in F-Spot.
+
+\subsection{Organizing photos}
+\label{sec:organizing-photos}
+
+F-Spot makes finding photos of the same type easier by using tags. You can apply 
+as many tags to a photo as you like. 
+
+To apply tags to photos, first select the photos. Then right-click on the photos
+and choose \menu{Attach Tag}. Click the tag you want add to your photos. You can 
+attach tags when importing photos, as covered in the ``Importing'' section.
+
+You can make new tags by opening the \menu{Tags} and choosing 
+\menu{Create New Tag\ldots}. This will open up the \window{Create New Tag} window.
+Enter the name of the tag in the \textfield{Name of New Tag:} text field. The 
+\dropdown{Parent Tag:} drop-down list allows you to choose the ``parent'' tag 
+for your new tag.
+
+\subsection{Editing Images}
+
+You may want to edit some of the photos you import into F-Spot. For example, 
+you may want to remove something at the edge, some discoloring, fix red eyes, 
+or straighten a photo. To edit a photo, click on the photo that you 
+want to edit and then click on the \button{Edit Image} button. This changes the 
+side bar on the left of the \window{F-Spot} window. The panel will show eight 
+options: \button{Crop}, \button{Red-eye Reduction}, \button{De-saturate}, 
+\button{Sepia Tone}, \button{Straighten}, \button{Soft Focus}, 
+\button{Auto Color}, and \button{Adjust Colors}. Some of these options are 
+explained in more detail in the next section.
+
+\subsubsection{Cropping photos} 
+
+You might want to crop a photo to change the framing or remove part of the edge 
+of the photo. Click on the \button{Crop} on the left panel, then in the 
+\dropdown{Select an area to crop} drop-down list choose the ratio that you 
+would like to crop with. You might want choose the ratio that matches the ratio 
+that you would like to print, so that the photo is not stretched.
+
+You can create custom constraints if one of the defaults does not meet your 
+requirements. This is done by choosing \dropdown{Custom Ratios} from the 
+\dropdown{Select an area to crop} drop-down list. This opens the 
+\window{Selection Constraints} window. Click \button{Add} to place a new entry on 
+the left of the window.
+
+Once you have chosen your constraint, move the cursor to one corner of the 
+section of the photo that you want to keep. Click-and-hold the left mouse button 
+and drag it to the opposite corner of the section that you want to keep. 
+Release the the mouse button to finish your cropping selection.
+
+To resize the cropping selection box, move the mouse until an arrow points to 
+the side of the cropping selection box that you want to move. Click-and-hold the 
+left mouse button, and move the mouse until the edge is in the right place.
+
+%TODO is this the best way of describing this?
+All ratios work in portrait and landscape mode. To change between the two, you 
+need to click on the edge of the cropping selection box as if you were to resize 
+the box. Moving the cursor between top right and bottom left switches between 
+portrait and landscape modes.
+
+\subsubsection{Red-eye Reduction} 
+
+If you have taken a photo and the flash caused the subject to have 
+red eyes, you can fix this problem in F-Spot. First, click on the 
+\button{Red-eye Reduction} button. Move the cursor to the one corner of the 
+subject's eye and click-and-hold the left mouse button as you drag the cursor to 
+the opposite corner of the eye. Then, release the mouse button.
+
+This box can be moved by placing the cursor into the middle of the red eye 
+selection box until a hand cursor is shown. Then, click-and-hold the left mouse 
+button and move the selection box into the correct place. When it is in the 
+correct place you can release the left mouse button.
+
+To resize the box, move the mouse until an arrow points to the side of the 
+red eye selection box that you want to move. Click-and-hold the left mouse 
+button, move the mouse until the edge is in the right place.
+
+When the box covers all of the red in one eye, click the \button{Fix} button. 
+You will need to repeat the process for each of the subject's eyes that is 
+affected.
+
+\subsubsection{Straighten}
+
+If you have a photo where the subject is at an angle, you can straighten the
+photo with F-Spot. First, click on the \button{Straighten} button. Then move the 
+slider until the picture is straight again. F-Spot will auto crop the picture 
+to remove any white parts that occur due to the rotation. When you are happy 
+that the picture is straight, click on the \button{Straighten} button.
+
+\subsubsection{Auto Color}
+
+To automatically correct the coloring of a photo, click on the 
+\button{Auto Color} button.
+
+\subsection{Exporting to web services}
+
+F-Spot allows you to export you photos to a Web Gallery, Folder or \acronym{CD} and the 
+following services: SmugMug, Picasa Web, Flickr, 23hq and Zooomr.
+
+You can export to these services by selecting a picture and then opening the
+\menu{Photo} menu, then choosing \menu{Export to} and clicking the service that 
+you require. This will open a window in which you can enter your account name and 
+password for the service. This will allow you to upload pictures to this service.

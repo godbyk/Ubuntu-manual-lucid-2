@@ -1,0 +1,54 @@
+%
+% Tamil-specific options for the Ubuntu Manual
+%
+
+\ProvidesFile{um-tamil.clo}[2010/06/04 v1.0.0 Tamil-specific options for the Ubuntu Manual]
+
+% Serif fonts
+%\newfontfamily\tamilfont[Script=Tamil,Language=Tamil]{FreeSerif}%
+%\newfontfamily\tamilfont[Script=Tamil,Language=Tamil]{Lohit Tamil}%
+%\newfontfamily\tamilfont[Script=Tamil,Language=Tamil]{TSCu_Paranar}%
+\newfontfamily\tamilfont[Script=Tamil,Language=Tamil]{Akshar Unicode}%
+
+% Sans serif fonts
+%\newfontfamily\tamilfontsf[Script=Tamil,Language=Tamil]{FreeSans}%
+%\newfontfamily\tamilfontsf[Script=Tamil,Language=Tamil]{Lohit Tamil}%
+%\newfontfamily\tamilfontsf[Script=Tamil,Language=Tamil]{TSCu_Paranar}%
+%\setsansfont[Script=Tamil,Language=Tamil]{TSCu_Paranar}
+\newfontfamily\tamilfontsf[Script=Tamil,Language=Tamil]{Akshar Unicode}%
+\setsansfont[Script=Tamil,Language=Tamil]{Akshar Unicode}
+
+
+% Monospaced fonts
+%\newfontfamily\tamilfonttt[Script=Tamil,Language=Tamil]{FreeMono}%
+
+
+% Redefine the heading styles
+% Format the chapter headings
+\titleformat{\chapter}[block]% command and paragraph shape
+  {\Huge\sffamily}% format
+  {\Huge\sffamily\thechapter\quad}% label
+  {0mm}% separation
+  {}% before
+  []% after
+
+
+
+% Define quotation mark styles
+%\DeclareQuoteStyle[quotes]{language}
+%  {\quotedblbase}% „ U+201E - left double outer
+%  {\textquotedblleft}% “ U+201C - right double outer
+%  [0.05em]
+%  {\quotesinglbase}% ‚ U+201A - left single inner
+%  {\textquoteleft}% ‘ U+2018 - right single inner
+%\DeclareQuoteAlias[quotes]{language}{language}
+%\DeclareQuoteOption{language}
+%\ExecuteOptions{language}
+
+% Define translated macros
+%\renewcommand{\dash}{\unskip\,--\,\ignorespaces}
+%\renewcommand{\ie}{\textit{i.\hairsp{}e.}\xspace}
+%\renewcommand{\eg}{\textit{e.\hairsp{}g.}\xspace}
+
+\endinput
+

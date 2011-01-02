@@ -1,0 +1,26 @@
+%
+% Arabic-specific options for the Ubuntu Manual
+%
+
+\ProvidesFile{um-arabic.clo}[2010/02/16 v1.0.0 Arabic-specific options for the Ubuntu Manual]
+
+% Reverse page margins for RTL languages
+\geometry{a4paper,reversemp,left=24.8mm,top=27.4mm,headsep=2\baselineskip,textwidth=107mm,marginparsep=8.2mm,marginparwidth=49.4mm,textheight=49\baselineskip,headheight=\baselineskip}
+\AtBeginDocument{\raggedleft}
+
+% Serif fonts
+%\newfontfamily\arabicfont[Script=Arabic,Language=Arabic]{KacstBook}% from ttf-kacst
+\newfontfamily\arabicfont[Script=Arabic,Language=Arabic]{Scheherazade}% from ttf-sil-scheherazade
+
+% Sans serif fonts
+\newfontfamily\arabicfontsf[Script=Arabic,Language=Arabic]{Arab}% from ttf-arabeyes
+
+% Monospaced fonts
+% TODO define \arabicfonttt
+
+% Reverse the arrow bullet
+\renewcommand{\smallarrow}{{\reflect{\normalfontlatin ¿}}}%
+
+
+\endinput
+

@@ -1,0 +1,17 @@
+%
+% Marathi-specific options for the Ubuntu Manual
+%
+
+\ProvidesFile{um-marathi.clo}[2010/02/16 v1.0.0 Marathi-specific options for the Ubuntu Manual]
+
+% Serif fonts
+\newfontfamily\devanagarifont[Script=Devanagari,Language=Marathi]{Aksharyogini}% from ttf-devanagari-fonts
+
+% Sans serif fonts
+\newfontfamily\devanagarifontsf[Script=Devanagari,Language=Marathi]{gargi}% from ttf-devanagari-fonts
+
+% Monospaced fonts
+\newfontfamily\devanagarifonttt[Script=Devanagari,Language=Marathi]{Mitra Mono}% from ttf-FIXME
+
+\endinput
+

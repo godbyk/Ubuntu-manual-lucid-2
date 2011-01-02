@@ -1,0 +1,78 @@
+%written by Luke Jennings ubuntujenkins@googlemail.com
+
+\section{Connecting and using your printer}
+
+You can add, remove, and change printer properties by navigating to \menu{System \then Administration \then Printing}. 
+This will display the \window{Printing-localhost} window.
+
+When you want to add a printer, you will need to make sure that it switched on, and plugged into your computer with a \acronym{USB} cable or connected to your network.
+
+\subsection{Adding a local printer}
+
+If you have a printer that is connected to your computer with a \acronym{USB} cable then this
+is termed a \emph{local printer}. You can add a printer by clicking on the \button{Add Printer} button.
+
+In the left hand pane of the \window{New Printer} window any printers that you can
+install will be listed. Select the printer that you would like to install and click \button{Forward}.
+
+\marginnote{If your printer can automatically do double sided printing it will probably have a duplexer. 
+Please refer to the instructions that came with the printer 
+if you are unsure. If you do have a duplexer you will need to make sure the \checkbox{Duplexer Installed} 
+option is checked and then click the \button{Forward} button.} 
+You can now specify the printer name, description and location. Each of these 
+should remind you of that particular printer so that you can choose the right one
+to use when printing. Finally, click \button{Apply}.
+
+\subsection{Adding a network printer}
+
+Make sure that your printer is connected to your network with an Ethernet cable and is 
+turned on. You can add a printer by clicking \button{Add Printer}. The \window{New Printer} window will open. Click
+ the ``+'' sign next to \emph{Network Printer}. 
+
+If your printer is found automatically it will appear under \emph{Network Printer}. 
+Click the printer name and then click \button{Forward}. In the text fields you
+ can now specify the printer name, description and location. Each of these should remind you of 
+that particular printer so that you can choose the right one to use when printing. Finally click \button{Apply}.
+
+You can also add your network printer by entering the \acronym{IP} address of the printer. Select \textbf{Find Network Printer}, type in the \acronym{IP} address of the printer in the box that reads \textbf{Host:} and press the \button{Find} button. Ubuntu will find the printer and add it. Most printers are detected by Ubuntu automatically. If Ubuntu cannot detect the printer automatically, it will ask you to enter the make and model number of the printer.
+\marginnote[-4\baselineskip]{The default printer is the one that is automatically selected when you print a file. 
+To set a printer as default, right-click the printer that you want to set as 
+default and then click \menu{Set As Default}.}
+
+\subsection{Changing printer options} 
+
+Printer options allow you to change the printing quality, paper size and media type. They
+can be changed by right-clicking a printer and choosing \menu{Properties}. The \window{Printer Properties}
+window will show, in the left pane choose \emph{Printer Options}.
+
+You can now specify settings by changing the drop-down entries. Some
+ of the options that you might see are explained.
+
+\subsubsection{Media Size}
+
+This is the size of the paper that you put into your printer tray.
+
+\subsubsection{Media source} 
+
+This is the tray that the paper comes from.
+
+\subsubsection{Color Model}
+
+This is very useful if you want to print in \dropdown{Grayscale} to save on ink, or to print in \dropdown{Color}, or \dropdown{Inverted Grayscale}.
+
+\subsubsection{Media type}
+
+Depending on the printer you can change between:
+
+\begin{itemize}
+\item Plain Paper
+\item Automatic
+\item Photo Paper
+\item Transparency Film
+\item \acronym{CD} or \acronym{DVD} Media
+\end{itemize}
+
+\subsubsection{Print Quality}
+
+This specifies how much ink is used when printing, \dropdown{Fast Draft} using the 
+least ink and \dropdown{High-Resolution Photo} using the most ink.

@@ -1,0 +1,52 @@
+# Language codes listing
+# Code  Language    xindy_language
+
+ar      arabic      general
+ast     asturian    general
+bg      bulgarian   bulgarian
+bn      bengali     general
+ca      catalan     general
+cs      czech       czech
+da      danish      danish
+de      german      german-din
+el      greek       greek
+en_GB   english     english
+eo      esperanto   esperanto
+es      spanish     spanish-modern
+et      estonian    estonian
+fa      persian     general
+fi      finnish     finnish
+fr      french      french
+gl      galician    general
+grc     ancient-greek   greek
+hi      hindi       general
+hu      hungarian   hungarian
+ia      interlingua general
+id      indonesian  general
+it      italian     italian
+ja      japanese    general
+ko      korean      general
+la      latin       latin
+lt      lithuanian  lithuanian
+ml      malayalam   general
+mr      marathi     general
+ms      malay       general
+nb      norwegian-bokmal    norwegian
+nl      dutch       general
+oc      occitan     general
+pl      polish      polish
+pt_BR   brazilian-portuguese    portuguese
+pt      portuguese  portuguese
+ro      romanian    romanian
+ru      russian     russian
+sl      slovenian   slovenian
+sq      albanian    albanian
+sr      serbian     serbian
+te      telugu      general
+th      thai        general
+uk      ukrainian   ukrainian
+vi      vietnamese  general
+zh_CH   chinese     general
+zh_CN   chinese-simplified  general
+zh_TW   chinese-traditional general
+

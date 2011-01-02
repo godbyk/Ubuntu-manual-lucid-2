@@ -1,0 +1,21 @@
+%
+% Farsi-specific options for the Ubuntu Manual
+%
+
+\ProvidesFile{um-farsi.clo}[2010/02/16 v1.0.0 Farsi-specific options for the Ubuntu Manual]
+
+% Serif fonts
+\newfontfamily\farsifont[Script=Arabic,Language=Farsi]{Scheherazade}% from ttf-sil-scheherazade
+
+% Sans serif fonts
+\newfontfamily\farsifontsf[Script=Arabic,Language=Farsi]{Homa}% from ttf-farsiweb
+
+% Monospaced fonts
+% TODO define \farsifonttt
+
+% Reverse the arrow bullet
+%\renewcommand{\smallarrow}{{\reflect{\normalfontlatin ¿}}}%
+
+
+\endinput
+

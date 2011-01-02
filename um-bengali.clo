@@ -1,0 +1,17 @@
+%
+% Bengali-specific options for the Ubuntu Manual
+%
+
+\ProvidesFile{um-bengali.clo}[2010/02/16 v1.0.0 Bengali-specific options for the Ubuntu Manual]
+
+% Serif fonts
+\newfontfamily\bengalifont[Script=Bengali,Language=Bengali]{Likhan}% from ttf-bengali-fonts
+
+% Sans serif fonts
+\newfontfamily\bengalifontsf[Script=Bengali,Language=Bengali]{Likhan}% from ttf-bengali-fonts
+
+% Monospaced fonts
+\newfontfamily\bengalifonttt[Script=Bengali,Language=Bengali]{Mitra Mono}% from ttf-FIXME
+
+\endinput
+

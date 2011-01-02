@@ -1,0 +1,78 @@
+% Translated by Shushi Kurose <md81bird@hitaki.net>
+
+\ProvidesFile{gloss-japanese.ldf}[polyglossia: module for japanese]
+\makeatletter
+
+\ifx\l@japanese\@undefined%
+   \xpg@nopatterns{Japanese}%
+   \adddialect\l@japanese0%
+\fi
+
+\def\captionsjapanese{%
+   \def\refname{\textjapanese{参考文献}}%
+   \def\abstractname{\textjapanese{要約}}%
+   \def\bibname{\textjapanese{文献}}%
+   \def\prefacename{\textjapanese{序文}}%
+   \def\chaptername{\textjapanese{章}}% (``chapter'' means ``章'', but ``Chapter 1'' can translate to ``第1章'', for example.)
+   \def\appendixname{\textjapanese{付録}}%
+   \def\contentsname{\textjapanese{目次}}%
+   \def\listfigurename{\textjapanese{図の一覧}}%
+   \def\listtablename{\textjapanese{表の一覧}}%
+   \def\indexname{\textjapanese{索引}}%
+   \def\figurename{\textjapanese{図}}%
+   \def\tablename{\textjapanese{表}}%
+   %\def\thepart{\textjapanese{}}% TODO Roman numerals are okay, but Arabic are more common.
+   \def\partname{\textjapanese{パート}}%
+   \def\pagename{\textjapanese{ページ}}% (``page 37'' can translate to ``37 ページ''. Word order is reversed.)
+   \def\seename{\textjapanese{を参照}}% (``apples, see fruit'' can translate to ``りんご :フルーツを参照'' りんご=apple, fruit=フルーツ. we don't use ``,'' as expression of detail information. `` :'' is beter, I think. Blank (exist or not) does not a matter.)
+   \def\alsoname{\textjapanese{も参照}}% (``apples, see also oranges'' can translate to ``リンゴ :オレンジも参照'' orange=オレンジ.  also=``*** も'')
+   \def\enclname{\textjapanese{同封物}}% (I saw expression of ``Enclosure'' in english business letter, but not in Japanese. ``同封物'' is better for letters, ``添付'' is better for e-mail.)
+   \def\ccname{\textlatin{cc}}% (Can't see this style in Japanese letter, but it's very popular in e-mail.)
+   \def\headtoname{\textlatin{To}}% (Can't see this style in Japanese letter, but it's very popular in e-mail.)
+   \def\proofname{\textjapanese{証明}}%
+   \def\glossaryname{\textjapanese{用語集}}%
+   }
+
+\def\datejapanese{%
+   \def\today{\textjapanese{\number\year年\number\month月\number\day日}}
+   }
+
+\def\japanese@font{%
+\font\zf@basefont="\csname zf@family@fontdef\f@family\endcsname" at \f@size pt
+\@ifundefined{japanesefont}{%
+      \@ifundefined{kanafont}{%
+        \zf@check@ot@script{kana}% Kana
+        \if@tempswa%
+          \addfontfeature{Script=Kana}%
+        \else%
+          \PackageError{polyglossia}{^^J
+          The current font does not contain the Kana script!^^J
+          Please define \string\kanafont\space or \string\japanesefont\space with \string\newfontfamily}%
+        \fi%
+        \zf@check@ot@lang{JAN}% Japanese
+        \if@tempswa\addfontfeature{Language=Japanese}\fi%
+        }%
+      {\kanafont%
+        \zf@check@ot@lang{JAN}% Japanese
+        \if@tempswa\addfontfeature{Language=Japanese}\fi%
+      }}% 
+     {\japanesefont}%
+}
+
+\def\selectnormalfontjapanese{%
+   \let\normalfont=\japanese@font%
+   \def\reset@font{\normalfont}}
+
+\def\japanese@language{\protect\language=\l@japanese}
+
+\setlocalhyphenmins{japanese}{2}{2}%
+
+\def\noextras@japanese{%
+   }
+
+\def\blockextras@japanese{%
+   }
+
+\def\inlineextras@japanese{%
+   }
+

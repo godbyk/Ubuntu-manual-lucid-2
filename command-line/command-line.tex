@@ -1,0 +1,317 @@
+\chapter{The Command Line}
+\label{ch:command-line}
+
+\section{Introduction to the terminal}
+
+Throughout this manual, we have focused primarily on the graphical desktop
+user interface. However, in order to fully realize the power of Ubuntu,
+you may want to learn how to use the terminal.
+
+\subsection{What is the terminal?}
+
+Most operating systems, including Ubuntu, have two types of user interfaces.
+The first is a graphical user interface (\acronym{GUI}). This is 
+the desktop, windows, menus, and toolbars that you click to get things done. 
+The second, and much older, type of interface is the command-line interface
+(\acronym{CLI}).
+
+The \emph{terminal} is Ubuntu's command-line interface. It is a method of 
+controlling some aspects of Ubuntu using only commands that you type on the
+keyboard.
+
+\subsection{Why would I want to use the terminal?}
+
+For the average Ubuntu user, most day-to-day activities can be completed without ever needing to open the terminal. However, the terminal is a powerful and invaluable tool that can be used to perform many useful tasks. For example:
+
+\begin{itemize}
+  \item Troubleshooting any difficulties that may arise when using Ubuntu sometimes requires you to use the terminal.
+  \item A command-line interface is sometimes a faster way to accomplish a 
+task. For example, it is often easier to perform operations on many files at
+once using the terminal.
+  \item Learning the command-line interface is the first step towards more advanced 
+troubleshooting, system administration, and software development skills. If you are interested in becoming a developer or an advanced Ubuntu user, knowledge of the command-line will be essential. 
+\end{itemize}
+
+\subsection{Opening the Terminal}
+
+\marginnote{The \emph{terminal} gives you access to what is called a \emph{shell}. When you type a command
+in the \gls{terminal} the \gls{shell} interprets this command, resulting in the desired action. There are different types of shells that accept 
+slightly different commands. The most popular is called ``bash,'' and is the default shell in Ubuntu.}
+You can open the terminal by clicking \menu{Applications \then Accessories \then Terminal}.
+
+When the terminal window opens, it will be largely blank apart from some text at the top left of the screen, 
+followed by a blinking block. This text is your \gls{prompt}\dash it displays
+your login name and your computer's name, followed by the current directory. 
+\marginnote{In \acronym{GUI} environments the term ``folder'' is commonly used to describe a
+place where files are stored. In \acronym{CLI} environments the term ``directory''
+is used to describe the same thing and this metaphor is exposed in
+many commands (\ie, \code{cd} or \code{pwd}) throughout this chapter.}
+The tilde (\textasciitilde)
+means that the current directory is your home directory. Finally, the 
+blinking block is the \gls{cursor}\dash this marks where text will be entered as you type.
+
+To test things out, type \userinput{pwd} and press \keystroke{Enter}. The 
+terminal should display \code{/home/\emph{yourusername}}.
+This text is called the ``\gls{output}.'' You have just used the
+\commandlineapp{pwd} (print working directory) command, and the output that was displayed shows the current directory.
+
+\screenshot{06-default-terminal.png}{ss:default-terminal}{The default terminal window allows you to run hundreds of useful commands.}
+
+All commands in the terminal follow the same approach. Type in the name of a 
+command, possibly followed by some \glspl{parameter}, and
+press \keystroke{Enter} to perform the specified action. 
+\marginnote{\emph{Parameters} are extra segments of text, usually added at the end of a command, that change how the command itself is interpreted. These usually take the form of \userinput{-h} or \userinput{--help}, for example. In fact, \userinput{--help} can be added to most commands to display a short description of the command, as well as a list of any other parameters that can be used with that command.}
+Often some output will be displayed
+that confirms the action was completed successfully, although this depends on the command. For example, using the \commandlineapp{cd} command
+to change your current directory (see below) will change the prompt, but will not display any output.
+
+The rest of this chapter covers some very common uses of the terminal. However, there are almost infinite possibilities available to you when using
+the command-line interface in Ubuntu. Throughout the second part of this manual we will continue to refer to the command line, particularly when discussing steps involved in troubleshooting and the more advanced management of your computer.
+
+
+\section{Ubuntu file system structure}
+
+Ubuntu uses the Linux file system, which is based on a series of folders in the root directory. Each of these folders contain important system files that cannot be modified unless you are running as the root user or use \emph{sudo}. This restriction exists for both security and safety reasons: computer viruses will not be able to change the core system files, and users should not be able to accidentally damage anything vital.
+
+Below are some of the most important directories.
+
+\screenshot{root-directories.png}{ss:root-directories}{Some of the most important directories in the root file system.}
+
+The root directory \dash denoted by \code{/} \dash contains all other directories and files. Here are the contents of some system essential directories:
+
+\begin{itemize}
+  \item \code{/bin} \& \code{/sbin}: Many essential system programs
+  \item \code{/etc}: System-wide configuration files
+  \item \code{/home}: Each user will have a subdirectory to store personal files (for example \code{/home/your-username})
+  \item \code{/lib}: Library files, similar to \code{.dll} files on Windows
+  \item \code{/media}: Removable media (\acronym{CD-ROMs} and \acronym{USB} drives) will be mounted in this directory
+  \item \code{/root}: This contains the root user's files (not to be confused with the root directory)
+  \item \code{/usr}: Pronounced `user', it contains most program files (not to be confused with each user's home directory)
+  \item \code{/var/log}: Contains log files written by many programs
+\end{itemize}
+
+Every directory has a \emph{path}. The path is a directory's full name \dash it describes a way to navigate the directory from anywhere in the system.
+
+For example, the directory \code{/home/your-username/Desktop} contains all the files that are on your Ubuntu desktop. The path, /home/your-username/Desktop, can be broken down into a few pieces:
+
+\begin{enumerate}
+  \item / \dash indicates that the path starts at the root directory
+  \item home/ \dash from the root directory, the path goes into the home directory
+  \item your-username/ \dash from the home directory, the path goes into the your-username directory
+  \item Desktop \dash from the your-username directory, the path ends up in the Desktop directory
+\end{enumerate}
+
+Every directory in Ubuntu has a complete path that starts with the \code{/} (the root directory) and ends in the directory's own name.
+
+Directories and files that begin with a period are hidden directories. These are usually only visible with a special command or by selecting a specific option. In the \application{Nautilus} you can show hidden files and directories by selecting \menu{View\then Show Hidden Files}, or by pressing \keystroke{Ctrl+H}. There are many hidden directories in your home folder used to store program preferences. For example, \code{/home/your-username/.evolution} stores preferences used by the \application{Evolution} mail application.
+
+\subsection{Mounting and unmounting removable devices.}
+
+Any time you add storage media to your computer \dash an internal or external hard drive, a \acronym{USB} flash drive, a \acronym{CD-ROM} \dash it needs to be \emph{mounted} before it is accessible. Mounting a device means to associate a directory name with the device, allowing you to navigate to the directory to access the device's files.
+
+When a device such as a \acronym{USB} flash drive or a media player is mounted in Ubuntu, a folder is automatically created for it in the \emph{media} directory and you are given the appropriate permissions to be able to read and write to the device.
+
+Most File Managers will automatically add a shortcut to the mounted device in its side bar so it's easy for you to get to. You shouldn't have to physically navigate to the \emph{media} directory in Ubuntu, unless you choose to do so from the command line.
+
+When you are done using a device, you can \emph{unmount} it. Unmounting a device means to disassociate the device from its directory, allowing you to eject it.
+
+\section{Getting started with the command line}
+
+\subsection{Navigating directories}
+
+The \commandlineapp{pwd} command is short for \emph{print working directory}. It can be used to 
+display the directory you are currently in. Note that the prompt (the text just before the blinking cursor) also displays your current directory.
+
+\begin{terminal}
+\prompt \userinput{pwd}
+/home/your-username/
+\end{terminal}
+
+The \commandlineapp{cd} command is short for \emph{change directory}. It allows you to navigate from your current working directory to another of your choosing.
+
+\begin{terminal}
+\prompt \userinput{cd /directory/you/want/to/go/to/}
+\end{terminal}
+
+If there are spaces in one of the directories, you will need to put quotation marks around the path:
+
+\begin{terminal}
+\prompt \userinput{cd \textasciitilde/"Music/The Beatles/Sgt. Pepper's Lonely Hearts Club Band/"}
+\end{terminal}
+
+If you leave out the quotation marks, the terminal will think that you are trying to change to a directory named \code{\textasciitilde/Music/The}.
+
+There are some special directory names. \code{\textasciitilde} is a special name that always refers to your home directory. You can type \userinput{cd \textasciitilde} to navigate to your home directory from anywhere in the system. The name \code{..} (two periods) is a special name that refers to the directory's ``parent'' \dash the directory one level above it in the directory tree. For example, if your current working directory is \code{/home/your-username} then typing \userinput{cd ..} will navigate to the \code{/home} directory.
+
+\subsection{Getting a list of files}
+
+The \commandlineapp{ls} command is used to get a \emph{list} of all the files and directories that exist inside the current directory.
+
+
+\begin{terminal}
+\prompt \userinput{ls}
+alligator-pie.mp3
+squirm.mp3
+baby-blue.mp3
+\end{terminal}
+
+\subsection{Moving things around}
+
+\marginnote{Note that the terminal is case-sensitive. For example, if you have a directory called \texttt{Directory1}, you must remember to include the capital letter whenever referring to it in the terminal, otherwise the command will not work.}
+The \commandlineapp{mv} command is used to move a file from one directory to another.
+
+\begin{terminal}
+\prompt \userinput{mv /dmb/big-whiskey/grux.mp3 /home/john}
+\end{terminal}
+
+You can also use the \code{mv} command to rename a file. For example:
+
+\begin{terminal}
+\prompt \userinput{mv grux.mp3 frub.mp3}
+\end{terminal}
+
+The \commandlineapp{cp} command is used to copy a file from one directory into another.
+
+\begin{terminal}
+\prompt \userinput{cp /dmb/big-whiskey/grux.mp3 /media/ipod}
+\end{terminal}
+
+\subsection{Creating directories}
+
+The \commandlineapp{mkdir} command is short for \emph{make directory}, and is used to create a new directory in the current directory or another specified location. For example, this command will make a directory called \texttt{newdirectory} inside the current directory:
+
+\begin{terminal}
+\prompt \userinput{mkdir newdirectory}
+\end{terminal}
+
+The following command will ignore your current directory, and instead make one called \texttt{newdirectory} inside a hypothetical directory called \texttt{/tmp/example/}:
+
+\begin{terminal}
+\prompt \userinput{mkdir /tmp/example/newdirectory} 
+\end{terminal}
+
+You could then navigate to this new directory by using the \commandlineapp{cd} command.
+
+\begin{terminal}
+\prompt \userinput{cd /tmp/example/newdirectory}
+\end{terminal}
+
+\subsection{Deleting files and directories}
+
+The \commandlineapp{rm} command is used to delete files. For example, to delete a file named \texttt{deleteme.txt} located in the current directory:
+
+\begin{terminal}
+\prompt \userinput{rm deleteme.txt}
+\end{terminal}
+
+To delete a file located in another directory (\ie, not inside your current working directory), you would need to include the \emph{path} to the file. In other words, you are specifying the file's location. For example, to delete the file \texttt{deleteme.txt} located in the \texttt{/tmp/example/} directory, use the following command:
+
+\begin{terminal}
+\prompt \userinput{rm /tmp/example/deleteme.txt}
+\end{terminal}
+
+The \commandlineapp{rmdir} command is similar to the \commandlineapp{rm} command, except it is used to delete folders. For example, this command would delete the directory called \texttt{newdirectory} that we created earlier.
+
+\begin{terminal}
+\prompt \userinput{rmdir /tmp/example/newdirectory/}
+\end{terminal}
+
+\section{Introducing sudo}
+
+When you installed Ubuntu, the system automatically created two user accounts: your primary user account, and a ``root'' account that operates behind the scenes. This root account has the necessary privileges required for modifying system files and settings, whereas your primary user account does not. Rather than logging out of your primary user account and then logging back in as root (which can be very dangerous), you can use the \commandlineapp{sudo} command (for command line applications) and \commandlineapp{gksudo} to borrow root account privileges for performing administrative tasks such as installing or removing software, creating or removing new users, and modifying system files. 
+
+\marginnote{When using \commandlineapp{sudo} in the terminal, you will be prompted to enter your password. You will not see any dots, stars, or other characters appearing in the terminal as you type your password \dash this is an extra security feature to help protect your password from any prying eyes.}
+For example, the following command would open Ubuntu's default text editor \application{gedit} with root privileges. You will then be able to edit important system files that would otherwise be protected. The password you use with \commandlineapp{sudo} is the same password that you use to log in to your primary account, and is set up during the Ubuntu installation process.
+
+\begin{terminal}
+\prompt \userinput{gksudo gedit}
+[sudo] password for \emph{username}:
+Opening gedit...
+\end{terminal}
+
+\warning{The {\ttfamily sudo} command gives you virtually unlimited access to important system files and settings. It is important you only use {\ttfamily sudo} if you understand what you are doing. You can find out more about using {\ttfamily sudo} in \chaplink{ch:security}.}
+
+\section{Managing software through the terminal}
+
+In Ubuntu there are many ways to manage your software. Graphical
+tools such as the \application{Ubuntu Software Center} and \application{Synaptic
+Package Manager} were discussed in \chaplink{ch:software-management}, however,
+many people prefer to use the \commandlineapp{apt} command (Advanced Packaging
+Tool) to manage their software from within the terminal. The \commandlineapp{apt} command is
+extremely versatile and encompasses several tools, the most commonly
+used of which is \commandlineapp{apt-get}.
+
+The various \commandlineapp{apt} commands should be prefixed with the \commandlineapp{sudo} 
+command, since they typically require root privileges.
+
+\subsection{Using apt-get}
+
+The \commandlineapp{apt-get} command is used for installing and removing packages from your system. It can also be used to refresh the list of packages available in the repositories, as well as download and install any new updates for your software.
+
+\subsubsection{Updating and upgrading} 
+
+The \commandlineapp{apt-get} \code{update} command can be used to quickly
+refresh the list of packages that are available in the default Ubuntu
+repositories, as well as any additional repositories added by the user (see
+\chaplink{ch:software-management} for more information on repositories).
+
+\begin{terminal}
+\prompt \userinput{sudo apt-get update}
+\end{terminal}
+
+You can then use \commandlineapp{apt-get} \code{upgrade} to download and
+install any available updates for your currently installed packages. It is best
+to run \commandlineapp{apt-get} \code{update} prior to running
+\commandlineapp{apt-get} \code{upgrade}, as this will ensure you are getting
+the most recent updates available for your software.
+
+\begin{terminal}
+\prompt \userinput{sudo apt-get upgrade}
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages will be upgraded:
+\space\space tzdata
+1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 683kB of archives.
+After this operation, 24.6kB disk space will be freed.
+Do you want to continue [Y/n]? 
+\end{terminal}
+
+The terminal will give you a summary of what packages are to be upgraded, the download size, and how much extra disk space will be used (or freed), and then ask you to confirm before continuing. To proceed with the installation, press \keystroke{y} and then \keystroke{Enter}, and the upgrades will be downloaded and installed for you. If you do not want to proceed with the installation, press \keystroke{n} and then \keystroke{Enter}.
+
+\subsubsection{Installing and removing}
+
+The following command would be used to install \acronym{VLC} media player using
+\commandlineapp{apt-get}:
+\marginnote{Notice the sudo command before the apt-get command. In most cases it will be necessary to use sudo when installing software, as you will be modifying protected parts of your system. Many of the commands we will be using from here on require root access, so expect to see sudo appearing frequently.}
+
+\begin{terminal}
+\prompt \userinput{sudo apt-get install vlc}
+[sudo] password for \emph{username}:
+\end{terminal}
+
+To remove \acronym{VLC}, you would type:
+
+\begin{terminal}
+\prompt \userinput{sudo apt-get remove vlc}
+[sudo] password for \emph{username}:
+\end{terminal}
+
+\subsubsection{Cleaning up your system}
+
+Often software in Ubuntu depends on other packages being installed on your system in order to run correctly. If you attempt to install a new package and these \emph{dependencies} are not already installed, Ubuntu will automatically download and install them for you at the same time (provided the correct packages can be found in your repositories). When you remove a package in Ubuntu, any dependencies that were installed alongside the original package are not also automatically removed. These packages sit in your system and can build up over time, taking up disk space. A simple way to clean up your system is to use the \commandlineapp{apt-get} \code{autoremove} command. \marginnote{Another useful cleaning command is \commandlineapp{apt-get} \code{autoclean} which removes cache files left over from downloading packages.} This will select and remove any packages that were automatically installed but no longer required.
+
+\begin{terminal}
+\prompt \userinput{sudo apt-get autoremove}
+\end{terminal}
+
+\subsubsection{Adding extra software repositories}
+
+Sometimes you might want to install some software that isn't in the official repositories but may be available in a what's called a \acronym{PPA}. \acronym{PPA}s, or personal package archives, contain software that you can install by adding that \acronym{PPA} to your system. To add a PPA repository:
+
+\begin{terminal}
+\prompt \userinput{sudo add-apt-repository ppa:example/ppa}
+\end{terminal}
+
+Once you have installed the \acronym{PPA} you may install software from it in the usual way using the \commandlineapp{apt-get} \code{install} command.

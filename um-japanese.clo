@@ -1,0 +1,27 @@
+%
+% Japanese-specific options for the Ubuntu Manual
+%
+
+\ProvidesFile{um-japanese.clo}[2010/03/01 v1.0.0 Japanese-specific options for the Ubuntu Manual]
+
+% Serif fonts
+\newfontfamily\japanesefont[Script=Kana,Language=Japanese]{Sazanami Mincho}% from ttf-sazanami-mincho
+
+% Sans serif fonts
+\newfontfamily\japanesefontsf[Script=Kana,Language=Japanese]{VL PGothic}% from ttf-vlgothic
+
+% Monospaced fonts
+\let\japanesefonttt\japanesefontsf
+
+% Chapter cross-referencing
+% Should be like: ``2 章:Ubuntu''
+\renewcommand{\chaplink}[1]{%
+  \IfBeforeSubStringEmpty{ch:}{#1}{%
+    \ref{#1}~\hyperref[#1]{\@chapapp}\hyperref[#1]{:}\nameref{#1}%
+  }{%
+    \ref{ch:#1}~\hyperref[ch:#1]{\@chapapp}\hyperref[ch:#1]{:}\nameref{ch:#1}%
+  }%
+}
+
+\endinput
+

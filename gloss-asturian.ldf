@@ -1,0 +1,65 @@
+% Translated by Xuacu <xuacusk8@gmail.com>
+
+\ProvidesFile{gloss-asturian.ldf}[polyglossia: module for asturian]
+\makeatletter
+
+\ifx\l@asturian\@undefined%
+   \xpg@nopatterns{asturian}%
+   \adddialect\l@asturian\l@nohyphenation%
+\fi
+
+\def\captionsasturian{%
+   \def\refname{\textasturian{Referencies}}%
+   \def\abstractname{\textasturian{Sumariu}}%
+   \def\bibname{\textasturian{Bibliografía}}%
+   \def\prefacename{\textasturian{Entamu}}%
+   \def\chaptername{\textasturian{Capítulu}}%
+   \def\appendixname{\textasturian{Apéndiz}}%
+   \def\contentsname{\textasturian{Conteníu}}%
+   \def\listfigurename{\textasturian{Llista de figures}}%
+   \def\listtablename{\textasturian{Llista de tables}}%
+   \def\indexname{\textasturian{Índiz}}%
+   \def\figurename{\textasturian{Figura}}%
+   \def\tablename{\textasturian{Tabla}}%
+   %\def\thepart{\textasturian{}}% TODO!
+   \def\partname{\textasturian{Parte}}%
+   \def\pagename{\textasturian{Páxina}}%
+   \def\seename{\textasturian{ver}}%
+   \def\alsoname{\textasturian{ver tamién}}%
+   \def\enclname{\textasturian{incl.}}%
+   \def\ccname{\textasturian{cc}}%
+   \def\headtoname{\textasturian{Pa}}%
+   \def\proofname{\textasturian{Demostración}}%
+   \def\glossaryname{\textasturian{Glosariu}}%
+}
+
+\def\dateasturian{%
+   \def\today{\textasturian{\number\day~\ifcase\month\or
+    de~xineru\or de~febreru\or de~marzu\or d'abril\or de~mayu\or de~xunu\or
+    de~xunetu\or d'agostu\or de~setiembre\or d'ochobre\or de~payares\or
+    d'avientu\fi\space de~\number\year}}%
+}
+
+\def\asturian@font{\normalfontlatin}
+
+\def\selectnormalfontasturian{%
+   \let\normalfont=\asturian@font%
+   \def\reset@font{\normalfont}}
+
+\def\asturian@language{\protect\language=\l@asturian}
+
+\setlocalhyphenmins{asturian}{2}{2}%
+
+\def\noextras@asturian{%
+   \nonfrenchspacing%
+}
+
+\def\blockextras@asturian{%
+   \frenchspacing%
+}
+
+\def\inlineextras@asturian{%
+   \frenchspacing%
+}
+
+\endinput

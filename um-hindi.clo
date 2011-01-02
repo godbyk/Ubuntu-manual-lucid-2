@@ -1,0 +1,17 @@
+%
+% Hindi-specific options for the Ubuntu Manual
+%
+
+\ProvidesFile{um-hindi.clo}[2010/02/16 v1.0.0 Hindi-specific options for the Ubuntu Manual]
+
+% Serif fonts
+\newfontfamily\devanagarifont[Script=Devanagari,Language=Hindi]{Aksharyogini}% from ttf-devanagari-fonts
+
+% Sans serif fonts
+\newfontfamily\devanagarifontsf[Script=Devanagari,Language=Hindi]{gargi}% from ttf-devanagari-fonts
+
+% Monospaced fonts
+\newfontfamily\devanagarifonttt[Script=Devanagari,Language=Hindi]{Mitra Mono}% from ttf-FIXME
+
+\endinput
+

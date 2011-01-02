@@ -1,0 +1,86 @@
+% Translations provided by সাজেদুর রহিম জোয়ারদার <toshazed@gmail.com>
+
+% TODO implement Bengali calendar
+% TODO default to using Devanagari numerals (0..9 maps to U+0966..U+096F)
+
+\ProvidesFile{gloss-bengali.ldf}[polyglossia: module for bengali]
+\makeatletter
+
+\ifx\l@bengali\@undefined%
+   \xpg@nopatterns{Bengali}%
+   \adddialect\l@bengali0%
+\fi
+
+\def\captionsbengali{%
+   \def\refname{\textbengali{তথ্যসুত্রসমূহ}}%
+   \def\abstractname{\textbengali{সারসংক্ষেপ}}%
+   \def\bibname{\textbengali{তথ্যবিবরণ}}%
+   \def\prefacename{\textbengali{পূর্বকথা}}%
+   \def\chaptername{\textbengali{অধ্যায়}}%
+   \def\appendixname{\textbengali{পরিশিষ্ট}}%
+   \def\contentsname{\textbengali{সূচীপত্র}}%
+   \def\listfigurename{\textbengali{ছবি/নকশা সমূহের তালিকা}}%
+   \def\listtablename{\textbengali{তালিকাসারণী}}%
+   \def\indexname{\textbengali{সূচক/নির্দেশক}}%
+   \def\figurename{\textbengali{ছবি/নকশা}}%
+   \def\tablename{\textbengali{সারনী}}%
+   %\def\thepart{\textbengali{}}% TODO
+   \def\partname{\textbengali{খন্ড}}%
+   \def\pagename{\textbengali{পৃষ্ঠা}}%
+   \def\seename{\textbengali{দেখুন}}%
+   \def\alsoname{\textbengali{আরও দেখুন}}%
+   \def\enclname{\textbengali{সংযুক্তি}}%
+   \def\ccname{\textbengali{অনুলিপি}}%
+   \def\headtoname{\textbengali{প্রতি}}%
+   \def\proofname{\textbengali{প্রমাণ}}%
+   \def\glossaryname{\textbengali{পরিভাষার শব্দসম্ভার}}%
+   }
+\def\datebengali{%
+   \def\bengalimonth{%
+      \ifcase\month\or%
+         জানুয়ারী\or%
+         ফেব্রুয়ারী\or%
+         মার্চ\or%
+         এপ্রিল\or%
+         মে\or%
+         জুন\or%
+         জুলাই\or%
+         আগষ্ট\or%
+         সেপ্টেম্বর\or%
+         অক্টোবর\or%
+         নভেম্বর\or%
+         ডিসেম্বর%
+      \fi}%
+   %\def\today{\textbengali{}}% TODO
+   }
+
+\def\bengali@font{%
+  \@ifundefined{bengalifont}{%
+    \font\zf@basefont="\csname zf@family@fontdef\f@family\endcsname" at \f@size pt
+    \zf@check@ot@script{beng}%
+    \if@tempswa%
+      \addfontfeature{Script=Bengali}%
+    \else%
+      \PackageError{polyglossia}{The current font does not contain the Bengali script!^^J
+      Please define \string\bengalifont\space with \string\newfontfamily}%
+    \fi%
+    }%
+  {\bengalifont}}
+
+\def\selectnormalfontbengali{%
+   \let\normalfont=\bengali@font%
+   \def\reset@font{\normalfont}}
+
+\def\bengali@language{\protect\language=\l@bengali}
+
+\setlocalhyphenmins{bengali}{2}{2}%
+
+\def\noextras@bengali{%
+   }
+
+\def\blockextras@bengali{%
+   }
+
+\def\inlineextras@bengali{%
+   }
+

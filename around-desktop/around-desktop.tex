@@ -1,0 +1,389 @@
+%Chapter 2 - Tom Cantara and Ben VB
+%Edited and Proofread by Jason Cook
+
+\chapter{The Ubuntu Desktop}
+\label{ch:the-ubuntu-desktop}
+
+\section{Understanding the desktop}
+\marginnote{Ubuntu 10.04 has an emphasis on ``social from the start'' and features social network integration in the desktop for sites like Twitter and Facebook.}
+At first glance, you will notice many similarities between Ubuntu and other operating systems such as Windows or Mac \acronym{OS~X}. This is because they are all based on the concept of a graphical user interface (\gls{GUI})\dash that is, you use your mouse to navigate the desktop, open programs, move files, and perform most other tasks. In short, things are visually oriented, which means that it's important for you to become familiar with where and what to click in Ubuntu. 
+
+\subsection{GNOME}
+All \acronym{GUI}-based operating systems use a \emph{desktop environment}. Desktop environments encompass many things, such as:
+\begin{itemize}
+  \item the look and feel of your system
+  \item how the desktop is organized
+  \item the way the desktop is laid out
+  \item how the desktop is navigated by the user
+\end{itemize}
+In Linux distributions (such as Ubuntu), there are a number of desktop environments available for use. One of the most popular desktop environments is called \acronym{GNOME}, which the default in Ubuntu. \marginnote{To read more about other variants of Ubuntu, refer to \chaplink{ch:learning-more}.} \acronym{KDE}, \acronym{XFCE}, and \acronym{LXDE} are other popular desktop environments (used in Kubuntu, Xubuntu, and Lubuntu, respectively), although there are many more. Since Ubuntu uses \acronym{GNOME}, we will limit this guide to exploring your \acronym{GNOME} desktop.
+
+When you first log in to Ubuntu after installing it, you will see the \acronym{GNOME} desktop. Ubuntu is highly customizable, as is the \acronym{GNOME} desktop, but for now let's just explore the default layout that is in front of you.
+
+\screenshot{02-blank-desktop.png}{ss:blank-desktop}{The Ubuntu 10.04 default desktop.}
+
+First, you will notice there are two \emph{panels}\dash one at the top of your desktop and one at the bottom. A panel is a bar that sits on the edge of your screen and contains various \emph{applets}. \marginnote{Everything on a panel is an \gls{applet}, even the main menu.} These applets provide useful functions such as running programs, viewing the time, or accessing the main menu.
+
+\subsection{The top panel}
+Starting from the left, you will see three menu headings\dash \button{Applications}, \button{Places}, and \button{System}\dash followed by two program icons. The first of these icons will open the \application{Firefox} web browser (see \chaplink{ch:default-applications} for more information), and the next will open the \application{Ubuntu Help Center}. \marginnote{The \application{Ubuntu Help Center} is a highly useful resource. It provides a wealth of information about your Ubuntu system, and is always at your fingertips by simply clicking this panel icon (or navigating to \menu{System \then Help and Support}).}
+
+On the right side of this panel you will find the \emph{notification area}, which is similar in function to the ``system tray'' in Windows, or the ``menu extras'' area on the Mac \acronym{OS~X} menubar. Next to this is the \gls{MeMenu}, which will display your username (the name you entered during installation) and is used to update social network sites like Twitter and Facebook as well as set your Instant Messaging status in \application{Empathy}. \marginnote{New notifications of emails and instant messages appear in the messaging menu applet. When you have a new message, the envelope icon will turn green.} Finally, on the far right of the panel is the session menu, which provides menu options for locking your computer, logging out, restarting, or shutting down completely. 
+
+\subsubsection{The notification area}
+Inside the \gls{notification area} you will find the network indicator, volume adjustment, Bluetooth indicator (if your computer has Bluetooth capability), messaging, and the date and time applets. Some
+programs will also place an icon in the notification area when you open them.
+
+\marginnote{To remove an applet, right-click on it and select \button{Remove From Panel.} To add a new applet to a panel, right-click in a clear area on the panel and select \button{Add to Panel.}}%
+Left-clicking icons in the notification area will bring up a list of options associated with the application. In some cases right-clicking an icon will also perform another action related to that application. For example, to adjust the volume, simply left-click once on the volume icon and a volume slider will appear. Click the date and time applet to open a small calendar, and then click a specific date to add a reminder to your calendar through \application{Evolution} (see \chaplink{ch:default-applications} for more information on \application{Evolution}).
+
+When the calendar is expanded there is a button labeled \button{Locations}, which will open a small world map when clicked. Here you can further set up your location preferences by clicking \button{Edit}. In the window that appears, click \button{Add}, then enter your location in the text field. If you live in a major city it may be on the list already; if not, you can enter your latitude and longitude manually If you don't know this information try searching online for it. Make sure your time zone is selected, then click \button{OK} to return to the preferences screen. 
+
+Feel free to explore the other options available under the \button{General} and \button{Weather} tabs if you like, then click \button{Close} at the bottom when you are done. If weather information is available for your home city, you will now see the current temperature displayed alongside the date and time in the notification area.
+
+\subsection{The bottom panel}
+
+Ubuntu uses most of the bottom panel to display a list of all programs or windows that are currently open. These appear as horizontal buttons which can be clicked to \emph{minimize} or \emph{restore} the corresponding windows (see \seclink{sec:managing-windows} below for more information).
+
+\marginnote{To show the desktop you can press \keystroke{Ctrl+Alt+D}}
+
+On the far left of the bottom panel is a small icon that resembles a desktop. This \emph{Show Desktop} button will \gls{minimize} all open windows at once, giving you clear access to your desktop. This is often useful when you have many windows open at once and your desktop becomes cluttered. Clicking the button again will restore the windows to their original position.
+
+\marginnote{The \acronym{GNOME} desktop environment used in Ubuntu can provide two or more ``virtual desktops,'' or \textbf{workspaces}. Using these workspaces can reduce clutter by opening windows on separate desktops, without needing a separate monitor. For example, in order to organize your activities you may have your email open in one workspace and a text document you are working on in another. To switch workspaces, simply click on the boxes in the \textbf{workspace switcher} or use the keyboard shortcut \keystroke{Ctrl+Alt+Left arrow} or \keystroke{Ctrl+Alt+Right arrow} to switch workspaces quickly.}
+On the right side of the panel you will see some small boxes in a row; this is the \emph{Workspace Switcher}. By default, Ubuntu 10.04 is set up with four workspaces.
+
+Finally, the icon farthest to the right is the \emph{trash}, which performs a similar function to the Recycle Bin in Windows or the Trash in Mac \acronym{OS X}. Any files you delete are first sent to the trash. To see the contents of the trash, click on this icon. You can empty it by clicking on the \button{Empty Trash} button in the window that appears, or alternatively by right-clicking the trash icon in the bottom panel and selecting \menu{Empty Trash} from the menu. This will permanently delete any files or folders that it contains.
+
+\subsection{The desktop background}
+In between the top and bottom panels is an image that covers the entire desktop. This is the desktop background or wallpaper and the one you see in front of you belongs to the default Ubuntu 10.04 theme known as \emph{Ambiance.} To learn more about customizing your desktop including changing your background, see the section on \seclink{sec:customizing-desktop} below.
+
+\section{Managing windows}
+\label{sec:managing-windows}
+When you open a program in Ubuntu (such as a web browser or a text editor\dash see \chaplink{ch:default-applications} for more information on using programs)\dash a \emph{window} will appear on your desktop. If you have used another operating system before, such as Microsoft Windows or Mac \acronym{OS~X}, you are probably familiar with the concept of a ``window''\dash the box that appears on your screen when you start a program. In Ubuntu, the top part of a window (the \emph{titlebar}) will have the title of the window in the center, and three buttons in the top left corner. From left to right, these buttons \emph{close}, \emph{minimize}, and \emph{maximize} the window. Additionally, you can right-click anywhere on the titlebar for a list of other window management options. 
+
+\subsection{Closing, maximizing, restoring, and minimizing windows}
+
+\screenshot{02-window-buttons.png}{ss:window-buttons}{The close, minimize, and maximize buttons are on the top-left corner of windows.}
+
+\noindent To \emph{close} a window, click on the ``$\times$'' in the upper left corner of the window\dash this will be the first button on the left-hand side. Immediately to the right of this is a downward-pointing arrow that is used to \emph{minimize} the window to the bottom panel of your desktop. Once minimized the window will no longer be visible, but its corresponding button in the bottom panel will remain, indicating the program is still running in the background. Clicking this button will \emph{restore} the window to its original position. Finally, the right-most button of this group will \gls{maximize} the window, making it fill the entire screen. Clicking this button again will return the window to its original size.
+
+\subsection{Moving and resizing windows}
+To move a window around the workspace, place the mouse pointer over the window's titlebar, then click
+and drag the window while continuing to hold down the left mouse button. \marginnote{You can also move a window by holding the \keystroke{Alt} key and dragging the window} To resize a window, place the pointer on an edge or corner of the window 
+so that it turns into a larger arrow, the resize icon. You can then click and drag to resize the window.
+
+\section{Switching between open windows}
+
+There are at least three ways in Ubuntu to switch between open windows in a workspace.  You can 
+find the window on the bottom panel taskbar and click to bring it up on the screen, or you 
+can use \keystroke{Alt+Tab} to select the window you wish to work on. Hold down the 
+\keystroke{Alt} key, and keep pressing the \keystroke{Tab} button until the window you're 
+looking for appears in the popup. If the window is visible on your screen, you can click any 
+portion of it to raises it above all other windows.
+
+\section{Using the Applications menu}
+\marginnote{You may find that there are programs in the \menu{Applications} menu that you don't use frequently, or just don't want to be displayed on the menu. To hide those applications (without deleting the actual programs), click on \menu{System \then Preferences \then Main Menu}. Find the programs in the right panel that you want to hide from the menu, and deselect them in the ``Show'' column.}
+There are three menu headers in the top panel. Let's take a look at these in more detail, starting with the \menu{Applications} menu. 
+
+\subsection{Accessories}
+The \menu{Accessories} sub-menu has many programs that are suited for productivity, including \application{Calculator} and
+\application{Tomboy Notes}.
+
+\marginnote{See \chaplink{ch:default-applications} for more information about the included applications.}
+Other programs in \menu{Accessories} include the \application[CD/DVD Creator@\acronym{CD}/\acronym{DVD} Creator]{\acronym{CD}/\acronym{DVD} Creator}, \application{gedit} Text Editor (similar to Windows' Notepad and Mac \acronym{OS X}'s TextEdit), \application{Search for Files} (we'll discuss that later), and \application{Take Screenshot}, which allows you to take a picture of your desktop screen.
+\marginnote{Another way to take a screenshot is to press \keystroke{PrtSc}.}
+
+\subsection{Games}
+Ubuntu has several games built in for your entertainment. If you enjoy card games, check out
+\application{AisleRiot Solitaire}. Perhaps you're looking for more of a challenge: in that case, there's
+\application{gBrainy} and \application{Sudoku}.  The \menu{Games} menu also includes \application{Mahjongg}, \application{Mines} (similar to Windows'
+Minesweeper game) and \application{Quadrapassel} (similar to Tetris).
+
+\subsection{Graphics}
+Under the \menu{Graphics} sub-menu, you'll find the \application{F-Spot} photo manager where you can view, edit and share pictures you've downloaded from your camera. \application{OpenOffice.org Drawing} allows you to create images using the OpenOffice.org suite, and \application{Simple Scan} is a program for scanning images and documents from your scanner.
+
+\subsection{Internet}
+\marginnote{\emph{Instant messaging} (\acronym{IM}) is a means of text-based communication where you can hold a conversation with someone over the Internet, instantly.}
+The \menu{Internet} sub-menu is where you will find the \application{Firefox} web browser and the \application{Empathy} Instant Messenger client to allow you to talk to your friends and family.
+
+\subsection{Office}
+\marginnote{To learn more about OpenOffice.org and to get help with using the OpenOffice.org suite of applications, visit \url{http://openoffice.org}.}
+The \menu{Office} sub-menu is where you will find most of the OpenOffice.org suite to help you create formal documents, presentation, or spreadsheets. Also under \menu{Office} is the \application{Evolution} email client and an online dictionary. The full OpenOffice.org suite installed in Ubuntu by default consists of:
+%This is a little confusing: the above string makes it appear as if evolution is a dictionary. I can't think of a way to rephrase it propery. - JasonCook599
+
+\begin{itemize}
+\item OpenOffice.org Word Processor
+\item OpenOffice.org Spreadsheet
+\item OpenOffice.org Presentation
+\item OpenOffice.org Drawing (located under the \menu{Graphics} sub-menu)
+\end{itemize}
+
+\subsection{Sound and video}
+The \menu{Sound and Video} sub-menu has programs for working with multimedia, such as: 
+\begin{itemize}
+\item \application{Brasero} disc burner
+\item \application{Totem} movie player
+\item \application{Pitivi} video editor
+\item \application{Rhythmbox} music player
+\item \application{Sound Recorder}
+\end{itemize}
+
+More information on all of these programs can be found in \chaplink{ch:default-applications}.
+
+%Commented out as we can't rely on the user taking the screenshot to have default programs in stalled luke jennings (ubuntujenkins)
+%If some one has an extra computer then Ubuntu can be installed on it, then take the screen shot. JasonCook599
+%\screenshotTODO{Screenshot showing the expanded Applications > Sound and Video menu with the programs clearly shown.}
+
+\subsection{Ubuntu Software Center}
+
+\marginnote{Learn more about the \application{Ubuntu Software Center} in \chaplink{ch:software-management}.}
+At the very bottom of the \menu{Applications} menu is the \application{Ubuntu Software Center}. This application gives you
+access to a library of software that you can download. When you open the \application{Ubuntu Software Center}, the main screen is similar to your \menu{Applications} menu, for easy searching. If you know the name of the program you're looking for, just type the name into the \textfield{search box} in the top right. The \application{Ubuntu Software Center} keeps track of programs that are installed on your computer. If you're simply curious as to what is available, you can explore the software available using the categories listed on the left side of the window.
+
+
+\section{Using the System menu}
+\marginnote{See \chaplink{ch:hardware} for more information on setting up Ubuntu.}
+The \menu{System} menu, located on the top panel, contains two important sub-menus. These sub-menus,
+\menu{Preferences} and \menu{Administration}, allow you to make modifications to Ubuntu's appearance, as well as the way it functions. Through the \menu{System} menu, you can also open the \application{Ubuntu Help Center} (\application{Help and Support}), find out more about your \acronym{GNOME} desktop environment (\application{About GNOME}), and find out more about Ubuntu in general (\application{About Ubuntu}).
+
+\subsection{Preferences}
+You can use the \menu{Preferences} sub-menu to modify the appearance of the desktop and windows,
+assign a default printer, designate keyboard shortcuts, change the entries listed in the \menu{Applications} menu, edit network connections, and change mouse settings, among other options.
+%Commented out as we can't rely on the user taking the screenshot to have default programs in stalled luke jennings (ubuntujenkins)
+%As noted above, do a fresh install, then take the screenshot. JasonCook599
+%\screenshotTODO{Screenshot showing the expanded Applications > Sound and Video menu with the programs clearly shown.}
+%\screenshotTODO{Screenshot of expanded System > Preferences menu that clearly shows all Preference options.}
+
+%\"application{Ubuntu One}, a program that allows you to sync and backup your files across many different computers." was removed from "Internet" category. Left info here in case it was decided to ad it to the "Preferences" category.
+%I don't think that it should be added. This is because not many apps in the prefs section are explained. If more of them get explained the we can add it as well. - JasonCook599
+
+\subsection{Administration}
+
+\marginnote{Most of the applications in the \menu{System \then Administration} menu will prompt you to enter your user password when you launch them. Some applications will require you to click a button to unlock it. Press this button, and enter your password. After entering your password you gain increased privileges. This is a security feature to make sure that only authorized people are allowed to change system settings. To learn more about security in Ubuntu, see \chaplink{ch:security}.}
+The \menu{Administration} sub-menu contains programs you can use to monitor computer performance,
+change disk partitions, activate third-party drivers, manage all installed printers, and manage
+how your computer receives updates from Ubuntu. This sub-menu also has the \application{Synaptic Package
+Manager} for locating and downloading software packages. This is a more technical alternative to \application{Ubuntu Software Center} and should be used by power users.
+
+\section{Browsing files on your computer}
+There are two ways to locate files on your computer.  You can use the \application{Search for Files}
+tool in the \menu{Applications} \then {Accessories}. You can also use the \menu{Places} menu on the top panel. See the section below about the \seclink{sec:nautilus} for more details.
+
+\subsection{Places}
+The \menu{Places} menu holds a list of commonly used folders (such as \menu{Documents}, \menu{Music}, \menu{Downloads}, and the \menu{Home Folder}). You can also browse the disks on your computer by clicking \menu{Computer} in this menu. If you set up a home network, you will find a menu item to access shared
+files/folders. You can also access the \application{Search for Files} tool from the \menu{Places} menu, as well as browse a list of recently opened documents.
+
+\subsection{Your home folder}
+The home folder is where each user's personal files are located. When you installed Ubuntu, you
+entered a name to set up your user account. That same name is assigned to your home folder. When you open your personal folder, you will see that there are several folders inside: Desktop (which contains any files that are visible on the desktop), Documents, Downloads, Music, Pictures, Public, Templates, and Videos.
+
+\marginnote{You should open the example content to see how different types of files are displayed in Ubuntu.}
+You will also see a link named Examples. Double-click on that link to open a folder containing example documents, spreadsheets, and multimedia files. You will note be able to edit them. If you want to edit them move them to you home folder.
+
+\section{Nautilus file browser}
+\label{sec:nautilus}
+Just as Windows has \application{Windows Explorer} and Mac \acronym{OS~X} has \application{Finder} to browse files and folders, Ubuntu uses the \application{Nautilus} file
+browser by default.  We will now look at the features offered in \application{Nautilus}.
+
+\subsection{The Nautilus file browser window}
+When you open a folder on the desktop or from the \menu{Places} menu, the \application{Nautilus} file browser window
+opens up. The standard browser window contains the following features:
+
+\begin{itemize}
+\item \textit{Menubar:} The menubar is located at the top of the window. These
+  menus allow you to modify the layout of the browser, navigate,
+  bookmark \marginnote{If you bookmark a folder, it will appear in the
+  \menu{Places} menu.} commonly used folders and files, and view hidden folders
+  and files.
+
+\item \textit{Toolbar:} The toolbar has tools for navigation and a tool to make
+  the contents of the window larger or smaller. A drop-down list gives you the
+  option of switching the view from \menu{Icon View} to \menu{List View} or
+  \menu{Compact View}.  The search icon (which looks like a magnifying glass)
+  opens a field so you can search for a file by name.
+
+\item \textit{Additional Navigation Tools:} \marginnote{If you start typing a
+  location starting with a / character, \application{Nautilus} will automatically
+  change the navigation buttons into a text field labeled \emph{Location}. It is also
+  possible to convert the navigation buttons into a text field by pressing 
+  \keystroke{Ctrl+L}.} Just below the toolbar, you will see a representation 
+  of where you are currently browsing. This is similar to the history function 
+  of most browsers; it keeps track of where you are and allows you to backtrack 
+  if necessary.  You can click on the locations to navigate back through the 
+  file browser.
+
+\item \textit{Left Pane:} The left pane of the file browser has shortcuts to commonly-used
+  folders. When you bookmark a folder, it appears in the left pane. No matter
+  what folder you open, the left pane will always contain the same folders.
+  This left pane can be changed to display different features by clicking the
+  down arrow beside ``Places'' near the top.
+
+\item \textit{Central Pane:} The largest pane shows the files and folders in the
+  directory that you are currently browsing.
+\end{itemize}
+
+\screenshot{02-quickshot-home.png}{ss:quickshot-home}{Nautilus file manager displaying your home folder.}
+
+\subsection{Navigating between directories}
+To navigate between directories, use the bookmarks in the left pane of the \application{Nautilus} file
+browser. You can also retrace your steps by clicking on the name of a folder where it is listed just below the navigational icons. Double-clicking on a visible directory will cause you to navigate to it in \application{Nautilus}.
+
+\subsection{Opening files}
+To open a file, you can either double-click on its icon or right-click and select \button{Open With}
+(program).
+
+\subsection{Creating new folders}
+\marginnote{Note that you can easily view hidden files by clicking \menu{View \then Show Hidden Files}, or alternatively by pressing \keystroke{Ctrl+H}. Hiding files with a dot (.) is \textbf{not} a security measure\dash instead it provides a way of keeping your folders organized and tidy.}
+To create a new folder from within \application{Nautilus} click \menu{File \then Create Folder}, then name the folder that appears by replacing the default ``untitled folder'' with your desired label (\eg, ``Personal Finances''). You can also create a new folder by pressing \keystroke{Ctrl+Shift+N}, or by right-clicking in the file browser window and selecting \button{Create Folder} from the popup menu (this action will also work on the desktop). If you wish to hide certain folders or files, place a dot (.) in front of the  name (\ie, ``.Personal Finances''). In some cases it impossible to hide files and folders, without prefixing them with a dot. In Nautilus these folders can be hidden by creating a .hidden file. Open the file and type in the name of the file(s) or  folder(s) you wish to hide. Make sure that each file or folder is on a separate line. When you open Nautilus the folder will no longer be visible.
+
+\subsection{Copying and moving files and folders}
+\marginnote{You can also use the keyboard shortcuts \keystroke{Ctrl+X}, \keystroke{Ctrl+C} and \keystroke{Ctrl+V} to cut, copy and paste (respectively) files and folders.}
+You can copy files or folders in \application{Nautilus} by clicking \menu{Edit\then Copy}, or by right-clicking on the item and selecting \button{Copy} from the popup menu. When using the \button{Edit} menu in \application{Nautilus}, make sure you've selected the file or folder you want to copy first (by left-clicking on it once). 
+
+Multiple files can be selected by left-clicking in an empty space (\ie, not on a file or folder), holding the mouse button down, and dragging the cursor across the files or folders you want.  This ``click-drag'' move is useful when you are selecting items that are grouped closely together. To select multiple files or folders that are not positioned next to each other, hold down the \keystroke{Ctrl} key while clicking on each item individually. Once multiple files and/or folders are selected you can use the \menu{Edit} menu to perform actions just like you would for a single item.%
+\marginnote{When you ``cut'' or ``copy'' a file or folder, nothing will happen until you ``paste'' it somewhere. Paste will only affect the most recent item that was cut or copied.}
+When one or more items have been ``copied,'' navigate to the desired location then click \menu{Edit \then Paste} (or right-click in an empty area of the window and choose \button{Paste}) to copy them to the new location.
+
+While the \emph{copy} command can be used to make a duplicate of a file or folder in a new location, the \emph{cut} command can be used to move files and folders around. That is, a copy will be placed in a new location, and the original will be removed from its current location.
+
+To move a file or folder, select the item you want to move then click \menu{Edit \then Cut}. Navigate to your desired location, then click \menu{Edit \then Paste}. \marginnote{In the Nautilus \button{Edit} menu, you will also find the \button{Copy To} and \button{Move To} buttons. These can be used to copy or move items to common locations, and can be useful if you are using \textbf{panes} (see below). Note that it is unnecessary to use \button{Paste} when using these options.} As with the copy command above, you can also perform this action using the right-click menu, and it will work for multiple files or folders at once. An alternative way to move a file or folder is to click on the item, and then drag it to the new location.
+
+\begin{comment}
+Is this true? I couldn't get it to work for me --jaminday
+\marginnote{If you click on a file or folder with both the left and right mouse buttons at the same time, keep holding and drag it to your destination folder. When you let go of both mouse buttons, a menu will appear asking whether you want to \emph{copy, move} or \emph{link} the item.}
+\end{comment}
+%I got it to work. Clicking, dragging, and holding the Alt key works a well.
+
+
+\subsection{Using multiple tabs and multiple Nautilus windows}
+Opening multiple \application{Nautilus} windows can be useful for dragging files and folders between locations. The option of \emph{tabs} is also available in \application{Nautilus}, as well as the use of \emph{panes}.
+\marginnote{When dragging items between \application{Nautilus} windows, tabs or panes, a small symbol will appear over the mouse cursor to let you know which action will be performed when you release the mouse button. A plus sign (+) indicates you are about to copy the item, whereas a small arrow means the item will be moved. The default action will depend on the locations you are using.}
+When browsing a folder in \application{Nautilus}, to open a second window select \menu{File \then New Window} or press \keystroke{Ctrl+N}. This will open a new window, allowing you to drag files and folders between two locations. To open a new tab, click \menu{File \then New Tab} or press \keystroke{Ctrl+T}. A new row will appear above the space used for browsing your files containing two tabs\dash both will display the directory you were originally browsing. You can click these tabs to switch between them, and click and drag files or folders between tabs the same as you would between windows. You can also open a second pane in Nautilus so you can see two locations at once without having to switch between tabs or windows. To open a second pane, click \menu{View \then Extra Pane}, or press \keystroke{F3} on your keyboard. Again, dragging files and folders between panes is a quick way to move or copy items.
+
+\section{Searching for files on your computer}
+
+\marginnote{Search for files quickly by pressing \keystroke{Ctrl+F} in \application{Nautilus} and then typing what you want to find.}
+Earlier, we mentioned that you can search for files on the computer by using the \menu{Search for Files}
+feature on the \menu{Places} menu in the top panel.  You can also use the \application{Nautilus}
+browser to search for files, as explained above.
+
+\section{Customizing your desktop}
+\label{sec:customizing-desktop}
+Now that you've been introduced to the \acronym{GNOME} desktop environment, let's take a look
+at customizing some of its features, such as modifying the behavior of your panels, or changing the look and feel of your desktop.
+
+\subsection{Panels}
+The panels (currently sitting at the top and bottom of your screen) can be moved from their default positions to the sides of the screen, set to hide from view when not in use, and can change color. To access these features, right-click the panel you want to modify and select \button{Properties}
+from the pop-up menu. The \button{General} tab has options to autohide, position the panel, and change the panel size (width). 
+
+Use the \button{Orientation} drop-down box to select where you want the panel to be located, and underneath this you can set the desired width (in pixels).
+
+By default, a panel covers the entire length of the desktop. To change that, you can deselect the \button{Expand} option. The panel will then shrink so that it is just long enough to accommodate any applets or program launchers that are currently sitting in it. Ticking the \button{Autohide} button will cause your panel to ``fold'' up into the edge of the screen when you are not using it, and remain hidden until you move your mouse cursor back to that screen edge. 
+
+An alternative way of hiding the panel is to do so manually. Clicking on \button{Show hide buttons} will add a button to each side of the panel that can be used to hide it from view. By default these buttons will display directional arrows; however, you can select the \button{Arrows on hide buttons} option to remove the arrows and just have plain buttons. Clicking one of these \emph{hide buttons} on the panel will slide it across the screen and out of view, leaving just the opposite hide button in sight which you can click to bring it back. 
+\marginnote{By default, Ubuntu requires that you maintain at least one panel on the desktop. If you prefer a Microsoft Windows feel, a panel at the bottom of the desktop can be set to start programs as well as select between open windows. Alternatively, if you prefer a Mac \acronym{OS~X} look you can keep a panel at the top and add an applications dock such as \application{Docky}, \application{Avant Window Navigator} (\acronym{AWN}), or \application{Cairo-Dock}. These are all available in the \application{Ubuntu Software Center}, which is discussed further in \chaplink{ch:software-management}.}
+The \button{Background} tab in the \window{Panel Properties} window allows you to change the appearance of the panel. By default, this is set to \button{None (use system theme)}, meaning that your desktop theme will dictate the appearance of the panel (we will look at how to change your desktop theme below). If you prefer, you can choose your own panel color by selecting the \button{Solid color} button, then opening the color select window. You can also set the panel transparency using the slider. Alternatively, you can click the \button{Background image} button if you have an image or pattern stored on your computer that you would like to use as your panel background. Use the file selector to locate the background image in your computer, then click \button{Open} to apply the change. 
+
+\subsubsection{Adding applets}
+Ubuntu provides a selection of applets that can be added to any panel. Applets range from the informative to the fun, and can also provide quick access to some tasks. To add an applet, right-click on a panel then select \button{Add to Panel\ldots} from the popup menu. A window will appear with a list of available applets, which can then be dragged to an empty space on a panel. You may want to spend some time exploring the different ones available\dash they can easily be removed from your panel by right-clicking on the applet and selecting \button{Remove From Panel}.
+
+\marginnote{Some applets will be locked and can't be moved. Right-click on them and deselect the ``Lock to Panel'' check box.}
+
+To reposition an existing applet, right-click on it and select \button{Move}. Move your mouse cursor to the desired location (this can even be a different panel) and the applet will follow, then left-click to drop it into place. 
+
+\marginnote{You can also add program launchers to a panel by dragging them directly from the \menu{Applications} menu, in the left of the top panel.}
+The \window{Add to Panel\ldots} window can also be used to add additional application launchers to your panel, similar to the \application{Firefox} launcher that sits to the right of the \button{System} menu. To add a new one, double-click on \button{Application Launcher\ldots} near the top of the window. Here you can navigate through your applications and drag them to your panel to create a new launcher, just as you did to add an applet previously. Program launchers can also be removed and repositioned through their right-click menu.
+
+\subsection{Workspaces}
+To modify your workspaces, right-click on the \emph{workspace switcher} applet (by default this is on the right side of the bottom panel, just to the left of the Trash applet) and select \button{Preferences}. In the window that appears you can choose how many workspaces you want in total, and whether these will be displayed on the panel in one or more rows. You can also rename each workspace, and have the names displayed in the panel applet. If you prefer, you can also choose to just have the workspace you are currently using displayed in the panel. In this case, you can still change between workspaces by moving the mouse over the workspace switcher and scrolling the mouse wheel.
+
+\subsection{Appearance}
+You can change the background, fonts, and window theme to further modify the
+look and feel of your desktop. To begin, open the \application{Appearance
+Preferences} by navigating to \menu{System\then Preferences\then Appearances}
+in the top panel.
+
+
+
+\subsubsection{Theme}
+The \window{Appearance Preferences} window will initially display the \button{Theme} tab when it opens. Here you can select a theme that will control the appearance of your windows, buttons, scroll bars, panels, icons, and other parts of the desktop.  The ``Ambiance'' theme is used by default, but there are seven other themes you can choose from. Just click once on the theme you want to try, and the changes will take effect immediately.
+
+You can download additional themes by clicking the ``Get More Themes Online'' link at the bottom of this window. Your web browser will open and take you to \url{http://art.gnome.org/themes/}, where you can download new themes from a large selection. Once you have downloaded a theme, locate the file on your computer (using \application{Nautilus}) and drag it across to the Themes window. This will add it to your list of available themes, and a window will appear asking whether you want to apply the changes immediately.
+
+You can also customize any theme to your liking by selecting it then clicking the \button{Customize\ldots} button underneath. Here you can mix elements of different themes such as icons, mouse pointers, buttons, and window borders to create your own unique look.
+
+\screenshot{02-appearance-preferences.png}{ss:appearance-preferences}{You can change the theme in the \tab{Theme} tab of \window{Appearance Preferences}.}
+
+\subsubsection{Desktop background}
+
+\marginnote{You can also change the background by right-clicking on the desktop and selecting \button{Change Desktop Background} from the pop-up menu.}
+Click the \button{Background} tab in the Appearance Preferences window to
+change the desktop background. Here you will see Ubuntu's default selection of
+backgrounds. To change the background simply click the picture you
+would like to use. You're not limited to this selection though. To use one of your own pictures,
+click the \button{Add\ldots} button, and navigate to the
+image you want. Double-click it, and the change will take effect immediately.
+This image will also then be added to your list of available backgrounds.
+
+If you are after a larger selection of desktop backgrounds, click the ``Get More Backgrounds Online'' link at the bottom of the Appearance Preferences window.  This link will open your web browser, and direct you
+to the \url{http://art.gnome.org/backgrounds} website.
+
+\subsubsection{Fonts}
+You can also change the fonts used throughout your desktop through the Appearance Preferences window by clicking on the \button{Fonts} tab. You can individually set the font style and size for applications, documents, desktop items, window titles, and for anything using fixed width fonts. The Rendering section at the bottom of the Fonts tab gives you four options for changing the way that fonts are drawn on your screen. Changing these may improve the appearance of text on different types of monitors.
+
+\subsection{Screensaver}
+Ubuntu offers a selection of screensavers.  By default, a blank screen will be displayed after a short period of inactivity. To select a different screensaver, click on the \menu{System} menu in the top panel, then \menu{Preferences \then Screensaver}. This will open the \window{Screensaver Preferences} window, with the available screensavers listed on the left. When you select a screensaver, you will see a mini-preview in the window, or you can see how it will look on your full screen by clicking the \button{Preview} button. The left and right arrow buttons at the top allow you to scroll through the different screensavers without leaving the full screen preview. To return to the Screensaver Preferences window, click the \button{Leave Fullscreen} button at the top of the screen.
+
+Make sure that the \button{Activate screensaver when computer is idle} option is selected if you want to enable the screensaver. The slider can be adjusted to set the duration of inactivity before the screensaver appears. Once it does, you can resume working on your computer by pressing any key or by moving your mouse. For added security, you can also select the \button{Lock screen when screensaver is active} option. In this case, Ubuntu will ask you for your login password when you return to the computer.
+
+\section{Accessibility} 
+Ubuntu has built-in tools that make using the computer easier for people with certain physical limitations. You can find these tools by opening the \menu{System} menu, then selecting \menu{Preferences \then Assistive Technologies}. You can adjust keyboard and mouse settings to suit your needs through the \window{Assistive Technologies Preferences} window by clicking on the \button{Keyboard Accessibility} or \button{Mouse Accessibility} buttons.  
+
+%\screenshotTODO{Screenshot of the Assistive Technologies window.}
+\screenshot{02-assistive-technologies.png}{ss:assistive-technologies}{Assistive Technologies allows you to enable extra features to make it easier to use your computer.}
+
+
+\subsection{Other assistive technologies}
+\application{Orca} is another useful tool for persons with visual impairments, and comes preinstalled on Ubuntu. To run \application{Orca}, press \keystroke{Alt+F2} and type \userinput{orca} into the command text field. Then press Enter or click \button{Run}. Orca's voice synthesizer will activate and assist you through the various options such as voice type, voice language, Braille, and screen magnification. Once you have finished selecting your settings, you will need to log out of the computer (Orca will offer to do this for you). When you log back in, the Orca settings you chose will automatically run every time you use your computer.
+
+In addition to these options, selecting high-contrast themes and larger on-screen fonts can further assist those with vision difficulties.
+
+\section{Managing your computer}
+When you have finished working on your computer, you can choose to log out, suspend, restart, or shut down through the session menu on the far right side of the top panel. You can also quickly access these options by pressing the \keystroke{Ctrl+Alt+Del} keys.
+
+\subsection{Logging out}
+Logging out will leave the computer running but return you to the login screen. This is useful for switching users, such as when a different person wishes to log in to their account, or if you are ever instructed to ``log out and back in again.'' 
+You should save your work before logging out.
+
+\subsection{Suspend}
+To save energy, you can put your computer into suspend mode, which will save its current condition and allow you to start more quickly while remaining on but using very little energy. Suspending the computer spins down the hard disk and saves your session to memory, so it is very quick to suspend and resume from suspension.
+
+\subsection{Hibernate}
+
+Hibernate is similar to suspend, except that instead of saving your session to memory, hibernate will save your session to the hard disk. This takes a little longer, but with the added benefit that hibernation uses no power while it is in a hibernated state.
+
+\subsection{Rebooting}
+To reboot your computer, select \menu{Restart} from the session menu.
+
+\subsection{Shut down}
+To totally power down your computer, select \menu{Shut Down} from the session menu.
+
+\subsection{Other options}
+\marginnote{You can lock your screen quickly by using the keyboard shortcut \keystroke{Ctrl+Alt+L}. Locking your screen is recommended if you move away from your computer for a short amount of time.}
+From the session menu, you can also select \menu{Lock Screen} to require a password before using the computer again \dash this is useful if you need to leave your computer for some duration. You can also use the session menu 
+to set up a guest session for a friend to try Ubuntu, or to \emph{switch users} to log into another user account without closing your applications.
+
+\section{Getting help}
+
+\marginnote{Many programs have their own help which can be accessed by clicking the \menu{Help} menu within the application window.}
+Ubuntu, just like other operating systems, has a built-in help reference, called the \application{Ubuntu
+Help Center}. To access it, click on the help icon in the top panel. You can also access it by clicking \menu{Help and Support} in the \menu{System} menu.
+
+%\screenshotTODO{Help and support icon}
+%\screenshot{02-help-icon.png}{ss:help-icon}{Clicking the blue help icon in the top panel (just to the right of the \menu{System} menu and the \application{Firefox} icon) will open Ubuntu's built-in system help.}
+\screenshot{02-help-icon.png}{ss:help-icon}{Clicking the blue help icon in the top panel (just to the right of the \menu{System} menu and the \application{Firefox} icon) will open Ubuntu's built-in system help.}
+
+%\screenshotTODO{Ubuntu Help Center main window}
+\screenshot{02-help-center.png}{ss:help-center}{The built-in system help provides topic-based help for Ubuntu.}
+
+If you can't find an answer to your question in this manual or in the \application{Ubuntu Help Center}, you can contact the Ubuntu community through the Ubuntu Forums (\url{http://ubuntuforums.org}). \marginnote{We encourage you to check any information you find on other websites with multiple sources when possible, but only follow directions if you understand them completely.} Many Ubuntu users open an account on the forums to receive help, and in turn provide support to others as they gain more knowledge. Another useful resource is the Ubuntu Wiki (\url{https://wiki.ubuntu.com}), a website maintained by the Ubuntu community.
+

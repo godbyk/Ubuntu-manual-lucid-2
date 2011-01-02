@@ -1,0 +1,93 @@
+% This code draws the cover page.
+
+% TRANSLATORS: You can ignore this entire file.
+
+% Make sure we're starting on a new page
+\newpage
+
+% No page numbers, running head or feet
+\thispagestyle{empty}%
+
+% Add the Circle of Friends graphic
+\ifthenelse{\boolean{@tufte@afourpaper}}{%
+  \AddToShipoutPicture*{\put(73,482){\includegraphics{graphics/cover-cof.pdf}}}%
+}{%
+  \AddToShipoutPicture*{\put(72,451){\includegraphics{graphics/cover-cof.pdf}}}%
+}
+
+% Add the globe icon
+\ifthenelse{\boolean{@tufte@afourpaper}}{%
+  \AddToShipoutPicture*{\put(160,519){\includegraphics{graphics/cover-globe.pdf}}}%
+}{%
+  \AddToShipoutPicture*{\put(162,488){\includegraphics{graphics/cover-globe.pdf}}}%
+}%
+
+% Add the speech bubbles icon
+\ifthenelse{\boolean{@tufte@afourpaper}}{%
+  \AddToShipoutPicture*{\put(217,518){\includegraphics{graphics/cover-chat.pdf}}}%
+}{%
+  \AddToShipoutPicture*{\put(222,488){\includegraphics{graphics/cover-chat.pdf}}}%
+}
+
+% Add the music icon
+\ifthenelse{\boolean{@tufte@afourpaper}}{%
+  \AddToShipoutPicture*{\put(274,520){\includegraphics{graphics/cover-music.pdf}}}%
+}{%
+  \AddToShipoutPicture*{\put(280,489){\includegraphics{graphics/cover-music.pdf}}}%
+}
+
+% Add the camera icon
+\ifthenelse{\boolean{@tufte@afourpaper}}{%
+  \AddToShipoutPicture*{\put(327,523){\includegraphics{graphics/cover-camera.pdf}}}%
+}{%
+  \AddToShipoutPicture*{\put(335,492){\includegraphics{graphics/cover-camera.pdf}}}%
+}
+
+% Add the doc icon
+\ifthenelse{\boolean{@tufte@afourpaper}}{%
+  \AddToShipoutPicture*{\put(395,520){\includegraphics{graphics/cover-doc.pdf}}}%
+}{%
+  \AddToShipoutPicture*{\put(405,489){\includegraphics{graphics/cover-doc.pdf}}}%
+}
+
+% Add the circle of friends band
+\ifthenelse{\boolean{@tufte@afourpaper}}{%
+  \AddToShipoutPicture*{\put(-10,147){\includegraphics{graphics/cover-cof-band.pdf}}}%
+}{%
+  \AddToShipoutPicture*{\put(-11,136){\includegraphics{graphics/cover-cof-band.pdf}}}%
+}
+
+% Add the title text
+\newsavebox{\covertitlebox}
+\ifthenelse{\boolean{@tufte@afourpaper}}{%
+  \savebox{\covertitlebox}[395pt][t]{\fontsize{38}{42}\selectfont\sffamily\plaintitle}%
+  \AddToShipoutPicture*{\put(160,481){\usebox{\covertitlebox}}}%
+}{%
+  \savebox{\covertitlebox}[452pt][t]{\fontsize{24}{28}\selectfont\sffamily\plaintitle}%
+  \begin{lrbox}{\covertitlebox}
+    \begin{minipage}{452pt}
+      \fontsize{28}{32}\selectfont\sffamily%
+      \plaintitle
+    \end{minipage}
+  \end{lrbox}
+  \AddToShipoutPicture*{\put(160,450){\usebox{\covertitlebox}}}%
+}
+
+% Add the edition
+%\ifthenelse{\boolean{@tufte@afourpaper}}{%
+%  \AddToShipoutPicture*{\put(){}}%
+%}{%
+%  \AddToShipoutPicture*{\put(){}}%
+%}
+
+% Add the author
+\newsavebox{\coverauthorbox}
+\savebox{\coverauthorbox}[160pt][t]{\fontsize{19}{24}\selectfont\sffamily\plainauthor}%
+\ifthenelse{\boolean{@tufte@afourpaper}}{%
+  \AddToShipoutPicture*{\put(375,90){\usebox{\coverauthorbox}}}%
+}{%
+  \AddToShipoutPicture*{\put(374,84){\usebox{\coverauthorbox}}}%
+}
+
+\null\clearpage%
+

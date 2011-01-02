@@ -1,0 +1,49 @@
+%
+% Greek-specific options for the Ubuntu Manual
+%
+
+\ProvidesFile{um-greek.clo}[2010/02/16 v1.0.0 Greek-specific options for the Ubuntu Manual]
+
+% Greek-specific options
+\setkeys{greek}{numerals=arabic,variant=monotonic}
+
+% Serif fonts
+%\newfontfamily\greekfont[Script=Greek,Language=Greek]{RMFONT}% from ttf-RMFONT
+
+% Sans serif fonts
+\newfontfamily\greekfontsf[Script=Greek,Language=Greek,Mapping=tex-text,Numbers=OldStyle]{Linux Libertine O}% from ttf-linux-libertine
+\setsansfont[Mapping=tex-text,Numbers=OldStyle]{Linux Libertine O}
+
+% Monospaced fonts
+%\newfontfamily\greekfonttt[Script=Greek,Language=Greek]{TTFONT}% from ttf-TTFONT
+
+% Define quotation mark styles
+%\DeclareQuoteStyle[quotes]{greek}
+%  {\quotedblbase}% „ U+201E - left double outer
+%  {\textquotedblleft}% “ U+201C - right double outer
+%  [0.05em]
+%  {\quotesinglbase}% ‚ U+201A - left single inner
+%  {\textquoteleft}% ‘ U+2018 - right single inner
+%\DeclareQuoteAlias[quotes]{greek}{greek}
+%\DeclareQuoteOption{greek}
+%\ExecuteOptions{greek}
+
+% Define translated macros
+%\renewcommand{\dash}{\unskip\,--\,\ignorespaces}
+\renewcommand{\eg}{π.\kern0.5pt χ.\xspace}
+\renewcommand{\ie}{δηλ.\xspace}
+\renewcommand{\applicationsheadword}{εφαρμογές}
+\renewcommand{\commandlineappheadword}{γραμμή εντολών}
+\renewcommand{\revisionnumbercaption}{Αριθμός αναθεώρησης}
+\renewcommand{\revisiondatecaption}{Ημερομηνία αναθεώρησης}
+\renewcommand{\revinfo}[2]{% #1 is the revision number, #2 is the revision date
+  \revisionnumbercaption: #1%
+  \\\relax% line break instead of \qquad
+  \revisiondatecaption: #2%
+}
+\renewcommand{\colophoncaption}{Κολοφώνας}
+\renewcommand{\titlepagecaption}{Σελίδα τίτλου}
+\renewcommand{\printurl}{http://ubuntu-manual.org/buy/gswu1004e1/el}
+
+\endinput
+

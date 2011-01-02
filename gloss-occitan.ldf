@@ -1,0 +1,78 @@
+% Translated by Cédric Valmary <cvalmary@yahoo.fr> of Tot en òc <http://www.totenoc.org/>
+
+\ProvidesFile{gloss-occitan.ldf}[polyglossia: module for occitan]
+\makeatletter
+
+\ifx\l@occitan\@undefined%
+   \xpg@nopatterns{Occitan}%
+   \adddialect\l@occitan0%
+\fi
+
+\def\captionsoccitan{%
+   \def\refname{\textoccitan{Referéncias}}%
+   \def\abstractname{\textoccitan{Resumit}}%
+   \def\bibname{\textoccitan{Bibliografia}}%
+   \def\prefacename{\textoccitan{Prefàcia}}%
+   \def\chaptername{\textoccitan{Capítol}}%
+   \def\appendixname{\textoccitan{Annèx}}%
+   \def\contentsname{\textoccitan{Ensenhador}}%
+   \def\listfigurename{\textoccitan{Taula de las figuras}}%
+   \def\listtablename{\textoccitan{Taula dels tablèus}}%
+   \def\indexname{\textoccitan{Indèx}}%
+   \def\figurename{\textoccitan{Figura}}%
+   \def\tablename{\textoccitan{Tablèu}}%
+   %\def\thepart{\textoccitan{}}%
+   \def\partname{\textoccitan{Partida}}%
+   \def\pagename{\textoccitan{Pagina}}%
+   \def\seename{\textoccitan{vejatz}}%
+   \def\alsoname{\textoccitan{vejatz tanben}}%
+   \def\enclname{\textoccitan{Pèça junta}}%
+   \def\ccname{\textoccitan{còpia a}}%
+   \def\headtoname{\textoccitan{A}}%
+   \def\proofname{\textoccitan{Demostracion}}%
+   \def\glossaryname{\textoccitan{Glossari}}%
+   }
+\def\dateoccitan{%
+   \def\occitanmonth{\ifcase\month\or%
+      de~genièr\or% Jan
+      de~febrièr\or% Feb
+      de~març\or% Mar
+      d'abril\or% Apr
+      de~mai\or% May
+      de~junh\or% Jun
+      de~julhet\or% Jul
+      d'agost\or% Aug
+      de~setembre\or% Sep
+      d'octobre\or% Oct
+      de~novembre\or% Nov
+      de~decembre\fi% Dec
+   }%
+   \def\occitanday{\ifcase\day\or%
+      1èr\else% primièr
+      \number\day\fi% all other numbers
+   }
+   \def\today{\textoccitan{\occitanday~\occitanmonth~de~\number\year}}%
+   }
+
+\def\occitan@font{\normalfontlatin} % <== if the script is Latin
+
+\def\selectnormalfontoccitan{%
+   \let\normalfont=\occitan@font%
+   \def\reset@font{\normalfont}}
+
+\def\occitan@language{\protect\language=\l@occitan}
+
+\setlocalhyphenmins{occitan}{2}{2}%
+
+\def\noextras@occitan{%
+   \nonfrenchspacing%
+   }
+
+\def\blockextras@occitan{%
+   \frenchspacing%
+   }
+
+\def\inlineextras@occitan{%
+   \frenchspacing%
+   }
+

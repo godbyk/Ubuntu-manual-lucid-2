@@ -1,0 +1,33 @@
+%
+% Vietnamese-specific options for the Ubuntu Manual
+%
+
+\ProvidesFile{um-vietnamese.clo}[2010/02/16 v1.0.0 Vietnamese-specific options for the Ubuntu Manual]
+
+% Serif fonts
+\newfontfamily\vietnamesefont[Mapping=tex-text,Numbers=OldStyle,Language=Vietnamese]{Linux Libertine O}
+
+% Sans serif fonts
+\newfontfamily\vietnamesefontsf[Mapping=tex-text,Numbers=OldStyle,Language=Vietnamese]{Linux Biolinum O}
+
+% Monospaced fonts
+\newfontfamily\vietnamesefonttt[Mapping=text-text,Scale=MatchLowercase,Language=Vietnamese]{DejaVu Sans Mono}
+
+% Define quotation mark styles
+%\DeclareQuoteStyle[quotes]{vietnamese}
+%  {\quotedblbase}% „ U+201E - left double outer
+%  {\textquotedblleft}% “ U+201C - right double outer
+%  [0.05em]
+%  {\quotesinglbase}% ‚ U+201A - left single inner
+%  {\textquoteleft}% ‘ U+2018 - right single inner
+%\DeclareQuoteAlias[quotes]{vietnamese}{vietnamese}
+%\DeclareQuoteOption{vietnamese}
+%\ExecuteOptions{vietnamese}
+
+% Define translated macros
+%\renewcommand{\dash}{\unskip\,--\,\ignorespaces}
+%\renewcommand{\ie}{\textit{i.\hairsp{}e.}\xspace}
+%\renewcommand{\eg}{\textit{e.\hairsp{}g.}\xspace}
+
+\endinput
+

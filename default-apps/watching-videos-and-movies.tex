@@ -1,0 +1,79 @@
+%written by Luke Jennings ubuntujenkins@googlemail.com
+%TODO when this is complete and totem works it needs checking for accuracy. 
+%I could only write biased on karmic due to bug #521482.
+
+\section{Watching videos and movies}
+
+To watch videos or \acronym{DVD}s in Ubuntu, you can use the \application{Movie Player}
+application. To start the Movie Player, open the \menu{Applications} menu, then 
+choose \menu{Sound \& Video}, then choose \menu{Movie Player}. This will open the 
+\window{Movie Player} window.
+
+%\screenshotTODO{Main totem window}
+\screenshot{03-totem.png}{ss:totem}{Totem plays music and videos.}
+
+\subsection{Codecs}
+
+Watching \acronym{DVD}s may require Ubuntu to install a ``codec,'' which is a piece
+of software that allows your computer to understand the contents of the \acronym{DVD}, and
+display the video.
+
+\warning{Legal Notice: Patent and copyright laws operate differently depending on
+ which country you are in. Please obtain legal advice if you are unsure whether 
+a particular patent or restriction applies to a media format you wish to use in your country.}
+
+So that you can play all videos and \acronym{DVD}s, you will need to install some codecs. 
+These are located within the \textbf{Multiverse} repository. This is now enabled by default.
+
+To install the codecs, open the \menu{Applications} menu, then
+choose \menu{Ubuntu Software Center}. When the \window{Ubuntu Software Center} 
+window opens, use the search box in the top right and search for the following:
+
+\begin{itemize}
+  \item gstreamer0.10-ffmpeg
+  \item gstreamer0.10-plugins-bad
+  \item gstreamer0.10-plugins-bad-multiverse
+  \item gstreamer0.10-plugins-ugly
+  \item gstreamer0.10-plugins-ugly-multiverse
+  \item gstreamer0.10-plugins-base
+  \item gstreamer0.10-plugins-good
+  \item libdvdread4
+  \item libdvdnav4
+\end{itemize}
+
+When you find each one, select it with a double-click and then click the \button{Install} 
+button. This may open an \window{Authenticate} window. If so, enter your password then click \button{Authenticate} to start the installation process.  
+
+\marginnote{For more information on the terminal see \chaplink{ch:command-line}}
+To finish codec installation, you also need to run a command in the terminal.
+Open the \button{Applications} menu, then choose \button{Accessories} 
+and then choose \button{Terminal}. This will open the \window{Terminal} window.
+
+Type the command as shown below.
+\marginnote{Sudo is a way to gain temporary administrative rights to perform certain tasks, such as installing new software. Usually, sudo is presented in a window for you to enter your password. When you enter your password in a terminal, it will not be shown.}
+
+\begin{terminal}
+\prompt \userinput{sudo /usr/share/doc/libdvdread4/install-css.sh}
+\end{terminal}
+
+Once you have typed the command, press \keystroke{Enter}. You will be asked for 
+your password \dash to authorize this action, type in you password and press
+\keystroke{Enter}. Wait for the process to finish. Once it has finished you can close the \window{Terminal} window.
+
+\subsection{Playing videos from file}
+
+Open the \menu{Movie} menu, then choose \menu{Open\ldots}. This will open the 
+\window{Select Movies or Playlists} window. Find the file or files that you want 
+to play and click on the \button{Add} button. The video or videos will start 
+playing.
+
+\subsection{Playing a DVD}
+
+When you insert a \acronym{DVD} in the computer, Ubuntu should open the \window{You 
+have just inserted a Video \acronym{DVD}. Choose what application to launch} window. Make 
+sure that \dropdown{Open Movie Player} is chosen in the drop-down list and then 
+click \button{OK}. The \window{Movie Player} window will open and the movie 
+will start.
+
+If the \window{Movie Player} window is already open, open \menu{Movie} menu, then 
+choose \menu{Play Disc\ldots} and the movie will start.

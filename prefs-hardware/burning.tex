@@ -1,0 +1,128 @@
+%written by Luke Jennings ubuntujenkins@googlemail.com
+
+\section{Burning CDs and DVDs}
+
+To create a \acronym{CD} or \acronym{DVD} go to \menu{Applications \then Sound
+and Video \then Brasero Disc Burner}. This opens \application{Brasero}, which
+gives you five options to choose from. Each one of these is explained below.
+
+%\screenshotTODO{Main Brasero window}
+\screenshot{04-brasero.png}{ss:brasero}{Brasero burns music, video, and data \acronym{DVD}s and \acronym{CD}s.}
+
+\subsection{Universal options}
+
+These options apply for all projects except \textbf{Disc copy} and \textbf{Burn
+Image}.
+
+\subsubsection{Adding files to a project}
+
+To add files to the list, click the \button{Green +} button, which opens the \window{Select Files}
+window. Then navigate your way to the file you want to add, click it,
+and then click the \button{Add} button. Repeat this process for each file that you 
+want to add.
+
+\subsubsection{Saving a project}
+
+To save a project so that you can finish it later, choose \menu{Project \then Save}. 
+The \window{Save Current Project} window will be opened. Choose where you
+would like to save the project. Then, in the \textfield{Name:} text field, enter a name for the 
+project so that you will remember it. Now click the \button{Save} button.
+
+\subsubsection{Removing files}
+
+\marginnote{Icons of a broom are often used in Ubuntu to represent clearing a text field or returning something to its default state.}
+If you want to remove a file from the project, click the file in the list and click on the \button{Red -} button.
+To remove all the files in the list click on the \button{Broom shaped} button.
+
+\subsubsection{Burning the disc}
+
+When you click the burn button you will see the \window{Properties of \ldots} window.
+
+You can specify the burning speed in the \dropdown{Burning speed} drop down. It is best to choose the highest speed.
+
+To burn your project directly to the disc, select the \checkbox{Burn the image directly without saving it to disc} option. With this option selected, no image file is created and no files are saved to the hard disk.
+
+\marginnote{Temporary files are saved in the /tmp folder by default. Should you wish to save these files in another location, you will need to change the setting in the \dropdown{Temporary files} drop down menu. Under normal conditions, you should not need to change this setting.}
+The \checkbox{Simulate before burning} option is useful if you encounter
+problems burning discs. Selecting this option allows you to simulate the disc
+burning process without actually writing data to a disc \dash a wasteful process
+if your computer isn't writing data correctly. If the simulation is successful,
+Brasero will burn the disc after a ten second pause. During that ten second
+pause, you have the option to cancel the burning process.
+
+\subsubsection{Blanking a disk}
+
+\marginnote{\acronym{RW} stands for Re-Writable which means that disc can be used more than once.}
+If you are using a disc that has \acronym{RW} written on it and you have used it before, then you can blank it so that you can use it again. Doing this will cause you to lose all of the data currently on the disc. To blank a disc, open the \menu{Tools} menu, then choose \menu{Blank}. The \window{Disc Blanking} window will be open. In the \dropdown{Select a disc} drop down choose the disc that you would like to blank.
+
+You can enable the \checkbox{Fast blank} option if you would like to shorten the amount of time to perform the blanking process. However, selecting this option will not fully remove the files; if you have any sensitive data on your disc, it would be best not to enable the \checkbox{Fast blank} option.
+
+Once the disc is blank the you will see \emph{The disc was successfully blanked.} Click the \button{Close} button to finish.
+
+
+\subsection{Audio project}
+
+If you record your own music, then you may want to transfer this music onto an audio \acronym{CD} so your friends and family can listen. You can start an audio project by clicking \menu{Project}, then \menu{New Project} and then \menu{New Audio Project}.
+
+So that each file does not play straight after each other you can add a two second
+ pause after a file. This can be done by clicking the file and then clicking the 
+\button{||} button.
+
+You can slice files into parts by clicking the \button{Knife} button. This 
+opens a \window{Split Track} window. The \dropdown{Method} drop down gives you 
+four options each one of these lets you split the track in a different way. Once 
+you have split the track click \button{OK}.
+
+In the drop down at the bottom of the main \window{Brasero} window make sure that you have
+selected the disc that you want to burn the files to. Then click the \button{Burn} button.
+
+\subsection{Data project}
+
+If you want to make a back up of your documents or photos it would be best to make a data project.
+You can start a data project by clicking \menu{Project}
+then clicking \menu{New Project} and then \menu{New Data Project}.
+
+If you want to add a folder you can click the \button{Folder} picture, then type 
+the name of the folder.
+
+In the drop down at the bottom of the main \window{Brasero} window make sure that you have
+selected the disc that you want to burn the files to. Then click the \button{Burn} button.
+
+\subsection{Video project}
+
+If you want to make a \acronym{DVD} of your family videos it would be best to make a video project.
+You can start a video project by clicking \menu{Project}, then \menu{New Project} and then \menu{New Video Project}.
+
+In the drop down at the bottom of the main \window{Brasero} window make sure that you have
+selected the disc that you want to burn the files to. Then click the \button{Burn} button.
+
+\subsection{Disc copy}
+
+You can copy a disc clicking \menu{Project}, then \menu{New Project} and then
+\menu{Disc copy}. This opens the \window{Copy \acronym{CD}/\acronym{DVD}} window.
+
+If you have two \acronym{CD/DVD} drives you can copy a disc from one to the other, the disc
+that you want to copy to must be in the \acronym{CD-RW/DVD-RW} drive. If you have only one 
+drive you will need to make an image and then burn it to a disc. In the \dropdown{Select disc to copy}
+ drop-down choose the disc to copy. In the \dropdown{Select a disc to write to} drop-down
+either choose image file or the disc that you want to copy to. 
+
+\subsubsection{Image file}
+
+You can change where the image file is saved by clicking \button{Properties}, 
+this shows the \window{Location for Image File}. You can edit the name of the file
+in the \textfield{Name:} text field. 
+
+The default save location is your home folder, you can change this by clicking the +
+next to \textbf{Browse for other folders} . Once you have chosen where you want to 
+save it click \button{Close}.
+
+Back in the \window{Copy \acronym{CD}/\acronym{DVD}} window click \button{Create Image}. Brasero will open the \window{Creating Image}
+and will display the job progress. When the process is complete click \button{Close}.
+
+
+\subsection{Burn image}
+
+To burn an image, open the \menu{Project} \then{New Project}, and then \menu{Burn Image}. Brasero will open the \window{Image Burning Setup} window. Click on the \button{Click here to select a disc image} drop-down and the \window{Select Disc Image} window will appear. Navigate your way to the image you wish to burn, click on it, and then click \button{Open}.
+
+In the \dropdown{Select a disc to write to} drop-down menu, click on the disc to which you'd like to write, then click \button{Create Image}.

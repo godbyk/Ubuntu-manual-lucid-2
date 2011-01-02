@@ -1,0 +1,20 @@
+%
+% Hebrew-specific options for the Ubuntu Manual
+%
+
+\ProvidesFile{um-hebrew.clo}[2010/02/16 v1.0.0 Hebrew-specific options for the Ubuntu Manual]
+
+% Reverse page margins for RTL languages
+\geometry{a4paper,reversemp,left=24.8mm,top=27.4mm,headsep=2\baselineskip,textwidth=107mm,marginparsep=8.2mm,marginparwidth=49.4mm,textheight=49\baselineskip,headheight=\baselineskip}
+\AtBeginDocument{\raggedleft}
+% FIXME page margins are crap
+
+% Reverse the arrow bullet
+\renewcommand{\smallarrow}{{\reflect{\normalfontlatin ¿}}}%
+
+% Redefine the \eg macro to its Hebrew translation
+\newcommand{\eg}{לדוג'\xspace}
+\newcommand{\ie}{כלומר\xspace}
+
+\endinput
+

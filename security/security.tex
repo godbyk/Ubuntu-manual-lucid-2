@@ -1,0 +1,177 @@
+% Chapter 7 - Kelvin Gardiner
+
+% Superedit on Tuesday, March 23; ready for writing freeze and general copyedit
+
+\chapter{Security}
+\label{ch:security}
+
+This chapter discusses ways to keep your Ubuntu computer secure.
+
+\section{Why Ubuntu is safe}
+\label{sec:security:why-ubuntu-is-safe}
+
+Ubuntu is secure by default for a number of reasons:
+
+\begin{itemize}
+	\item Ubuntu clearly distinguishes between normal users and administrative users.
+	\item Software for Ubuntu is kept in a secure online repository, which contains no false or malicious software.
+	\item Open-source software like Ubuntu allows security flaws to be easily detected.
+	\item Security patches for open-source software like Ubuntu are often released quickly.
+	\item Many viruses designed to primarily target Windows-based systems do not affect Ubuntu systems.
+\end{itemize}
+
+
+\section{Basic Security concepts and procedures}
+\label{sec:security:security-basics}
+
+%\subsubsection{Separate user accounts}
+%removing the section header until another section is added above it, otherwise we have two headers in a row
+
+When Ubuntu is installed, it is automatically configured for a single person to use. If more than one person will use the computer with Ubuntu, each person should have her or his own user account. This way, each user can have separate settings, documents, and other files. If necessary, you can also protect files from being viewed or modified by users without administrative privileges. See \seclink{security:users-and-groups} to learn more about creating additional users accounts.
+
+\subsection{Permissions}
+\label{sec:permissions}
+
+In Ubuntu, files and folders can be set up so that only specific users can view, modify, or run them.  For instance, you might wish to share an important file with other users, but do not want those users to be able to edit the file.  Ubuntu controls access to files on your computer through a system of ``permissions.''  Permissions are settings that you can configure to control exactly how files on your computer are accessed and used.
+
+To learn more about modifying permissions, visit \url{https://help.ubuntu.com/community/FilePermissions}.
+
+\subsubsection{Passwords}
+\label{sec:security:passwords}
+\index{password}
+
+You can use a strong password to increase the security of your computer. Your password should not contain names, common words or common phrases. By default, the minimum length of a password in Ubuntu is four characters. We recommend a password with more than the minimum number of characters.
+
+\subsubsection{Locking the screen}
+
+When you leave your computer unattended, you may want to lock the screen. Locking your screen prevents anyone from using your computer until your password is entered. To lock the screen:
+
+\begin{itemize}
+	\item Click the session menu icon in the right corner of the top panel, then select \menu{Lock Screen}, or
+	\item press \keystroke{Ctrl+Alt+L} to lock the screen. This keyboard shortcut can be changed in \menu{System \then Preferences \then Keyboard Shortcuts}.
+\end{itemize}
+
+\section{System updates}
+\label{sec:security:system-updates}
+
+Good security depends on an up-to-date system. Ubuntu provides free software and security updates. You should apply these updates regularly. See \chaplink{ch:software-management} to learn how to update your Ubuntu computer with the latest security updates and patches.
+
+\subsubsection{Trusting third party sources}
+\label{sec:security:trusting-third-party-sources}
+
+Normally, you will add applications to your computer via the Software Center, which downloads software from the Ubuntu repositories as described in \chaplink{ch:software-management}. However, it is occasionally necessary to add software from other sources. For example, you may need to do this when an application is not available in the Ubuntu repositories, or when you need a newer version of the one available in the Ubuntu repositories.
+
+Additional repositories are available from sites such as \href{http://getdeb.net}{getdeb.net} and Launchpad \acronym{PPA}s, which can be added as described in \chaplink{ch:software-management}. You can download the \acronym{deb} packages for some applications from their respective project sites on the Internet. Alternately, you can build applications from their source code (an advanced method of installing and using applications).
+
+Using only recognized sources such as a project's site, \acronym{PPA}, or various community repositories (such as \href{http://getdeb.net}{getdeb.net}) is more secure than downloading applications from an arbitrary (and perhaps less reputable) source. When using a third party source, consider its trustworthiness, and be sure you know exactly what you're installing on your computer.
+
+\section{Users and groups}
+\label{sec:security:users-and-groups}
+
+Like most operating systems, Ubuntu allows you to create separate user accounts for each person that use the computer. Ubuntu also supports user groups, which allow you to administer permissions for multiple users at the same time. 
+
+\index{root}
+Every user in Ubuntu is a member of at least one group \dash the group's name is the same as the name of the user. A user can also be a member of additional groups. You can configure some files and folders to be accessible only by a user and a group. By default, a user's files are only accessible by that user; system files are only accessible by the root user.
+
+%\screenshotTODO{Screenshoots of User and Groups window}
+\screenshot{07-users-settings.png}{ss:users-settings}{Add, remove and change the user accounts.}
+
+\subsection{Managing users}
+\label{sec:security:managing-users}
+
+You can manage users and groups using the \textbf{Users and Groups} administration application.  To find this application, click \menu{System \then Administration \then Users and Groups}.
+
+To adjust the user and group settings click the keys icon next the phrase ``Click to make changes.'' You will need to input your password in order to make changes to user and group settings.
+
+\paragraph{Adding a user}
+Click the \button{Add} button which appears underneath a list of the current user accounts that have already been created. A window will appear that has two fields. The ``Name`` field field is for a friendly display name. The ``Short Name`` field is for the actual username. Fill in the requested information, then click \button{OK}. A new dialog box will appear asking you to enter a password for the user you have just created. Fill out the fields, then click \button{OK}. Privileges you grant to the new user can be altered in \window{Users Settings}.
+
+\paragraph{Modifying a user}
+Click on the name of a user in the list of users, then click on the \button{Change\ldots} button, which appears next to each of following options:
+\begin{itemize}
+  \item Account type:
+  \item Password:
+\end{itemize}
+For more advanced user options click on the \button{Advanced Settings} button. Change the details as required in the dialog that appears. Click \button{OK} to save the changes.
+
+\paragraph{Deleting a user}
+Select a user from the list and click \button{Delete}. Ubuntu will deactivate the user's account, and you can choose whether remove the user's home folder or leave it.
+
+\subsection{Managing groups}
+\label{sec:security:managing-groups}
+
+Click on the \button{Manage Groups} button to open the group management dialog.
+
+\paragraph{Adding a group}
+To add a group, click \button{Add}. In the dialog that appears, enter the group name and select the names of users you would like to add to the group.
+
+\paragraph{Modifying a group}
+To alter the users in an existing group, select a group and click on the \button{Properties} button. Select and deselect the users as required, then click \button{OK} to apply the changes.
+
+\paragraph{Deleting a group}
+To delete a group, select a group and click \button{Delete}.
+
+\subsection{Applying groups to files and folders}
+
+To change the group associated with a file or folder, open the \application{Nautilus} file browser and navigate to the appropriate file or folder. Then, either select the folder and choose \menu{File \then Properties} from the menubar, or right-click on the file or folder and choose \menu{Properties}. In the Properties dialog that appears, click on the \tab{Permissions} tab and select the desired group from the \dropdown{Groups} drop-down list. Then close the window.
+
+\subsection{Using the command line}
+
+You can also modify user and group settings via the command line. We recommend that you use the graphical method above unless you have a good reason to use the command line. For more information on using the command line to modify users and groups, see the Ubuntu Server Guide at \href{https://help.ubuntu.com/10.04/serverguide/C/user-management.html}{https://help.ubuntu.com/10.04/serverguide/C/user-management.html}
+
+\section{Setting up a secure system}
+\label{sec:security:setting-up-a-secure-system}
+
+You may also want to use a firewall, or use encryption, to further increase the security of your system.
+
+\subsection{Firewall}
+\label{sec:security:firewall}
+A firewall is an application that protects your computer against unauthorized access by people on the Internet or your local network. Firewalls block connections to your computer from unknown sources. This helps prevent security breaches.
+
+Uncomplicated Firewall (\acronym{UFW}) is the standard firewall configuration program in Ubuntu. It is a program that runs from the command line, but a program called \application{Gufw} allows you to use it with a graphical interface. See \chaplink{ch:software-management} to learn more about installing the \application{Gufw} package.
+
+%To dificult to do due to quickshot user permissons luke jenings (ubuntujenkins)
+%\screenshotTODO{GUFW Window with Add service window}
+
+Once it's installed, start \application{Gufw} by clicking \menu{System \then Administration \then Firewall configuration}. To enable the firewall, select the \checkbox{Enable} option. By default, all incoming connections are denied. This setting should be suitable for most users.
+
+If you are running server software on your Ubuntu system (such as a web server, or an \acronym{FTP} server), then you will need to open the ports these services use. If you are not familiar with servers, you will likely not need to open any additional ports.
+
+To open a port click on the \button{Add} button. For most purposes, the \tab{Preconfigured} tab is sufficient. Select \button{Allow} from the first box and then select the program or service required.
+
+The \tab{simple} tab can be used to allow access on a single port, and the \tab{Advanced} tab can be used to allow access on a range of ports.
+
+\subsection{Encryption}
+\label{sec:security:encryption}
+
+You may wish to protect your sensitive personal data \dash for instance, financial records \dash by encrypting it.  Encrypting a file or folder essentially ``locks'' that file or folder by encoding it with an algorithm that keeps it scrambled until it is properly decoded with a password.  Encrypting your personal data ensures that no one can open your personal folders or read your private data without your private key.
+
+Ubuntu includes a number of tools to encrypt files and folders. This chapter will discuss two of these. For further information on using encryption with either single files or email, see Ubuntu Community Help documents at \href{https://help.ubuntu.com/community}{https://help.ubuntu.com/community}. 
+
+\subsubsection{Home folder}
+\label{sec:security:home-Folder}
+
+When installing Ubuntu, it is possible to encrypt a user's home folder. See \chaplink{ch:installation} for more on encrypting the home folder.
+
+\subsubsection{Private folder}
+\label{sec:security:private-folder}
+
+If you have not chosen to encrypt a user's entire home folder, it is possible to encrypt a single folder \dash called \textbf{Private} \dash in a user's home folder.
+To do this, follow these steps:
+\begin{enumerate}
+	\item Install the \textbf{ecryptfs-utils} software package. % Need more information on how to do this -- b^2
+	\item Use the terminal to run \commandlineapp{ecryptfs-setup-private} to set up the private folder.
+	\item Enter your account's password when prompted.
+	\item Either choose a mount passphrase or generate one.
+	\item Record both passphrases in a safe location. \textbf{These are required if you ever have to recover your data manually.}
+	\item Log out and log back in to mount the encrypted folder.
+\end{enumerate}
+
+After the \textbf{Private} folder has been set up, any files or folders in it will automatically be encrypted.
+
+%If you need to recover your encrypted files manually see \href{https://help.ubuntu.com/community/EncryptedPrivateDirectory#Recovering Your Data Manually}{https://help.ubuntu.com/community/EncryptedPrivateDirectory\#Recovering Your Data Manually}.
+%If you need to recover your encrypted files manually see \href{https://help.ubuntu.com/community/EncryptedPrivateDirectory#Recovering Your Data Manually}{https://help.ubuntu.com/community/EncryptedPrivateDirectory}.
+%If you need to recover your encrypted files manually see \href{https://help.ubuntu.com/community/EncryptedPrivateDirectory}{https://help.ubuntu.com/community/EncryptedPrivateDirectory}.
+If you need to recover your encrypted files manually see \url{https://help.ubuntu.com/community/EncryptedPrivateDirectory}.
+
+% The Arabic translation doesn't like # in urls.  I'm looking into the issue. In the meantime, I've shortened the URL a bit.  I'll restore it once I've fixed this bug. --godbyk 2010-03-06

@@ -1,0 +1,95 @@
+% Translations provided by Abhijit Navale <abhi_navale@live.in>
+
+% TODO default to using Devanagari numerals (0..9 maps to U+0966..U+096F)
+% TODO implement Hindu calendar (not used in day-to-day practice)
+
+\ProvidesFile{gloss-marathi.ldf}[polyglossia: module for marathi]
+\makeatletter
+
+\ifx\l@marathi\@undefined%
+   \xpg@nopatterns{Marathi}%
+   \adddialect\l@marathi0%
+\fi
+
+\def\captionsmarathi{%
+   \def\refname{\textmarathi{संदर्भ}}%
+   \def\abstractname{\textmarathi{सारांश}}%
+   \def\bibname{\textmarathi{संदर्भ ग्रंथांची यादी}}%
+   \def\prefacename{\textmarathi{प्रस्तावना}}%
+   \def\chaptername{\textmarathi{प्रकरण}}%
+   \def\appendixname{\textmarathi{परिशिष्ट}}%
+   \def\contentsname{\textmarathi{अनुक्रमणिका}}%
+   \def\listfigurename{\textmarathi{आक्रुत्यांची यादी}}%
+   \def\listtablename{\textmarathi{कॊष्टकांची यादी}}%
+   \def\indexname{\textmarathi{सुची}}%
+   \def\figurename{\textmarathi{आक्रुती}}%
+   \def\tablename{\textmarathi{कोष्टक}}%
+   %\def\thepart{\textmarathi{}}% TODO
+   \def\partname{\textmarathi{भाग}}%
+   \def\pagename{\textmarathi{पान}}%
+   \def\seename{\textmarathi{पहा}}%
+   \def\alsoname{\textmarathi{हे सुध्दा पहा}}%
+   \def\enclname{\textmarathi{समाविष्ट}}%
+   \def\ccname{\textmarathi{सि.सि.}}%
+   \def\headtoname{\textmarathi{प्रति}}%
+   \def\proofname{\textmarathi{कसोटी}}%
+   \def\glossaryname{\textmarathi{स्पष्टीकरणकोश}}%
+   }
+\def\datemarathi{%
+   \def\marathimonth{%
+      \ifcase\month\or%
+         जानेवारी\or% January
+         फेब्रुवारी\or% February
+         मार्च\or% March
+         एप्रिल\or% April
+         मे\or% May
+         जुन\or% June
+         जुलॆ\or% July
+         ओगस्ट\or% August
+         सप्टेंबर\or% September
+         ओक्टोबर\or% October
+         नोव्हेंबर\or% November
+         डिसेंबर\fi% December
+   }
+   \def\today{\textmarathi{\number\day~\marathimonth~\number\year}}%
+   }
+
+\def\marathi@font{%
+\font\zf@basefont="\csname zf@family@fontdef\f@family\endcsname" at \f@size pt
+\@ifundefined{marathifont}{%
+      \@ifundefined{devanagarifont}{%
+        \zf@check@ot@script{deva}% Devanagari
+	\if@tempswa%
+	  \addfontfeature{Script=Devanagari}%
+	\else%
+	  \PackageError{polyglossia}{^^J
+	  The current font does not contain the Devanagari script!^^J
+	  Please define \string\devanagarifont\space or \string\marathifont\space with \string\newfontfamily}%
+	\fi%
+	\zf@check@ot@lang{MAR}% Marathi
+	\if@tempswa\addfontfeature{Language=Marathi}\fi%
+	}%
+      {\devanagarifont%
+	\zf@check@ot@lang{MAR}% Marathi
+	\if@tempswa\addfontfeature{Language=Marathi}\fi%
+      }}% 
+     {\marathifont}%
+}
+
+\def\selectnormalfontmarathi{%
+   \let\normalfont=\marathi@font%
+   \def\reset@font{\normalfont}}
+
+\def\marathi@language{\protect\language=\l@marathi}
+
+\setlocalhyphenmins{marathi}{2}{2}%
+
+\def\noextras@marathi{%
+   }
+
+\def\blockextras@marathi{%
+   }
+
+\def\inlineextras@marathi{%
+   }
+

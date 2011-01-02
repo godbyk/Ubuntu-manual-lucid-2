@@ -1,0 +1,328 @@
+\section{Getting online}
+
+If you are in a location with Internet access, you will want to make sure you are connected in order to get the most out of your Ubuntu operating system. This section of the manual will help you check your connection and configure it where necessary. Ubuntu can connect to the Internet using a wired, wireless, or dialup connection. It also supports some more advanced connection methods, which we will briefly discuss at the end of this section. 
+
+\begin{comment}
+This margin note is confusing to me - are you saying that to connect to a network (\ie, access files from my home computer with my laptop) I do the same thing as connecting to the Internet? This is not the case and will probably confuse people so have removed it for now.
+\marginnote{In this guide we will limit our discussion to connecting to the Internet. However, connecting to a home or office network is usually performed in a similar manner.}
+\end{comment}
+
+\gltodo{``wired connection,'' ``router,'' ``Ethernet port,'' ``wireless connection,'' ``dialup connection''}
+A \gls{wired connection} refers to when your computer is physically 
+connected to a \gls{router} or an \gls{Ethernet port} with a cable. This is 
+the most common connection for desktop computers. 
+
+A \gls{wireless connection} is when your computer is connected to the Internet via a wireless radio network, also known as Wi-Fi. Laptop computers commonly use Wi-Fi due to portability, making it easy to access the Internet from different rooms in the house or when traveling.
+
+In order to connect wirelessly, you must be in a location with a working wireless network. To have your own, you will need to purchase and install a \emph{wireless router} or \emph{access point}. Some locations may already have a publicly accessible wireless network available.
+
+A \gls{dialup connection} is when your computer uses a 
+\emph{modem} to connect to an Internet service provider through your telephone line.
+
+\subsection{NetworkManager}
+
+\marginnote{If you are unsure whether your computer has a wireless card, check with your manufacturer.}
+In order to connect to the Internet in Ubuntu, you need to use 
+the \application{NetworkManager} utility. NetworkManager allows you 
+to turn all networking on or off, and helps you manage your wired, 
+wireless, and other connections.
+
+%\screenshotTODO{Partial screen shot that points out network manager 
+%when connected with a wired network (point it out with an arrow?)}
+
+\screenshot{03-wired-network.png}{ss:wired-network-icon}{NetworkManager will display this icon in the top panel when you are connected to a wired network.}
+
+You can access all the functions of NetworkManager using its icon in the top panel. This icon may look different depending on whether you currently have a working connection, and whether the connection is wired or wireless. If you are unsure, try hovering your mouse over the icon until a short description appears near the cursor. This will read ``Wired network connection `Auto eth$0$' active'' (for example) if you have a working wired connection, or otherwise something else related to networking or connections such as ``No connection'' or ``Networking disabled.''
+
+%\screenshotTODO{NetworkManager with the menu open showing auto eth$0$}
+\screenshot{03-autoeth.png}{ss:network-manager-menu}{Here you can see the currently active ``auto eth$0$'' connection listed in the NetworkManager menu.}
+
+Clicking this icon will bring up a list of network connections that are available to you. If you are currently connected to the Internet, the name of this connection will be highlighted in bold.
+
+%\screenshotTODO{NetworkManager with the right-click menu open, showing
+%Enable Networking checked}
+\screenshot{03-enable-networking.png}{ss:networking-right-click}{This is the
+menu when you right-click the networking icon.}
+
+You can also right-click on the \application{NetworkManager} icon. This will open a menu allowing you to enable or disable networking, view technical details about your current connection, or edit all 
+connection settings. In the image above, the check box next to ``Enable Networking'' is currently selected; you can deselect it to disable all network connections. This may be useful if you need to shut off all wireless communication, such as when in an airplane.
+
+\subsection{Establishing a wired connection}
+
+If you have an \emph{Ethernet} cable running from a wall socket, a router, or some other device, then you will want to set up a wired network connection in Ubuntu.
+
+\gltodo{``\acronym{DHCP},'' ``\acronym{ISP}''}
+\marginnote{Are you already online? If the NetworkManager icon in the top panel shows a connection, then you may have successfully connected during the installation process. If so, you do not need to follow the rest of this section.}
+In order to connect with a wired connection, you need to know whether your network connection supports \gls{DHCP}. This stands for ``Dynamic Host Configuration Protocol,'' and is a way for computers
+on your network to automatically receive configuration information from your Internet service provider (\gls{ISP}). This is usually the quickest and easiest way of establishing a connection between your computer and your \acronym{ISP} in order to access the Internet, although some \acronym{ISP}s may provide what is called a \emph{static address} instead. If you are unsure whether your \acronym{ISP} supports \acronym{DHCP}, you may wish to contact their customer service line to check. They will also be able to provide you with information on your static address if one has been allocated to you (in many cases \acronym{ISP}s only allocate static addresses to customers upon request).
+
+\subsubsection{Automatic connections with DHCP}
+
+If your network supports \acronym{DHCP}, you may already be set up for online access. To check this, click on the NetworkManager icon. There should be a ``Wired Network'' heading in the menu that is displayed. If ``Auto eth$0$'' appears directly underneath, then your computer is currently connected and probably already set up correctly for \acronym{DHCP}. If ``disconnected'' appears in gray underneath the wired network section, look below to see if an option labeled ``Auto eth$0$'' appears in the list. If so, click on it to attempt to establish a wired connection. 
+
+To check if you are online, right-click on the NetworkManager icon in the top panel and select the \menu{Connection Information} option.
+
+%\screenshotTODO{The Connection Information window of NetworkManager}
+
+\screenshot{03-connection-information.png}{ss:connection-information}{This window displays your \acronym{IP} address and other connection information.}
+
+\marginnote{An Internet Protocol (\acronym{IP}) address is a numerical label assigned to devices on a computer network. It is the equivalent of phone numbers for your house and allows your computer to be uniquely identified so you can access the Internet and share files with others.}
+You should see a window showing details about your connection. If your \acronym{IP} address is displayed as 0.0.0.0 or starts with 169.254, then your computer was not successfully provided with an address through \acronym{DHCP}. If it shows another address, it is most likely that your connection was automatically configured correctly. To test out your Internet connection, you may want to open the \application{Firefox} web browser to try loading a web page. More information on using Firefox can be found later in this chapter.
+
+\marginnote{To access the \window{Connection Information} window, you will need to make sure that networking is enabled. Otherwise this option will be gray and you will not be able to select it through the right-click menu of the NetworkManager applet. To enable networking, right-click on the NetworkManager applet and select \button{Enable Networking} from the popup menu.}
+If you are still not online after following these steps, you may need to try setting up your Internet configuration manually, using a static \acronym{IP} address. 
+
+\subsubsection{Manual configuration with static addresses}
+
+If your network does not support \acronym{DHCP}, then you need to know a few items of information before you can get online.
+
+\begin{itemize}
+  \item An \textbf{\acronym{IP} address} is a unique address used for identifying your computer on the Internet. When connecting through \acronym{DHCP} this is likely to change at times. However, if your \acronym{ISP} has provided you with a static address then it will not. An \acronym{IP} address is always given in the form of four numbers separated by decimal points, for example, 192.168.0.2.
+  \item The \textbf{network mask} tells your computer how large the network is that it belongs to. It takes the same form as an \acronym{IP} address, but is usually something like 255.255.255.0
+  \item The \textbf{gateway} is the \acronym{IP} address at your \acronym{ISP}'s end. It helps your computer connect or ``talk'' with their network, which acts as a ``gateway'' between your computer and the Internet.
+  \item \textbf{\acronym{DNS} servers} are one or more \acronym{IP} addresses of 
+    ``Domain Name System'' servers. These servers convert standard web addresses (like \url{http://www.ubuntu.com}) into \acronym{IP} addresses such as 91.189.94.156. This step allows your computer to ``find'' the correct web site when you type in the web address you wish to visit. A minimum of one \acronym{DNS} server is required,  up to a maximum of three. The additional ones are used in case the first one fails.
+\end{itemize}
+
+\marginnote{If you do not already have these settings, you will need to consult your  network administrator or \acronym{ISP} customer support to receive them.}
+To manually configure a wired connection, right-click on the NetworkManager
+icon and select \menu{Edit Connections}. Make sure you are looking at
+the \button{Wired} tab inside the \window{Network Connections} window that is displayed.
+
+The list may already have an entry such as ``Auto eth$0$,'' or a similar name. If a connection is listed, select it and then click the \button{Edit} button. If no connection is listed, click the \button{Add}
+button instead.
+
+If you are adding a connection, you first need to provide a name for the connection so you can distinguish it from any others that are added later. In the ``Connection name'' field, choose a name such as ``Wired connection 1.'' 
+
+%\screenshotTODO{manual connection editing screen, on the IPv4 tab}
+\screenshot{03-editing-ipv4.png}{ss:connection-editing-window}{In this window you can manually edit a connection.}
+
+To set up the connection:
+
+\begin{enumerate}
+  \item Under the connection name, make sure that the \checkbox{Connect
+automatically} option is selected.
+  \item Switch to the \button{\acronym{IP}v4 Settings} tab.
+  \item Change the \dropdown{Method} to ``Manual.''
+  \item Click on the \button{Add} button next to the empty list of addresses.
+  \item Type in your \acronym{IP} address in the field below the \textbf{Address} 
+header.
+  \item Click to the right of the \acronym{IP} address, directly below the 
+\textbf{Netmask} header, and type in your network mask. If you are
+unsure of your network mask, ``255.255.255.0'' is the most common.
+  \item Click to the right of the network mask, directly below the 
+\textbf{Gateway} header, and type in the address of your gateway.
+  \item In the \textfield{\acronym{DNS} servers} field below, type in the addresses
+    of your \acronym{DNS} server. If your network has more than one \acronym{DNS} server, enter them all, separated by spaces or commas.
+  \item Click \button{Apply} to save your changes.
+\end{enumerate}
+
+\advanced{A \acronym{MAC} address is a hardware address for your computer's network card, and entering it
+is sometimes important when using a cable modem connection or similar. If you know the \acronym{MAC} address of your network card, this can be entered in the appropriate text field in the \button{Wired} tab of the editing window.}
+
+When you have returned to the \application{Network Connections} screen, your 
+newly-added connection should now be listed. Click \button{Close} to return to the desktop. If your connection is configured correctly, the NetworkManager icon should have changed to show an active
+connection. To test if your connection is properly set up, refer to the instructions above for checking a \acronym{DHCP} connection.
+
+\subsection{Wireless}
+
+If your computer is equipped with a wireless (Wi-Fi) card and you 
+have a wireless network nearby, you should be able to set up a wireless
+connection in Ubuntu.
+
+\subsubsection{Connecting to a wireless network for the first time}
+
+If your computer has a wireless network card, you should be able to 
+connect to a wireless network. Most laptop and netbook computers
+have a wireless network card.
+
+\marginnote{To improve speed and reliability of your connection, try to move closer to your router or access point.}
+Ubuntu is usually able to detect any wireless networks that are available within range of your wireless card. To see a list of wireless networks, click on the NetworkManager icon. Under the 
+``Wireless Networks'' heading, you should see a list of available wireless
+networks. Each network will be shown with a name on the left, and a signal meter
+on the right. A signal meter looks like a series of bars \dash the more
+bars that are filled in, the stronger the connection will be.
+
+A wireless network may be open to anyone to connect, or may be protected
+with network security. A small padlock will be displayed next to the signal meter of any wireless networks that are protected. You will need to know the correct password in order to connect to these.
+
+To connect to a wireless network, select the desired network's name from the list. This will be the name that was used when the wireless router or access point was installed. If you are in a workplace or a location with a publicly accessible wireless network, the network name will usually make it easy to identify.
+
+If the network is unprotected (\ie, the network signal meter does not display a padlock), a connection should be established within a few seconds. The NetworkManager icon in the top panel will animate as Ubuntu attempts to establish a connection. If it connects successfully the icon will change to display a signal meter. A notification message in the upper right of your screen will also appear, informing you that a connection was established.
+
+If the network is secured, Ubuntu will display a window called ``Wireless Network Authentication Required'' once it tries to connect. This means that a password is required in order to connect.
+
+\screenshot{03-wireless-authentication.png}{ss:wireless-authentication}{Type in your wireless network passphrase.}
+
+If you know the password, enter it in the \textfield{Password} field, and then click \button{Connect}. As you type your password, it will be obscured to prevent others from seeing it. If you prefer, you can select the \checkbox{Show password} option to see the password as you type.
+
+After you click the \button{Connect} button, the NetworkManager icon in the top
+panel will animate as it tries to connect to the network. If you have entered the correct password, a connection will be established and the NetworkManager icon will change to show signal meter bars. Again, Ubuntu will display a pop up message in the upper right of your screen informing you that a connection was 
+established.
+
+\marginnote{Select the \checkbox{Show Password} option to make sure you haven't made a mistake when entering the password.}
+If you entered the wireless network's password incorrectly, NetworkManager will attempt to establish a connection then return to the \window{Wireless Network Authentication Required} window. You can attempt to enter the correct password again, or click \button{Cancel} to 
+abort your connection. If you do not know the password to the network you
+have selected, you will need to get the password from the network
+administrator.
+
+Once you have successfully established a wireless network connection, Ubuntu will store these settings (including the network password) in order to make it easier to connect to the same wireless network in future. You may also be prompted to select a \emph{keyring} password here. The keyring stores network and other important passwords in the one place, so you can access them all in future by just remembering your keyring password.
+
+\subsubsection{Connecting to a saved wireless network}
+
+If you have previously successfully established a wireless connection,
+that connection's password will be saved on your computer. This will 
+allow you to connect to the same network without having to re-enter the
+password.
+
+In addition, Ubuntu will automatically try to connect to a wireless
+network within range if it has its settings saved. This will work for
+both open and secured wireless networks.
+
+If you have many saved wireless networks that are in range, Ubuntu may choose
+to connect to one of them, while you may prefer to connect to another. 
+In this case, click on the NetworkManager icon. You should see a list
+of wireless networks in range, along with their signal meters. Click
+on your desired network.
+
+If the password and other settings have not changed, Ubuntu will connect
+to the wireless network you chose. If the password has change, Ubuntu will
+open the \window{Wireless Network Authentication Required} window. In this case, follow instructions in the previous section.
+
+\subsubsection{Connecting to a hidden wireless network}
+
+In some circumstances, you may need to connect to a hidden wireless network.
+These hidden networks do not broadcast their names, which means that they
+will not show up in the list of wireless networks in the NetworkManager menu.
+In order to be able to connect to a hidden network, you will need to get its
+name and security settings from your network administrator.
+
+To connect to a hidden network:
+
+\begin{enumerate}
+  \item Click on the NetworkManager icon in the top panel.
+  \item Choose the \menu{Connect to Hidden Wireless Network} option. 
+    Ubuntu should open the \window{Connect to Hidden Wireless Network} window.
+  \item By default, the \textfield{Connection} field should show ``New\ldots'' 
+    \dash you can leave this unchanged.
+  \item In the \textfield{Network name} field, enter the name of the wireless 
+    network. This name is also known as a \emph{\acronym{SSID}}. Please enter the
+    network name exactly as it was given to you.
+  \item In the \dropdown{Wireless security} field, select one of the options. 
+    If the network is open, leave this field as ``None.'' If you do not know
+    the correct setting for the network you will not be able to connect
+    to the hidden network.
+  \item Click on the \button{Connect} button.
+\end{enumerate}
+
+The rest of the process should work exactly as in the section on the initial
+connection to wireless networks. Once set up according to the instructions
+above, the hidden network should show up in the list of saved networks.
+
+\subsubsection{Disabling and enabling your wireless network card}
+
+\marginnote{Some computers may have a physical switch or button to turn off Wi-Fi.}
+Wireless access in Ubuntu is enabled by default if you have a wireless network
+card in your computer. In certain cases, for example on airplanes, you may
+need or be required to turn your wireless radio off.
+
+To do this, right-click on the NetworkManager icon, and deselect the 
+\menu{Enable Wireless} option. Your wireless network will be turned off,
+and your computer will no longer search for available wireless networks.
+
+To turn wireless networking back on, right-click on the NetworkManager
+icon, and click on the \menu{Enable Wireless} option to re-select it.
+Your wireless network will be turned back on. Ubuntu will then search 
+for nearby wireless networks and will connect to any saved networks within
+range.
+
+\subsubsection{Changing an existing wireless network}
+
+At times, you may want to change the settings for a wireless connection
+that you have previously saved. Its password may have changed, or 
+your system administrator asked you to change some networking or security
+settings.
+
+To edit a saved wireless network connection:
+
+\begin{enumerate}
+  \item Right-click on the NetworkManager icon and select 
+\menu{Edit Connections\ldots}
+  \item A \window{Network Connections} window should open. Click on the
+\textbf{Wireless} tab to see a list of saved wireless connections
+  \item By default, this list shows connections in the order of most
+recently used to least recently used. Find the connection you want to edit,
+click on it, and then click \button{Edit}.
+  \item Ubuntu should open a window called \window{Editing \variable{connection name}},
+where \variable{connection name} is the name of the connection you are editing. 
+The window should display a number of tabs.
+  \item Above the tabs, you may change the \textfield{Connection name} field if 
+you want to give the connection a more recognizable name
+  \item If the \checkbox{Connect automatically} option is not selected, Ubuntu
+will detect the wireless network but will not automatically connect to it
+without you choosing it from the NetworkManager menu. Select or deselect this 
+setting as needed.
+  \item On the \textbf{Wireless} tab of the \window{Editing \variable{connection 
+    name}} window, you may need to edit the \textfield{\acronym{SSID}} field. A \acronym{SSID} is 
+the wireless connection's network name \dash if set incorrectly, the network
+may not be detected and a connection may not be made. Please make sure that
+the \acronym{SSID} is set according to your network administrator's instructions.
+  \item Below the \acronym{SSID}, you should see the \textfield{Mode} field. The 
+``Infrastructure'' mode means that you would be connecting to a wireless 
+router or access point. This is the most common mode for wireless networks.
+The ``Ad-hoc'' mode is a computer-to-computer mode and is often only used
+in advanced cases.
+  \item On the \textbf{Wireless Security} tab of the \window{Editing 
+\variable{connection name}} window, you may need to change the \textfield{Security}
+field to the correct setting. A selection of \menu{None} means that you are 
+using an open network with no security. Other selections may require slightly
+different additional information:
+  \begin{itemize}
+    \item \textbf{\acronym{WEP} 40/128-bit Key} is an older security setting still in
+use by some wireless networks. If your network uses this security mode, you
+will need to enter a key in the \textfield{Key} field that should appear after
+you select this mode.
+    \item \textbf{\acronym{WEP} 128-bit Passphrase} is the same older security setting
+as the entry above. However, instead of a key, your network administrator
+should have provided you with a text passphrase \dash a password \dash to connect 
+to the network. Once you select this security mode, you will need to enter your
+passphrase in the \textfield{Key} field.
+    \item \textbf{\acronym{WPA} \& \acronym{WPA}2 Personal} is the most common security mode for
+wireless network connections at home and at businesses. Once you select this
+mode, you will need to enter a password in the \textfield{Password} field.
+    \item If your network administrator requires \acronym{LEAP}, Dynamic \acronym{WEP}, or 
+      \acronym{WPA} \& \acronym{WPA2} Enterprise security, you will need to have the administrator help
+you set up those security modes.
+  \end{itemize}
+\item On the \textbf{\acronym{IP}v4 Settings} tab, you may need to change the 
+  \textfield{Method} field from ``Automatic (\acronym{DHCP})'' to ``Manual,'' or one of the 
+other methods. For setting up manual settings (also known as static addresses), 
+please see the section above on manual set up for wired network connections.
+  \item When you finish making changes to the connection, click \button{Apply}
+to save your changes and close the window. You can click \button{Cancel} to 
+close the window without making changes.
+\item Finally, click \button{Close} on the \window{Network Connections}
+window to return to the desktop.
+\end{enumerate}
+
+After making changes, your new settings should go into effect immediately.
+
+\subsection{Other connection methods}
+
+There are other ways to get connected with Ubuntu. 
+
+With NetworkManager, you can also configure Mobile Broadband connections 
+to keep online through your cellular or other mobile data carrier. 
+
+You can also connect to \acronym{DSL}s (Digital Subscriber Lines), 
+which are a method of Internet connection that uses your telephone lines 
+and a ``\acronym{DSL} modem.'' 
+
+\marginnote{A \acronym{VPN} is a ``Virtual Private Network,'' and is sometimes used to help secure connections. \acronym{DSL}s are ``Digital Subscriber Lines,'' a type of broadband connection.}
+It's also possible to use NetworkManager to establish a \acronym{VPN} (Virtual Private Network) 
+connection. These are commonly used to create secure connectivity to a 
+workplace. 
+
+The instructions for making connections using mobile broadband, \acronym{VPN}s, or \acronym{DSL}s, are beyond the scope of this guide.
+\todo{Link to more info.}
+

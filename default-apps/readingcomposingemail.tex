@@ -1,0 +1,607 @@
+\section{Reading and composing email}
+
+To send and receive email in Ubuntu, you can use the \application{Evolution}
+mail application. To start \application{Evolution}, open the \menu{Applications}
+menu, then choose \menu{Office} and then \menu{Evolution Mail and Calendar}.
+
+In addition to email, \application{Evolution} also can help manage your contact list,
+your calendar, and a list of tasks.
+
+\warning{Although \application{Evolution} can be used with many webmail systems, such as Yahoo! Mail, Hotmail, and Gmail, you may prefer to use the \application{Firefox} web browser to access them.}
+
+\subsection{Running Evolution for the first time}
+
+When you start \application{Evolution} for the first time, you will need to configure
+it to connect to your email account.
+
+When \application{Evolution} starts, you should see the \window{Evolution Setup Assistant} 
+window, welcoming you to \application{Evolution}. Click \button{Forward} 
+to continue with the setup.
+
+Next, on the \window{Restore from backup} screen, \application{Evolution} may ask you to
+restore from a previous backup. Since this is the first time you are 
+running \application{Evolution}, you can click \button{Forward} to skip this
+step.
+
+On the next screen, \window{Identity}, you need to enter your name
+and the email address you wish to use with \application{Evolution}. Enter your full name
+in the \textfield{Full Name} field, and the full email address in the 
+\textfield{Email Address} field. You can fill in the optional information, 
+or leave it unchanged if you desire. Click \button{Forward} 
+when you are done.
+
+Next, you should see the \window{Receiving Email} screen. On this screen,
+you need to provide \application{Evolution} with the details of your email servers. If
+you do not know these details, you will need to ask your network administrator
+or check with your email provider.
+
+There are two common types of Internet email connections: \acronym{IMAP}, and \acronym{POP}. 
+These are described below. In work environments there are sometimes other 
+types, such as Microsoft Exchange or Novell GroupWise\dash for more 
+information on those types of connections, please see the documentation for
+\application{Evolution} located in the \menu{Help \then Contents} menu.
+
+\subsubsection{Setting up an IMAP connection}
+
+\acronym{IMAP} connections allow you to manage your email remotely\dash the actual
+email and folders reside on your email server, while \application{Evolution} allows you 
+to view, edit, and delete the messages and folders as needed. 
+
+If your email provider recommends an \acronym{IMAP} connection, choose
+\menu{IMAP} from the \dropdown{Server Type} drop-down list. In the 
+\textfield{Server} field, enter the Internet address or \acronym{URL} of your mail server.
+for example \textbf{imap.example.com}. In the \textfield{Username} field;
+enter the username that you use to log into your email system, for example
+\textbf{joe.x.user} or \textbf{joe.x.user@example.com}, as specified by your email provider.
+
+Your email provider may specify the security settings you will need to use
+in order to receive email. If your connection does not use security, leave
+the \dropdown{Use Secure Connection} drop-down list set to \menu{No encryption}.
+Otherwise, choose either \menu{\acronym{TLS} encryption} or \menu{\acronym{SSL}
+encryption}, as specified by your email provider. 
+
+After choosing these options, click \button{Forward} to proceed 
+to the \window{Receiving Options} screen. While it is normal to leave all options
+unselected, you may want to select the \checkbox{Check for new messages}
+option to have \application{Evolution} automatically check email on a regular basis.
+
+When you are finished setting the options, click \button{Forward}
+to continue to the next screen.
+
+\subsubsection{Setting up a POP connection}
+
+\acronym{POP} connections let you manage your email locally\dash \application{Evolution} will connect
+to your email provider and download any new messages you may have received,
+and store them in folders on your computer. The messages will be deleted from
+the server.
+
+If your email provider recommends a \acronym{POP} connection, choose
+\menu{POP} from the \dropdown{Server Type} drop-down list. In the 
+\textfield{Server} field, enter the Internet address or \acronym{URL} of your mail server;
+for example \textbf{pop.example.com}. In the \textfield{Username} field,
+enter the username that you use to log into your email system, for example
+\textbf{joe.x.user}, or \textbf{joe.x.user@example.com}.
+
+Your email provider may specify the security settings you will need to use
+in order to receive email. If your connection does not use security, leave
+the \dropdown{Use Secure Connection} drop-down list set to \menu{No encryption}.
+Otherwise, choose either \menu{\acronym{TLS} encryption} or \menu{\acronym{SSL}
+encryption}, as specified by your email provider.
+
+After choosing these options, click \button{Forward} to proceed 
+to \window{Receiving Options} screen. While it is normal to leave all options
+unselected, you may want to select the \checkbox{Check for new messages}
+option to have \application{Evolution} automatically check email on a regular basis.
+
+You may also wish to adjust the Message Storage options, which determine what
+\application{Evolution} does after downloading email to your computer. Select the 
+\checkbox{Leave messages on server} option to have \application{Evolution} keep the
+messages on your email system after downloading them. This will allow you
+to use another computer to re-download all of your new messages. 
+Select the \checkbox{Delete after 7 days} option to have \application{Evolution} keep the 
+messages for a few days, and delete them after a while. You can adjust the
+number of days that \application{Evolution} keeps the messages.
+
+When you are finished setting the options, click \button{Forward}
+to continue to the next screen.
+
+\subsubsection{Setting up your sending options}
+
+The next screen should be the \window{Sending Email} screen. Here, you will
+need to configure your connection for sending email through your 
+email provider.
+
+The most common type of sending connection is \acronym{SMTP}, which is the default
+server type selected.
+
+In the \textfield{Server} field, type in the name of the outbound mail
+server (also known as the \acronym{SMTP} server), as described by your
+email provider. For example, \textbf{mail.example.com}.
+
+If your email provider requires authentication, select the \checkbox{Server
+requires authentication} option. This is common for commercial email
+providers. In the ``Authentication'' section of the screen, choose the
+type of authentication from the \dropdown{Type} drop-down list\dash the most 
+common authentication type is ``\acronym{PLAIN}.'' Below that, enter your username, for example, \textfield{joe.x.user}, or \textfield{joe.x.user@example.com}, in the \textfield{Username} field.
+
+Your email provider may specify the security settings you will need to use
+in order to send email. If your connection does not use security, leave
+the \dropdown{Use Secure Connection} drop-down list set to \menu{No encryption}.
+Otherwise, choose either \menu{\acronym{TLS} encryption} or \menu{\acronym{SSL}
+encryption}, as specified by your email provider.
+
+After choosing these options, click \button{Forward} to proceed to the 
+next screen.
+
+\subsubsection{Finalizing your account options}
+
+On the next screen, \window{Account Management}, enter a descriptive
+name for this account. If you set up more email accounts with \application{Evolution} the name provided here will help distinguish those accounts.
+
+When finished, click \button{Forward}. This should open the
+\window{Done} screen. If you believe that you've entered the correct options,
+click \button{Apply} to finish setup. Otherwise, click 
+\button{Back} to go back one or more screens to correct your settings,
+or click \button{Cancel} to abort setup and discard your account 
+settings. 
+
+After you finish setup, \application{Evolution} may ask you if you would like to
+make it your default email client. Click \button{Yes} if you 
+plan on reading and sending email only with \application{Evolution}. Click \button{No} 
+if you plan on installing or using a different email program.
+
+\subsection{Around the Evolution workspace}
+
+%\screenshotTODO{Evolution full window, possibly with arrows and explanations of different parts of the window}
+
+\screenshot{03-evolution.png}{ss:evolution}{Evolution allows you to manage your mail, contacts and tasks.}
+
+The \application{Evolution} window is divided into four parts. At the top are the 
+menubar and toolbar. The menubar lets you access most of the functionality
+of \application{Evolution}, while the toolbar provides convenient shortcuts to some of
+the most frequently used features.
+
+On the left side of the window is the folder list. Every message that 
+you send or receive will reside in one of the folders in this list.
+
+Below the folder list on the left side of the window are the \button{Mail},
+\button{Contacts}, \button{Calendars}, \button{Tasks}, and \button{Memos}
+buttons. When working with email, the \button{Mail} button is selected.
+The other buttons take you to those other parts of \application{Evolution}.
+
+On the right side of the window are the message list, and the message
+preview beneath it. The message list shows all of the messages in the 
+currently selected folder, or matching your search request. If a message
+is selected in this list, its contents are shown in the message preview
+pane below.
+
+\subsubsection{Understanding the folder list}
+
+The folder list is the way that \application{Evolution} separates and categorizes your email.
+The first group of folders in the list is titled ``On This Computer.'' These
+are your \emph{local} folders\dash they reside on your computer only.
+If you use \acronym{POP} servers to retrieve your email, any new message will
+be placed in the \textbf{Inbox} local folder.
+
+You can click on any folder to see its contents appear in the message
+list on the right side of the window.
+
+Each of the initial folders in the list is special:
+\begin{itemize}
+  \item \textbf{Inbox} stores your incoming messages.
+  \item \textbf{Drafts} stores messages that you've worked on, but have not 
+yet sent.
+  \item \textbf{Junk} stores messages that have been identified as unsolicited
+email that you did not want. Junk mail is also known as ``spam.''
+  \item \textbf{Outbox} contains messages that you've finished composing, but 
+which have not been sent yet. For example, if you are in an airplane or another
+location without an Internet connection, you can still click the \button{Send}
+button once you've finished writing an email. The message will be moved
+to the Outbox, and will remain there until the next time you are able to
+send and receive messages. Once you can send and receive messages, all email
+messages in the Outbox will be sent out.
+  \item \textbf{Sent} contains copies of messages that have been sent successfully.
+Once a message from an Outbox is sent, it is copied to the Sent folder.
+  \item \textbf{Templates} stores any email message templates you have saved.
+A template is a partial message, for example, a blank invoice, that can be used
+as the starting point for other messages.
+  \item \textbf{Trash} contains messages that you have deleted. By default,
+    the trash will be emptied every time you exit \application{Evolution}.
+\end{itemize}
+
+If a folder contains any unread messages, the folder's name will be displayed
+in bold, and the number of unread messages will be displayed in parentheses
+following the folder name.
+
+If you use an \acronym{IMAP} server to retrieve your email, then your remote \acronym{IMAP} folders
+will also be shown in the folder list, below the ``On This Computer'' section.
+The heading for each folder list uses the name you gave to that account.
+Each \acronym{IMAP}-enabled account has its own \textbf{Inbox} for new messages.
+
+Towards the bottom of the folder list, \application{Evolution} will show a list of
+``Search Folders.'' These are special folders that represent certain
+messages that match search rules. Please see the section on Finding Messages
+for more on search folders.
+
+\subsubsection{Managing folders}
+
+In addition to the initial folders, you can create your own folders to manage
+your email.
+
+To create a new folder, open the \menu{Folder} menu, and then choose
+\menu{New}. Enter a name for the folder that you would like to create.
+Then, from the list of folders below, select the \emph{parent} folder. For
+example, if you would like your new folder to be placed under the Inbox then
+select the Inbox folder. If you select ``On This Computer,'' then your new
+folder will be placed under ``On This Computer'' in the folder list.
+
+Once you've made your selection, click on the \button{Create} button to 
+create the folder. Your new folder should now be in the folder list.
+
+You can move folders that you have created. To do so, click on the folder that
+you would like to move, hold down the mouse button, and drag the folder
+to a new parent folder. Once the mouse cursor highlights a new parent folder,
+release the mouse button to finish the move.
+
+You can also right-click on a folder, and choose the \menu{Move\ldots} option.
+Then, select the new parent folder, and click on the \button{Move} button.
+
+To delete a folder, right-click on the folder and choose the \menu{Delete}
+option. To confirm that you want to delete the folder, click on the 
+\button{Delete} button. 
+
+\subsection{Checking and reading messages}
+
+\subsubsection{Checking mail}
+
+When you finish setup, or when you start \application{Evolution} in the future, 
+\application{Evolution} will first try to connect to your email provider to check
+your email. In order to connect, \application{Evolution} will need to know your email
+account password, and will ask you for it.
+
+%\screenshotTODO{``enter password'' dialog}
+
+\screenshot{03-evolution-enter-password.png}{ss:enter-password}{You need to enter your password to authenticate your account.}
+
+In the \window{Enter Password} window, enter your password and click
+\button{OK}. If you wish for \application{Evolution} to remember this password
+and not ask you in the future, you can select the \checkbox{Remember this 
+password} option.
+
+\application{Evolution} will then show a \window{Send \& Receive Mail} window, showing the 
+progress of the operation such as how many messages are being retrieved.
+
+\subsubsection{Listing messages}
+
+The top right portion of the \application{Evolution} window is the message list. Here, you 
+can see email messages for your currently selected folder, or matching your 
+search terms.
+%not including this as showing e-mails causes a privacy issue, also adding a real e-mail increase chances of spam etc showing in this window. luke jennings ubuntujenkins
+%\screenshotTODO{Small view of the message list, showing column headers and 
+%a few email messages}
+
+By default, the message list shows six columns of information for each message.
+The first column is a read/unread indicator. If a message has been read, the 
+column shows an icon of an open envelope. If a message has not been read,
+the icon will show a closed envelope.
+
+The second column is an attachment indicator. If a message contains an attached
+file, \application{Evolution} will show an icon of a paperclip in this column. Otherwise, 
+the column will be blank.
+
+The third column is an importance indicator. If someone sends you a message
+marked with high importance, \application{Evolution} will show an exclamation mark in this
+column. Otherwise, this column will be blank.
+
+The fourth column contains the sender of the message. Both the name and email, 
+or just the email address, may be displayed in this column. 
+
+The fifth column contains the subject of the email message. 
+
+Finally, the sixth column is the date that the email was sent.
+
+When you click on a message, its contents will be displayed in the preview
+pane below the message list. Once you select a message by clicking it, you
+can click on the \button{Reply} button in the toolbar to begin composing a reply
+message to be sent to the sender, or click on the \button{Reply to All} button 
+to  begin composing a reply message to be sent to the sender and other 
+recipients of your selected message.
+
+You can also click on the \button{Trash} button in the toolbar to put 
+the message in the Trash folder, or on the \button{Junk} button to move the 
+message into the Junk folder. Note that \application{Evolution}, or your mail server, may
+automatically classify some mail as Junk.
+
+In addition to the buttons on the toolbar, you can right-click on a message
+in the list. \application{Evolution} will open a menu with actions that you can perform
+for the message. 
+
+Sometimes, you may wish to take an action on multiple email messages (for 
+example, delete multiple messages, or forward them to a new recipient).
+To do this in \application{Evolution}, press-and-hold the \keystroke{Ctrl} key while
+clicking on multiple messages\dash the messages you click on will be selected. 
+You can also click on one message to select it, then press-and-hold the 
+\keystroke{Shift} key and click on another message in the list. All messages
+in the list between the original selection and the one you just clicked on will
+be selected. Once you have multiple messages selected, right-click on one of 
+them to perform your desired action.
+
+Directly above the message list are the \dropdown{Show} drop-down list, and the 
+search options. You can use the \dropdown{Show} drop-down list to filter your 
+view to show only unread messages, or only messages with attachments, etc.
+
+The search options will be covered in a later section.
+
+\subsubsection{Previewing messages}
+
+When you select an email message, its contents will be shown in the preview
+pane below the message list. 
+
+The top of the preview pane will show the message header, which contains the
+sender, recipients, and subject of the message, as well as the date the 
+message was sent. Below the header, \application{Evolution} shows the contents of the message
+itself.
+
+\marginnote{Note that loading images may provide a way for the sender to track your receipt of the message. We do not recommend loading images in messages that you suspect are Junk.}
+If a message was sent with \acronym{HTML} formatting, some of the images may not be 
+displayed when a message is previewed. To display the missing images,
+open the \menu{View} menu from the menubar, then \menu{Load Images}, or 
+press \keystroke{Ctrl+I}. If your Internet connection is active, the missing
+images should then load.
+
+\subsubsection{Opening messages}
+
+At times, you may want to display multiple messages at the same time. To 
+do so, you can open each message in a separate window instead of just viewing
+it in the preview pane.
+
+To open a message in its own window, double click a message in the message
+list. The message should then open in a separate window. You can go back to 
+the message list and open another message, if needed.
+
+In the open message window, you can use the options in the menubar or on the
+toolbar to reply to the message, categorize it, delete it, as well as perform
+other message actions.
+
+\subsubsection{Finding messages}
+
+%discuss both the search, as well as search folders
+
+There are three ways to search for messages in \application{Evolution}: you can use the
+search option at the top of the message list, use the Advanced Search function,
+or create a search folder.
+
+To use message list search, enter the text you want to find in the 
+\textfield{Search} field at the top right of the message list, and press 
+\keystroke{Enter}. The list of messages will change to show only those messages containing the text you entered. 
+
+To the right of the search field you should be able to see a drop-down list 
+of options such as ``Current Folder,'' ``Current Account,'' and 
+``All Accounts.'' By default, \application{Evolution} will use the ``Current Folder'' option
+and will only show you results within the folder you've got selected in the
+folder list on your left. If you choose the ``Current Account'' option, 
+\application{Evolution} will search for messages in all folders within the current email
+account \dash such as all the folders ``On This Computer'' or in your \acronym{IMAP}
+folders, depending on your email setup. If you have multiple email accounts
+added to \application{Evolution}, choosing the ``All Accounts'' option lets you search for 
+messages in all of your accounts.
+
+If no messages match the text you've entered, you can edit the text and
+try searching again. To return to the folder display, open the \menu{Search}
+menu from the menubar and then choose \menu{Clear}, or instead erase all the
+text you've entered in the \textfield{Search} field and press \keystroke{Enter}.
+
+In some cases, you may want to search for messages using multiple criteria.
+For example, you may want to find a message from a particular user with some
+specific words in the subject of the message. In \application{Evolution}, you can perform
+this search using the Advanced Search function.
+
+%\screenshotTODO{The Advanced Search window}
+
+\screenshot{03-advanced-search.png}{ss:advanced-search}{To use more search terms you can use the advanced search window.}
+
+To use Advanced Search, choose \menu{Search \then Advanced Search}. \application{Evolution}
+should open the \window{Advanced Search} window. In the middle section of
+the window, specify your search criteria. For our example, to find messages
+from myfriend@example.com that contained ``boat'' in the subject, you would
+enter \userinput{myfriend@example.com} in the text field to the right of 
+the drop-down list with ``Sender'' selected, and would enter \userinput{boat}
+in the text field to the right of the drop-down list with ``Subject'' selected.
+Then, click on \button{Remove} to the right of all lines that are unused, and
+click \button{OK} to perform the search. The message list should then only 
+display messages that match your advanced search criteria. 
+
+When specifying the criteria for advanced search, you can click on the 
+\button{Add Condition} button to add additional lines. You can also change the
+selection in the drop-down list at the beginning of each line to specify 
+a different field to be checked, or change the drop-down with ``contains''
+selected by default in order to have a different type of a match. Please
+refer to the \application{Evolution} help documents for more information.
+
+In some cases, you may want to perform the same search request on a 
+regular basis. For example, you may want to always be able to see all messages
+from myfriend@example.com regardless of which folder you've used to store the
+message. To help with this type of a search, \application{Evolution} allows you to create
+Search Folders.
+
+To create a search folder, choose \menu{Search \then Create Search Folder From
+Search} from the menubar. Give the folder a name by entering it in the
+\textfield{Rule name} field at the top. Then, specify search criteria in the 
+same way as in Advanced Search. Below the criteria, pick which folders should be
+searched by this search folder \dash for example, you can choose ``All local
+and active remote folders'' to search in all of your account's folders. When
+you are finished, click \button{OK}.
+
+The new search folder should now be added to the list of search folders towards
+the bottom of the message list. If you click on the search folder to select it,
+you should be able to see a list of messages that match your search criteria.
+
+\subsubsection{Subscribing to IMAP folders}
+
+If you use \acronym{IMAP} to retrieve your email, you should see a set of folders in the
+folder list on the left side of the window that is titled with the name of
+your \acronym{IMAP} account. Folders like Inbox, Drafts, Junk and others should be
+displayed in the folder list.
+
+If you have other folders in your \acronym{IMAP} account, you will need to subscribe
+to them. If you subscribe to a folder, \application{Evolution} will download messages
+for that folder whenever you check your email.
+
+To subscribe to a folder select \menu{Folder \then Subscriptions} from the
+menubar. \application{Evolution} should open the \window{Folder Subscriptions} window.
+From the \dropdown{Server} drop-down list choose your account name. \application{Evolution}
+should then show a list of folders in the list below.
+
+%todo: inbox etc are shown as not subscribed -- really? but I still receive
+%email in my inbox, what gives?
+
+Choose the folders you would like to subscribe to by selecting the check box
+to the left of the folder name. When you are finished, click \button{Close}. 
+The folders will be updated the next time you check your email.
+
+\subsection{Composing and replying to messages}
+
+In addition to reading email, you will likely want to reply to the email
+you read, or compose new messages.
+
+\subsubsection{Composing new messages}
+
+To compose a new message, click on the \button{New} button on the toolbar.
+\application{Evolution} should open a \window{Compose message} window.
+
+In the \textfield{To:} field, enter the email address of the destination \dash
+the contact to whom you are sending this email. If there is more than one
+contact to whom you are writing, separate multiple recipients with commas.
+
+If a contact that you are addressing is in your address book, you can address
+them by name. Start typing the name of the contact; \application{Evolution} will display 
+the list of matching contacts below your text. Once you see the contact 
+you intend to address, click on their email address or use the 
+\keystroke{down arrow} key and then \keystroke{Enter} to select the address.
+
+If you would like to carbon-copy some contacts, enter their email addresses in 
+the \textfield{Cc:} field in the same manner as the To: recipients. Contacts
+on the To: and Cc: lines will receive the email, and will see the rest of the
+contacts to whom an email was sent.
+
+%FUTURE: marginnote about email privacy?
+
+If you would like to send an email to some contacts without disclosing to whom
+your email was sent, you can send a blind carbon-copy, or \textfield{Bcc}. To 
+enable Bcc, select \menu{View \then Bcc Field} from the menubar. A 
+\textfield{Bcc:} field should appear below the \textfield{Cc:} field. Any 
+contacts entered in the \textfield{Bcc:} field will receive the message, but none of the recipients will see the names or emails of contacts on the \textfield{Bcc:} line. 
+
+Instead of typing the email addresses, or names, of the contacts you are 
+addressing in the message, you can also select the contacts from your address
+book. To do so, click on the \button{To:}, \button{Cc:} or \button{Bcc:} buttons
+to the left of the text fields. \application{Evolution} should open the
+\window{Select Contacts from Address Book} window. Use the list on the left
+side of the window to select your contact, or type a few letters from your 
+contact's first or last name in the \textfield{Search} field to filter the 
+list to only show matching contacts.
+
+Once you identify the contact you would like to address, click on their name in
+the list. Then, click on the \button{Add} button to the left of either the 
+\textfield{To:}, \textfield{Cc:}, or \textfield{Bcc:} fields located on the right of the screen. Your selected contact will be added to that list. If you've added the contact in error, click their name in the list on the right, and click on the 
+\button{Remove} button. When you are finished picking contacts, click 
+\button{Close} to return to the composing screen.
+
+Enter a subject for your email. Messages should have a subject to help the
+recipient to identify the email while glancing at their message list;
+if you do not include a subject, \application{Evolution} will warn you about this.
+
+Enter the contents of your message in the big text field below the subject.
+There is no practical limit on the amount of text you can include in your
+message.
+
+By default, new messages will be sent in ``Plain Text'' mode. This means
+that no formatting or graphics will be shown to the recipient, but the message
+is least likely to be rejected or displayed illegibly to the recipients.
+If you know that your recipient uses a contemporary computer and a modern
+email program, you can send them messages that include formatting. To switch
+to this mode, click the drop-down list button on the left side directly above 
+the text field for the message contents. Change the selection from 
+``Plain Text'' to ``\acronym{HTML}'' to enable advanced formatting. When using \acronym{HTML} mode,
+a new toolbar should appear right under the mode selection that will allow you
+to perform advanced font styling and message formatting.
+
+When you have finished composing your email, click on the \button{Send} button 
+on the window's toolbar. Your message will be placed in the Outbox, and will 
+be sent when you next check your email.
+
+\subsubsection{Attaching files}
+
+At times, you may want to send files to your contacts. To send files, you 
+will need to attach them to your email message.
+
+To attach a file to an email you are composing, click on the \button{Add
+Attachment} button at the bottom right of the email message window. \application{Evolution} 
+should show the \window{Add attachment} window.
+
+Select the file you would like to include in your message and click on the
+\button{Attach} button. \application{Evolution} will return you to the email message
+window, and your selected file should be listed in a section below the 
+\button{Add Attachment} button.
+
+\subsubsection{Replying to messages}
+
+In addition to composing new messages, you may want to reply to messages that
+you receive.
+
+There are three types of email replies:
+
+\begin{itemize}
+  \item \textbf{Reply} (or ``Reply to Sender'') \dash sends your reply only to 
+the sender of the message to which you are replying.
+  \item \textbf{Reply to All} \dash sends your reply to the sender of the 
+message, as well as anyone else on the To or Cc lines.
+  \item \textbf{Forward} \dash allows you to send the message, with any 
+additional comments you may add, to some other contacts.
+\end{itemize}
+
+To use any of these methods, click on the message to which you want to reply
+and then click the \button{Reply}, \button{Reply to All}, or \button{Forward}
+button on the toolbar. 
+
+\application{Evolution} should open the reply window. This window should look much like 
+the window for composing new messages, but the To, Cc, Subject, and main 
+message content fields should be filled in from the message to which you 
+are replying. Each line in the message should be prefixed with a ``>'' 
+character.
+
+Edit the To, Cc, Bcc, Subject or main body as you see fit. When your reply 
+is finished, click on the \button{Send} button on the toolbar. Your message 
+will be placed in the Outbox, and will be sent when you next check your email.
+
+\subsubsection{Using signatures}
+
+In order to give your messages a footer, \application{Evolution} allows you to use a
+``signature.'' Signatures in email are a bit of standard text that is 
+added to the bottom of any new messages or replies.
+
+When composing of replying to a message, click on the \dropdown{Signature}
+drop-down list below the toolbar just above the \textfield{To:} field. 
+This list should contain any signatures that you have created, as well as an
+``Autogenerated'' signature. If you select \menu{Autogenerated}, \application{Evolution}
+will add two dashes, and then your name and email address to the bottom of
+the email message.
+
+You can also specify some custom signatures. To create a signature, open
+the \window{Evolution Preferences} window by selecting \menu{Edit \then
+Preferences} from the menubar. On the left side of the \application{Evolution} Preferences
+window, select \menu{Composer Preferences} and then select the 
+\menu{Signatures} tab. 
+
+Click on the \button{Add} to add a new signature. \application{Evolution}
+should then open the \window{Edit Signature} window. Give your signature a
+name, and enter the contents of your signature in the big text field below. 
+\marginnote{Note that the two dashes are added automatically by Ubuntu, so
+there is no need to include them in your custom signature.} When finished,
+click on the \button{Save} button on the toolbar (the button's icon looks like
+a floppy disk). Your new signature's name should appear in the list in
+preferences. Close the preferences window.
+
+Your signature should now show up in the drop-down list in the compose/reply 
+window.
+

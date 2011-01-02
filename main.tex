@@ -1,0 +1,64 @@
+\providecommand{\polang}{en}% TRANSLATORS: do not translate this
+\providecommand{\printscreen}{screen}% TRANSLATORS: do not translate this
+\documentclass[lang=\polang,\printscreen]{ubuntu-manual}
+
+% Resize the screenshots using the same scale.  To calculate the scale value, we feed in the widest screenshot.
+\setmaxscreenshot{screenshots/\polang/02-blank-desktop.png}% TRANSLATORS: Do not translate this line!
+
+%\setlength\overfullrule{5pt}% for spotting overful lines
+
+\hyphenation{U-bun-tu}
+
+\input{frontmatter/glossary-entries}% Must be loaded before any glossary commands are used
+
+\begin{document}
+
+\title{Getting Started with Ubuntu 10.04}
+\author{The Ubuntu Manual Team}
+
+% Half-title page
+\makeatletter
+\ifthenelse{\boolean{@ubuntu@print}}{
+  \AddToShipoutPicture*{\put(0,0){\includegraphics[width=\paperwidth,height=\paperheight]{titlepage/halftitlepage-\polang.pdf}}}%
+  \null\thispagestyle{empty}%
+  \cleardoublepage%
+}{}%
+\makeatother
+
+% Title page
+\pdfbookmark[0]{\titlepagecaption}{pdfbookmark:title-page}
+\frontcover% TRANSLATORS: do not translate this
+
+\frontmatter% TRANSLATORS: do not translate this
+
+\include{frontmatter/copyright}
+\tableofcontents
+\listoftodos
+\include{prologue/prologue}
+
+\mainmatter
+
+%\part{Getting Started}
+\include{installation/installation}
+\include{around-desktop/around-desktop}
+\include{default-apps/default-apps}
+\include{prefs-hardware/prefs-hardware}
+\include{software-packaging/software-packaging}
+
+%\part{Advanced topics}
+\include{command-line/command-line}
+\include{security/security}
+\include{troubleshooting/troubleshooting}
+\include{learning-more/learning-more}
+
+\appendix
+\include{backmatter/license}
+
+\backmatter
+
+\include{backmatter/glossary}% Just prints the glossary entries -- add entries in frontmatter/glossary-entries.tex
+\include{credits/credits}
+\include{backmatter/index}
+\include{backmatter/colophon}
+
+\end{document}

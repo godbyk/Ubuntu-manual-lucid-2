@@ -1,0 +1,15 @@
+make_translation:
+  name: Make Translated PDF
+  command: make show-mylang
+  show-in: any
+  offline: True
+make_release:
+  name: Make PDF
+  command: make show
+  show-in: any
+  offline: True
+make_clean:
+  name: Make Clean
+  command: make clean
+  show-in: any
+  offline: True

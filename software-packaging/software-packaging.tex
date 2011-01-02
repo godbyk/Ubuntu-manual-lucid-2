@@ -1,0 +1,259 @@
+% Chapter 5 - Software and Packaging
+
+% Author: Wolter Hellmund
+% Editor: Benjamin Humphrey
+% Editor: Kevin Godby
+% Editor: Jason Cook
+
+\chapter{Software Management}
+\label{ch:software-management}
+
+\section{Software management in Ubuntu}
+
+As discussed in \chaplink{ch:default-applications}, a range of default applications are available in Ubuntu that are suitable for many everyday tasks. At some point you may decide to test out an alternative web browser, set up a different email client, edit an audio file, or try some new games (for example), and to do any of these you will need to install new software. Ubuntu keeps track of many different software \glspl{package}, and finding and installing what you are after is designed to be as quick and easy as possible. Alternatively, you may prefer to browse through the extensive library of available applications, and try any that catch your interest.
+
+\subsection{Differences from other operating systems}
+
+Most other operating systems generally require a user to purchase commercial software (online or through a physical store), or otherwise search the Internet for a free alternative (if one is available). The correct installation file must then be downloaded and located on the computer, followed by the user proceeding through a number of installation prompts and options.
+
+While at times a similar process may be used for installing software in Ubuntu, the quickest and easiest way to find and install new applications is through the \application{Ubuntu Software Center}. This is a central location for accessing new software, and is based on the concept of \emph{repositories}. A repository can be thought of as a catalog of packages that are available for downloading from a single location. You automatically have access to the official Ubuntu repositories when the operating system is installed; however, additional repositories can be added later in order to access more software.
+
+%Software in Ubuntu is delivered in \emph{\glspl{package}}. A package is a collection
+%of code that runs the application. In Ubuntu, applications can share packages
+%to minimize hard drive usage and improve efficiency. These shared packages
+%are called \emph{dependencies} or \emph{libraries}.
+
+\section{Using the Ubuntu Software Center}
+\label{sec:software-center}
+
+\marginnote{Some software packages have more advanced purposes, such as programming or running a \gls{server}, and cannot be installed using the \application{Software Center}. You will need 
+to use the \application{Synaptic Package Manager} (discussed towards the end of this chapter) to install these packages.}
+The \application{Software Center} can be used to install most applications that are available in the official Ubuntu repositories.
+
+To start the \application{Software Center}, open the \menu{Applications} menu and choose
+\menu{Ubuntu Software Center}.
+
+\screenshot{05-software-center.png}{ss:software-center}{You can install and remove applications from your computer using the Software Center.}
+
+The \application{Software Center} window has two parts\dash a list of sections on the left,
+and a set of icons on the right. Each icon represents a \emph{department},
+which is a category of software.  For example, the ``Games'' department
+contains ``Sudoku.''
+
+The sections on the left side of the window represent your current view
+of the \application{Software Center}'s catalog. Click the \button{Get Software} button on the left to see software that is available to install, and \button{Installed Software} to
+see a list of software that is already installed on your computer.
+
+\subsection{Finding software}
+
+If you are looking for an application, you may already know a specific name (for example, ``Thunderbird'' is a popular email client), or otherwise you may just have a general category in mind (for example, the ``sound and video'' category includes a number of different software applications such as video converters, audio editors, and music players).
+
+To help you find the right application, you can browse the \application{Software Center} catalog by clicking on the department that reflects the category of software you are after, or alternatively use the built-in search at the top-right of the window to look for specific names or keywords.
+
+\marginnote{Check out the \emph{Featured Applications} department to see a list of highly recommended applications.}
+When you select a department, you will be shown a list of applications that fit within that category. Some departments have sub-categories\dash for example, the ``Games''
+department has subcategories for ``Simulation'' and ``Card Games.''
+
+To move through categories you can use the back and forward buttons at the top of the window, as well as the navigational buttons (often referred to as ``breadcrumbs'') next to these.
+
+\subsection{Installing software}
+
+\marginnote{Note that you will need to be connected to the Internet for the
+Software Center to work. To learn how to set up your connection, see
+\chaplink{ch:default-applications}.}
+Installing applications is practically only one click away. Once you have found an application that you would like to try:
+
+\begin{enumerate}
+	\item \emph{Click the \button{Install} button to the right of the selected package.} If you would like to read more about the software package before installing it, first click on \button{More Info}. This will take you to a short description of the application, as well as a screenshot and a web link when available. If you wish to proceed, you can also click \button{Install} from this page.
+   \item \emph{Type your password into the authentication window that appears.} This is the same password you use to log in to your account. You are required to enter it whenever installing new software, in order to prevent someone without administrator access from making unauthorized changes to your computer.
+    \marginnote[-4\baselineskip]{If you receive an ``Authentication Failure'' message after typing in your password, check that you typed it correctly by trying again. If the error continues, this may mean that your account is not authorized to install software on the computer.}
+  \item \emph{Wait until the package is finished installing}. During the installation (or removal) of software packages, you will see an animated icon of rotating arrows to the left of the \button{In Progress} button in the sidebar. If you like, you can now go back to the main browsing window and queue additional software packages to be installed by following the steps above. At any time, clicking the \button{In Progress} button on the left will take you to a summary of all operations that are currently processing. Here you can also click the \textsf{X} icon to cancel any operation. 
+    % FIXME insert the stock cancel icon in place of the \textsf{X} above
+\end{enumerate}
+
+%Now you can run your application. Depending on what the program does, it will
+%appear on the \menu{Applications} menu, \menu{System \then Administration} or
+%\menu{System \then Preferences}.
+% I commented this and came up with a--according to my opinion--better and more elaborate version of the text. Read it below. -Wolter
+
+Once the \application{Software Center} has finished installing an application, it is now ready to be used. Ubuntu will usually place an entry in your \menu{Applications} menu under the relevant sub-menu\dash its exact location will depend on the purpose of the application. In some cases an application will appear in one of the \menu{System\then Preferences} or \menu{System\then Administration} menus instead.
+
+\subsection{Removing software}
+
+Removing applications is very similar to installing them. First, click on the \button{Installed Software} button in the \application{Software Center}'s sidebar. Scroll down to the application you wish to remove (or use the search field to quickly find it), and then:
+\begin{enumerate}
+  \item \emph{Click the \button{Remove} button} to the right of the selected application.
+    \marginnote{To completely remove a package and all its configuration, you will need to \emph{purge} it. You can do this with the more advanced \application{Synaptic Package Manager}, which is discussed further in the \seclink{sec:synaptic} section below.}
+  \item \emph{Type your password into the authentication window that appears.} Removing software also requires that you enter your password to help protect your computer against unauthorized changes. The package will then be queued for removal, and will appear under the \button{In Progress} section in the sidebar.
+\end{enumerate}
+
+Removing a package will also update your menus accordingly.
+
+\section{Managing additional software}
+
+Although the \application{Software Center} provides a large library of applications to choose from, initially only those packages available within the official Ubuntu repositories are listed. At times, a particular application you are after may not be available in these repositories. If this happens, it is important to understand some alternative methods for accessing and installing software in Ubuntu, such as downloading an installation file manually from the Internet, or adding extra repositories. First, we will look at how to manage your repositories through \application{Software Sources}.
+
+\subsection{Software Sources}
+\label{sec:software-sources}
+
+The \application{Software Center} lists only those applications that are available in your enabled repositories. Repositories can be added or removed through the \application{Software Sources} application. 
+\marginnote{You can also open \application{Software Sources} from the
+\application{Software Center}. Simply go to \menu{Edit \then Software
+Sources}.}
+To open this, click \menu{System \then Administration \then Software Sources} in the top panel. You will be asked to enter your password, then the \window{Software Sources} window will open. There are five tabs at the top of this window: \tab{Ubuntu Software}, \tab{Other Software}, \tab{Updates}, \tab{Authentication}, and \tab{Statistics}.
+
+\subsubsection{Managing the official repositories}
+
+The \tab{Ubuntu Software} tab lists the five official Ubuntu repositories, each containing different types of packages. When Ubuntu is first installed, four of these are enabled\dash \emph{main}, \emph{universe}, \emph{restricted}, and \emph{multiverse}. 
+
+\begin{itemize}
+	\item \textbf{Canonical-supported open source software (main)}: This repository contains all the open-source packages that are maintained by \gls{Canonical}.
+	\item \textbf{Community-maintained open source software (universe)}: This repository contains all the open-source packages that are developed and maintained by the Ubuntu community.
+	\item \textbf{Proprietary drivers for devices (restricted)}: \marginnote{Closed-source packages are sometimes referred to as \emph{non-free}. This is a reference to freedom of speech, rather than monetary cost. Payment is not required to use these packages.} This repository contains \gls{proprietary} drivers, which may be required to utilize the full capabilities of some of your devices or hardware. 
+	\item \textbf{Software restricted by copyright or legal issues (multiverse)}: This repository contains software that may be protected from use in some states or countries by copyright or licensing laws. By using this repository you assume responsibility for the usage of any packages that you install.
+	\item \textbf{Source code}: This repository contains the source code that is used to build the software packages from some of the other repositories.
+
+\marginnote{\textbf{Building applications from source} is an advanced process for creating packages, and usually only concerns developers. You may also require source files when using a custom \gls{kernel}, or if trying to use the latest version of an application before it is released for Ubuntu. As this is a more advanced area, it will not be covered in this manual.}
+The \checkbox{Source code} option should not be selected unless you have experience with building applications from source.
+\end{itemize}
+
+\subsubsection{Selecting the best software server}
+
+Ubuntu grants permission to many servers all across the world to act as \emph{mirrors}. That is, they host an exact copy of all the files contained in the official Ubuntu repositories. In the \tab{Ubuntu Software} tab, you can select the server that will give you the best possible download speeds. 
+
+When selecting a server, you may want to consider the following:
+
+\begin{itemize}
+	\item \textbf{Connection speed}. Depending on the physical distance between you and a server, the connection speed may vary. Ubuntu provides a tool for selecting the server that provides the fastest connection with your computer. 
+		\subitem First, click the dropdown box next to ``Download from:'' in the \window{Software Sources} window, and select \button{Other} from the menu. In the \window{Server Selection} window that appears, click the \button{Select Best Server} button in the upper right. Your computer will now attempt a connection with all the available servers, then select the one with the fastest speed. If you are happy with the automatic selection, click \button{Choose Server} to return to the \window{Software Sources} window.
+	\item \textbf{Location}. Choosing a server that is close to your location will often provide the best connection speed.
+		\subitem To select a server by country, choose your location in the \window{Server Selection} window. If there are multiple servers available in your location, select one then click \button{Choose Server} when you are finished.
+	\end{itemize}
+\begin{comment}
+This needs to be reworded - dropping for now. --jaminday
+	\item \textbf{Security}. This should not concern you at all, as Canonical ensures the third party servers are trustworthy. However, if you still think you might be at risk with just any server, you could select one of the Ubuntu secure servers, such as the \textbf{Main server} or the \textbf{http://ubuntu.securedservers.com} server.
+
+JasonCook599 - How is this:
+This should not concern you much. Canonical ensures that the third party servers are trustworthy. All of the third party servers listed can be used, but if you don't trust a server you can use the default server.
+
+\end{comment}
+
+Finally, if you do not have a working Internet connection, Ubuntu can install
+some software packages straight from your installation \acronym{CD}. To do this,
+insert the disc into your computer's \acronym{CD} drive, then select the
+check box next to \button{Installable from the \acronym{CD-ROM}/\acronym{DVD}}.
+Once this check box is ticked, the disc will be treated just like an online
+repository, and applications will be installable straight from the \acronym{CD}
+through the \application{Software Center}.
+
+%\marginnote{To see more information about Security in Ubuntu, visit \chaplink{ch:security}.}
+
+\begin{comment}
+Not sure about this bit - probably needs to be fleshed out some more for next release --jaminday
+\begin{enumerate}
+  \item \textbf{Official repositories}, the standard method of downloading
+    software. By getting software through the official repositories you ensure
+    that your software is free of viruses or any other malware, that it is
+    stable, and that it works with Ubuntu.
+  \item \textbf{Third-party repositories} that you can add to expand your
+    software sources. These repositories are not as reliable as the official
+    ones: the repository maintainer can put whatever they want into them. There
+    is no solid guarantee that the software inside them is secure, stable, or
+    that it works with your system. 
+    % However, it is very rare to find a malicious third-party repository.
+    Read more instructions on this matter at \seclink{sec:software-sources}.
+    % Wolter: Does this make PPAs look bad? The embedded comment makes it look to long, but I could uncomment it, if necessary.
+  \item \textbf{Installers / deb packages} that you can download from software
+    websites, \acronym{CD}s, \acronym{USB} drives, etc. This method is the most insecure of all.
+    You should only obtain software this way when you trust the source. If you
+    are new to Ubuntu, then you are probably accustomed to obtain software this
+    way as it's similar to .exe files in Windows.
+%  \item \textbf{Building from source}, which consists in downloading
+%    applications' source code files and building them yourself in your computer.
+%    This task is considered rather advanced, hence not explained.
+\end{enumerate}
+\end{comment}
+
+\subsection{Adding more software repositories}
+
+\marginnote{A \acronym{PPA} is a \emph{Personal Package Archive}. These are online repositories used to host the latest versions of software packages, digital projects, and other applications.}
+Ubuntu makes it easy to add additional, third-party repositories to your list of software sources. The most common repositories added to Ubuntu are called \acronym{PPA}s. These allow you to install software packages that are not available in the official repositories, and automatically be notified whenever updates for these packages are available.
+
+Providing you know the web address of a \acronym{PPA}'s Launchpad site, adding it to your list of software sources is relatively simple. To do so, you will need to use the \tab{Other Software} tab in the \window{Software Sources} window. 
+
+On the Launchpad site for a \acronym{PPA}, you will see a heading to the left called ``Adding this PPA to your system.'' Underneath will be a short paragraph containing a unique \acronym{URL} in the form of \textbf{ppa:test-ppa/example}. Highlight this \acronym{URL} by selecting it with your mouse, then right-click and choose \menu{copy}.
+
+%\screenshotTODO{Screenshot of PPA page on Launchpad.}
+
+\screenshot{05-firefox-ppa.png}{ss:firefox-ppa}{This is an example of the Launchpad page for the \application{Lifesaver} PPA. \application{Lifesaver} is an application that is not available in the official Ubuntu repositories. However, by adding this PPA to your list of software sources, it would then be easy to install and update this application through the \application{Software Center}.}
+
+Return to the \window{Software Sources} window, and in the \tab{Other Software} tab click \button{Add\ldots} at the bottom. A new window will appear, and you will see the words ``Apt line:'' followed by a text field. Right-click on the empty space in this text field and select \menu{Paste}, and you should see the \acronym{URL} appear that you copied from the \acronym{PPA}s Launchpad site earlier. Click \button{Add Source} to return to the \window{Software Sources} window. You will see a new entry has been added to the list of sources in this window, with a ticked check box in front meaning it is enabled. 
+
+If you click \button{Close} in the bottom right corner of this window, a message will appear informing you that ``The information about available software is out-of-date.'' This is because you have just added a new repository to Ubuntu, and it now needs to connect to that repository and download a list of the packages that it provides. Click \button{Reload}, and wait while Ubuntu refreshes all of your enabled repositories (including this new one you just added). When it has finished, the window will close automatically.
+
+Congratulations, you have just added a \acronym{PPA} to your list of software sources. You can now open the \application{Software Center} and install applications from this \acronym{PPA}, in the same way you previously installed programs from the default Ubuntu repositories. 
+
+\section{Synaptic Package Manager}
+\label{sec:synaptic}
+
+The \application{Synaptic Package Manager} is a more advanced tool for managing software in Ubuntu. It can be used to perform the same tasks as the \application{Ubuntu Software Center}, such as installing and removing applications, but also allows for more control over your packages. For example, it provides the following options:
+
+\begin{itemize}
+	\item \textbf{Install} any package in your repositories. In many cases you can even select which version of a package to install, although this option is only available if there are multiple versions in the repository.
+	\item \textbf{Reinstall} a package. This may be useful if you wish to revert a package to its default state, or repair any conflicts or damaged files.
+	\item \textbf{Update} a package when a newer version is released.
+	\item \textbf{Remove} any package you no longer need.
+	\item \textbf{Purge} a package to completely remove it, including any stored preferences or configuration files (which are often left behind when a package is removed).
+	\item \textbf{Fix} broken packages.
+	\item \textbf{Check properties} of any package, such as the version number, contained files, package size, dependencies, and more.
+\end{itemize}
+
+To open the \application{Synaptic Package Manager}, navigate to \menu{System \then Administration \then Synaptic Package Manager}. As explained above, Synaptic is a more complex tool than the \application{Software Center}, and generally not essential for a new user just getting started with Ubuntu. If you want to read more information on how to use this program, or require more support managing the software on your system, head to \url{https://help.ubuntu.com/community/SynapticHowto}. 
+
+\begin{comment}
+Using this package manager is very simple once you understand the basics behind it. Ideally, you will mark different actions to perform on different packages first, and then apply your changes. When you click the \button{Apply} button, the \application{Synaptic Package Manager} will do each of your marked actions, one by one. Then you will be free to close the program, or wait until the process is complete to make more changes.
+
+\marginnote{If you are not very familiar with advanced computing in Ubuntu you may wish to stick with the \application{Software Center}.}
+
+\subsubsection{Finding what you want}
+
+If you are having difficulties finding the package you are looking for, you may try the \textbf{Quick search} box, the \button{Search} button (which opens a search dialog) or sort by the categories in the left side pane.
+
+You can use the \button{Reload} button when you have made changes to your software sources, such as adding or removing repositories, so that the package manager can notice the changes and act accordingly.
+
+\subsubsection{Applying your changes}
+
+Once you find the package you are looking for, you can just open its right-click menu and there you will see listed all the actions you can perform on it. You can alternatively access these options through the \menu{Package} menu.
+
+When you are ready marking actions, click the \button{Apply} button and wait until the changes are made. Afterward, you can close the application or mark more changes.
+\end{comment}
+
+
+\section{Updates and Upgrades}
+
+Ubuntu also allows you to decide how to manage package updates through the \tab{Updates} tab in the \application{Software Sources} window.
+
+\subsection{Ubuntu updates}
+
+In this section, you are able to specify the kinds of updates you wish to install on your system, and usually depends on your preferences around stability, versus having access to the latest developments. 
+
+\begin{itemize}
+	\item \textbf{Important security updates}: These updates are highly recommended to ensure your system remains as secure as possible. These are enabled by default.
+	\item \textbf{Recommended updates}: These updates are not as important for keeping your system secure, but will mean your packages always have the most recent bug fixes or minor updates that have been tested and approved. This option is also enabled by default.
+	\item \textbf{Pre-released updates}: This option is for those who would rather remain up-to-date with the very latest releases of applications, at the risk of installing an update that has unresolved bugs or conflicts. Note that it is possible that you will encounter problems with these updated applications, therefore this option is not enabled by default. However, if this happens it is possible to ``roll-back'' to a previous version of a package through \application{Synaptic Package Manager}.
+	\item \textbf{Unsupported updates}: These are updates that have not yet been fully tested and reviewed by Canonical. Some bugs may occur when using these updates, and so this option is also not enabled by default.
+\end{itemize}
+
+\subsection{Automatic updates}
+The middle section of this window allows you to customize how your system manages updates, such as the frequency with which it checks for new packages, as well as whether it should install important updates right away (without asking for your permission), download them only, or just notify you about them.
+
+\subsection{Release upgrade}
+
+\marginnote{Every 6 months, Canonical will release a new version of the Ubuntu operating system. These are called \textit{normal releases}. Every four normal releases\dash or 24 months\dash Canonical releases a \textit{Long Term Support (LTS)} release. Long Term Support releases are intended to be the most stable releases available, and are supported for a longer period of time.}
+Here you can decide which system upgrades you would like to be notified about.
+
+\begin{itemize}
+	\item \textbf{Never}: Choose this if you would rather not be notified about any new Ubuntu releases.
+	\item \textbf{Normal releases}: Choose this if you always want to have the latest Ubuntu release, regardless of whether it is a Long Term Support release or not. This option is recommended for normal home users.
+	\item \textbf{Long Term Support releases only}: Choose this option if you need a release that will be more stable and have support for a longer time. If you use Ubuntu for business purposes, you may want to consider selecting this option.
+\end{itemize}

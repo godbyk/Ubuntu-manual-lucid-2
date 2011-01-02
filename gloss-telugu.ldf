@@ -1,0 +1,85 @@
+% Translations provided by Anmol Sharma <unmole.in@gmail.com>
+
+\ProvidesFile{gloss-telugu.ldf}[polyglossia: module for telugu]
+\makeatletter
+
+\ifx\l@telugu\@undefined%
+   \xpg@nopatterns{telugu}%
+   \adddialect\l@telugu0%
+\fi
+
+\def\captionstelugu{%
+   \def\refname{\texttelugu{ఆధారాలు}}%
+   \def\abstractname{\texttelugu{సారాంశం}}%
+   \def\bibname{\texttelugu{గ్రంథాల  జాబితా}}%
+   \def\prefacename{\texttelugu{ముందుమాట}}%
+   \def\chaptername{\texttelugu{అధ్యాయము}}%
+   \def\appendixname{\texttelugu{అదనంగా}}%
+   \def\contentsname{\texttelugu{విషయాలు}}%
+   \def\listfigurename{\texttelugu{ఆకృతుల  జాబితా}}%
+   \def\listtablename{\texttelugu{పట్టికల    జాబితా}}%
+   \def\indexname{\texttelugu{విషయ సూచిక}}%
+   \def\figurename{\texttelugu{ఆకృతి}}%
+   \def\tablename{\texttelugu{పట్టిక}}%
+   %\def\thepart{\texttelugu{}}%
+   \def\partname{\texttelugu{భాగం}}%
+   \def\pagename{\texttelugu{పేజి}}%
+   \def\seename{\texttelugu{చూడండి}}%
+   \def\alsoname{\texttelugu{కూడా చూడండి}}%
+   \def\enclname{\texttelugu{ఎంక్లోజర్*}}%
+   \def\ccname{\texttelugu{సిసి}}%
+   \def\headtoname{\texttelugu{కి}}%
+   \def\proofname{\texttelugu{రుజువు}}%
+   \def\glossaryname{\texttelugu{నిఘంటువు}}%
+   }
+
+\def\datetelugu{%
+   \def\telugu@month{%
+      \ifcase\month\or%
+         జనవరి\or% jan
+         ఫిబ్రవరి\or% feb
+         మార్చ్\or% mar
+         ఏప్రిల్\or% apr
+         మే\or% may
+         జూన్\or% jun
+         జూలై\or% jul
+         ఆగస్ట్\or% aug
+         సెప్టెంబర్\or% sep
+         అక్తోబెర్\or% oct
+         నవంబర్\or% nov
+         డిసంబర్%dec
+      \fi}%
+   \def\today{\texttelugu{\telugu@month\space \number\day, \number\year}}%
+   }
+
+\def\telugu@font{%
+  \@ifundefined{telugufont}{%
+    \font\zf@basefont="\csname zf@family@fontdef\f@family\endcsname" at \f@size pt
+    \zf@check@ot@script{Telugu}%
+    \if@tempswa%
+      \addfontfeature{Script=Telugu}%
+    \else%
+      \PackageError{polyglossia}{The current font does not contain the Telugu script!^^J
+      Please define \string\telugufont\space with \string\newfontfamily}%
+    \fi%
+    \addfontfeature{Language=Telugu}% may not be necessary
+    }%
+  {\telugufont}}
+
+\def\selectnormalfonttelugu{%
+   \let\normalfont=\telugu@font%
+   \def\reset@font{\normalfont}}
+
+\def\telugu@language{\protect\language=\l@telugu}
+
+\setlocalhyphenmins{telugu}{2}{2}%
+
+\def\noextras@telugu{%
+   }
+
+\def\blockextras@telugu{%
+   }
+
+\def\inlineextras@telugu{%
+   }
+

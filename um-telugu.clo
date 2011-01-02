@@ -1,0 +1,27 @@
+%
+% Telugu-specific options for the Ubuntu Manual
+%
+
+\ProvidesFile{um-telugu.clo}[2010/02/16 v1.0.0 Telugu-specific options for the Ubuntu Manual]
+
+% Serif fonts
+%\newfontfamily\telugufont[Script=Telugu]{Pothana2000}% from ttf-telugu-fonts
+%\newfontfamily\telugufont[Script=Telugu]{Lohit Telugu}% from ttf-telugu-fonts
+%\newfontfamily\telugufont[Script=Telugu]{Vemana2000}% from http://www.kavya-nandanam.com/dload.htm
+%\newfontfamily\telugufont[Script=Telugu]{Akshar Unicode}% from http://www.kamban.com.au/
+\newfontfamily\telugufont[Script=Telugu,Language=Telugu]{Gautami}% from Microsoft Windows
+%\newfontfamily\telugufont[Script=Telugu]{APNEWS-Normal}% from http://www.andhraprabha.com/xfont/Fonthelp.htm % FAILS!
+
+% Sans serif fonts
+%\newfontfamily\telugufontsf[Script=Telugu]{Pothana2000}% from ttf-telugu-fonts
+%\newfontfamily\telugufontsf[Script=Telugu]{Lohit Telugu}% from ttf-telugu-fonts
+%\newfontfamily\telugufontsf[Script=Telugu]{Vemana2000}% from http://www.kavya-nandanam.com/dload.htm
+%\newfontfamily\telugufontsf[Script=Telugu]{Akshar Unicode}% from http://www.kamban.com.au/
+\newfontfamily\telugufontsf[Script=Telugu,Language=Telugu]{Gautami}% from Microsoft Windows
+%\newfontfamily\telugufontsf[Script=Telugu]{APNEWS-Normal}% from http://www.andhraprabha.com/xfont/Fonthelp.htm % FAILS!
+
+% Monospaced fonts
+% TODO define \telugufonttt
+
+\endinput
+

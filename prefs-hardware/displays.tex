@@ -1,0 +1,24 @@
+\section{Displays}
+% Written by Saad Bin Javed <sbjaved@gmail.com>, irc nick: koogee
+\subsection{Hardware drivers}
+
+A driver is some code packaged in a file, which tells your computer how to utilize a piece of hardware. Every component in a computer requires a driver to function, whether it's the printer, \acronym{DVD} player, hard disk, or graphics card. 
+
+\marginnote{Your graphics card is the component in your computer that powers your display. When you're watching videos on YouTube or \acronym{DVD}s or simply enjoying the smooth transition effects when you maximize/minimize your windows, your graphics device is doing the hard work behind the scenes.}
+A majority of graphics cards are manufactured by three well known companies: Intel, \acronym{AMD}/\acronym{ATI}, and \acronym{NVIDIA} Corp. You can find your card manufacturer by referring to your computer manual or looking for the specifications of your particular model on the Internet. The Ubuntu Software Center houses a number of programs that allow detailed system information to be obtained. \textbf{SysInfo} is one such program that you can use to find relevant information about your System devices. Ubuntu comes with support for graphics devices manufactured by the above companies, and many others, out of the box. That means that you don't have to find and install any drivers by yourself, Ubuntu takes care of it on its own.
+
+In keeping with Ubuntu's philosophy, the drivers that are used by default for powering graphics devices are open source. This means that the drivers can be modified by the Ubuntu developers and problems with them can be fixed. However, in some cases the proprietary driver (restricted driver) provided by the company may provide better performance or features that are not present in the open source driver written by the developer community. In other cases, your particular device may not be supported by the open source drivers yet. In those scenarios, you may want to install the restricted driver provided by the manufacturer.
+
+For both philosophical and practical reasons, Ubuntu does not install restricted drivers by default but allows the user to make an informed choice. Remember that restricted drivers, unlike the open source drivers for your device, are not maintained by Ubuntu. Problems caused by those drivers will be resolved only when the manufacturer wishes to address them. To see if restricted drivers are available for your system, click \textbf{System} in the top panel, go to \textbf{Administration} and find \textbf{Hardware Drivers}. If a driver is provided by the company for your particular device, it will be listed there. You can simply click \textbf{Activate} and use the driver if you want. This process will require an active Internet connection and will ask for your password.
+
+The Ubuntu developers prefer open source drivers because they allow the problem to be identified and fixed by anyone with knowledge in the community. Ubuntu development is extremely fast and it is likely that your device will be supported by open source drivers. You can use the Ubuntu Live \acronym{CD} to check for your device compatibility before installing Ubuntu or go online in the Ubuntu forums to ask about your particular device. 
+\marginnote[-3\baselineskip]{Another useful resource is the official online documentation (\url{http://help.ubuntu.com}), which contains detailed information about various graphics drivers and known problems.}
+
+\subsection{Setting up your screen resolution}
+
+One of the most common display related tasks is setting up your screen resolution. 
+
+\marginnote{Displays are made up of thousands of tiny pixels. Each pixel displays a different color, and when combined they all display the image that you see. The native screen resolution is a measure of the amount of actual pixels on your display.}
+Ubuntu correctly identifies your native screen resolution by itself and sets it for you. However, due to a huge variety of devices available, sometimes it can make a mistake and set up an undesirable resolution.
+
+To set up or just check your screen resolution, go to \menu{System \then Preferences \then Monitors}. The \emph{Monitors} application shows you your monitor name and size, the screen resolution and refresh rate. Clicking on the displayed resolution (\eg, ``1024$\times$768 (4$\mathrel{:}$3)'') would open a drop-down menu where you can select the resolution of your choice.

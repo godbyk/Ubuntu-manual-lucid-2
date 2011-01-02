@@ -1,0 +1,24 @@
+%
+% Czech-specific options for the Ubuntu Manual
+%
+
+\ProvidesFile{um-czech.clo}[2010/02/16 v1.0.0 Czech-specific options for the Ubuntu Manual]
+
+% Define quotation mark styles
+\DeclareQuoteStyle[quotes]{czech}
+  {\quotedblbase}% „ U+201E - left double outer
+  {\textquotedblleft}% “ U+201C - right double outer
+  [0.05em]
+  {\quotesinglbase}% ‚ U+201A - left single inner
+  {\textquoteleft}% ‘ U+2018 - right single inner
+\DeclareQuoteAlias[quotes]{czech}{czech}
+\DeclareQuoteOption{czech}
+\ExecuteOptions{czech}
+
+% Define translated macros
+%\renewcommand{\dash}{\unskip\,--\,\ignorespaces}
+%\renewcommand{\ie}{\textit{i.\hairsp{}e.}\xspace}
+%\renewcommand{\eg}{\textit{e.\hairsp{}g.}\xspace}
+
+\endinput
+

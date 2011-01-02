@@ -1,0 +1,132 @@
+% Section by Matt Griffin matt.griffin@canonical.com
+
+\begin{comment}
+
+OUTLINE
+
+[DONE] - Launch Rhythmbox (Ubuntu and UNE)
+[DONE] - Play music
+[DONE]   - Import and play audio files
+[DONE]   - Use the toolbar
+[DONE]   - Play from a CD and import
+[DONE] - Listen to streaming radio
+[DONE] - Connect with digital audio players
+[DONE] - with other users (DAAP)
+[DONE] - Manage podcasts
+[DONE] - Preferences overview
+[DONE] - Managing your music - playlists, ratings, deleting/moving songs from library
+[DONE] - Plugins
+[DONE] - Stores: Magnatune, Jamendo, Ubuntu One Music Store - give the basics and refer people to one.ubuntu.com/music and the store Help system for more info
+[DONE] - Installing codecs
+[DONE] - Where to get Rbox support
+
+\end{comment}
+
+\section{Listening to audio and music}
+Ubuntu comes with the \application{Rhythmbox} Music Player for listening to your music, streaming Internet radio, managing playlists and podcasts, and purchasing songs.
+
+\subsection{Starting Rhythmbox}
+To start Rhythmbox, open the \menu{Applications} menu, then choose \menu{Sound \& Video}, then \menu{Rhythmbox Music Player}.
+
+To quit Rhythmbox, choose \menu{Music \then Quit} or press \keystroke{Ctrl+Q}. Rhythmbox will continue to run if you choose \menu{Music \then Close} or close the window. A few Rhythmbox tools (such as \button{Play}, \button{Next}, and \button{Previous}) are available from the Rhythmbox Music Player icon in the \gls{notification area} (typically the top right of your screen). You can also choose \button{Quit} from this menu to quit Rhythmbox.
+
+\subsection{Playing music}
+
+%\screenshotTODO{Rhythmbox application with a CD inserted}
+\screenshot{03-rhythmbox-cd.png}{ss:rhythmbox-cd}{Rhythmbox with a \acronym{CD} in.}
+
+
+In order to play music, you must first import music into your library. Choose \menu{Music \then Import Folder} or press \keystroke{Ctrl+O} on your keyboard to import a folder of songs or \menu{Import File} for single songs.
+
+The Rhythmbox toolbar contains most of the controls that you will use for browsing and playing your music.
+
+If you want to play a song, select a track and click on the \button{Play} button on the toolbar (you can also choose \menu{Control \then Play} from the menubar or press \keystroke{Ctrl+Space}). Clicking on the \button{Play} button again will pause the song.
+
+\button{Next} and \button{Previous} buttons are next to the Play button. You can click on these buttons to play the next and previous songs in your library.
+
+The Rhythmbox toolbar also has options to enable or disable \button{Repeat} (\menu{Control \then Repeat} or \keystroke{Ctrl+R}), \button{Shuffle} (\menu{Control \then Shuffle} or \keystroke{Ctrl+U}), the \button{Artist/Album browser} (\menu{View \then Browse} or \keystroke{Ctrl+B}), and \button{Visualization}.
+
+When you insert a \acronym{CD} into your computer, it will appear in the list of Devices in the Side Pane. Select the \acronym{CD} in the Devices list. Enable and disable the Side Pane by choosing \menu{View \then Side Pane} or \keystroke{F9}. Rhythmbox will attempt to find the correct artist, album, and track names. To play the songs on the \acronym{CD}, choose the track and press Play.
+
+To import the songs into your library, select the \acronym{CD} in the Devices list. You can review information about the \acronym{CD}, make any changes if needed, or deselect songs that you do not want to import. The toolbar will display additional options to \button{reload album information}, \button{eject the \acronym{CD}}, and \button{copy the tracks to your library}. Press the Copy button to import the songs.
+
+\subsection{Listening to streaming radio}
+
+\marginnote{Streaming radio are radio stations that are broadcast over the Internet.}
+Rhythmbox is preconfigured to enable you to stream radio from various sources. These include Internet broadcast stations (\button{Radio} from the Side Pane) as well as \button{Last.fm}. To listen to an Internet radio station, choose a station from the list and click \button{Play}. To listen to music from Last.fm, configure your \button{Account Settings}.
+
+\subsection{Connect digital audio players}
+Rhythmbox can connect with many popular digital audio players. Connected players will appear in the Devices list. Features will vary depending on the player but common tasks like transferring songs and playlists should be supported.
+
+\subsection{Listen to shared music}
+\marginnote{\textbf{\acronym{DAAP}} stands for ``Digital Audio Access Protocol,'' and is a method designed by Apple Inc. to let software share media across a network.}
+If you are on the same network as other Rhythmbox users (or any music player software with \acronym{DAAP} support), you can share your music and listen to their shared music. Choose \button{Shared} from the Side Pane for a list of shared libraries on your network. Usually shares will be listed automatically but sometimes you will be required to add the IP manually. To do this click \menu{Music \then Connect to DAAP share\ldots}. Then enter the IP address and the port number. Then click \button{Add}. Clicking a shared library will enable you to browse and play songs from other computers.
+
+\subsection{Manage podcasts}
+Rhythmbox can manage all of your favorite podcasts. Select \button{Podcasts} from the Side Pane to view all added podcasts. The toolbar will display additional options to \button{Subscribe to a new Podcast Feed} and \button{Update all feeds}. Choose \menu{Music \then New Podcast Feed}, \keystroke{Ctrl+P}, or press the Subscribe button in the toolbar to import a podcast \acronym{URL}. Podcasts will be automatically downloaded at regular intervals or you can manually update feeds. Select an episode and click \button{Play}. You can also delete episodes.
+
+%\screenshotTODO{Podcasts Toolbar with podcast options}
+
+\screenshot{03-rhythmbox-podcast.png}{ss:rhythmbox-podcasts}{You can add and
+play your podcasts in Rhythmbox.}
+
+\subsection{Rhythmbox preferences}
+The default configuration of Rhythmbox may not be exactly what you want. Choose \menu{Edit \then Preferences} to alter the application settings. The \button{Preferences} tool is broken into four main areas: \button{General}, \button{Playback}, \button{Music}, and \button{Podcasts}.
+
+\begin{itemize}
+\item \textbf{General options} include music filtering and sorting options and a configuration setting for toolbar button labels.
+
+\item \textbf{Playback options} allow you to customize the crossfading feature and define the buffer setting for streamed music from sources such as Internet radio and shared libraries.
+
+\item \textbf{Music options} define the \button{Library Location} on your computer where imported music is added, the \button{Library Structure} of how folders are created based on your imported music, and the \button{Preferred format} for imported music.
+
+\item \textbf{Podcasts options} define the \button{Download location} podcast episodes and the frequency to \button{Check for new episodes}.
+\end{itemize}
+
+\subsection{Managing your music}
+Rhythmbox supports creating playlists. Playlists are either static lists of songs that are played in order or can be automatic playlists based on your specific filter criteria. Playlists contain references to songs in your library. They do not contain the actual song file. If you remove a song from a playlist (\button{Remove from Playlist}), it will remain in your library.
+
+To create a playlist, choose \menu{Music \then Playlist \then New Playlist} or \keystroke{Ctrl+N} and give the new playlist a name. You can then either drag songs from you library to the new playlist in the side pane or right-click on songs and choose \menu{Add to Playlist} and pick the playlist.
+
+\button{Automatic Playlists} are created almost the same way as static playlists \dash choose \menu{Music \then Playlist \then New Automatic Playlist}. Next, define the filter criteria. You can add multiple filter rules. Finally, click \button{Close} and give the new automatic playlist a name. Automatic Playlists will appear in your side pane with a different icon than any static playlists. You can update any playlist by right-clicking on the name and choosing \menu{Edit\ldots}.
+
+Rhythmbox supports setting song ratings. Select a song in your library and
+choose \menu{Music \then Properties}, \keystroke{Alt+Enter}, or right-click on the file and choose \menu{Properties}. Select the \button{Details} tab and set the rating by picking the number of stars. Other song information such as \button{Title}, \button{Artist}, and \button{Album} can be changed from the \button{Basic} tab. Click \button{Close} to save any changes.
+
+To delete a song, select it in your library and choose \menu{Edit \then Move to Trash} or right-click on the song and choose \menu{Move to Trash}. This will move the song file to your trash.
+
+If you ever want to move a song (for example to another computer), choose the song (or group of songs) from your library and drag it to a folder or to your desktop. This will make a copy in the new location.
+
+\subsection{Rhythmbox plugins}
+Rhythmbox comes with a variety of plugins. These are tools that you can enable and disable that add more features to Rhythmbox. Examples include \button{Cover art}, \button{Song Lyrics}, and various music stores. A few plugins are enabled by default.
+
+To view the list of available plugins, choose \menu{Edit \then Plugins}. The \button{Configure Plugins} window allows you to enable or disable individual plugins, view descriptions, and configure additional options if they are available for the plugin.
+
+\subsection{Music stores}
+Rhythmbox has three music stores which give you access to an extremely large catalog of music with a variety of licensing options.
+
+The \button{Jamendo} store sells free, legal and unlimited music published under the six Creative Commons licenses. You can browse the catalog and play songs by choosing \button{Jamendo} in the \button{Stores} list in the side pane. More information about their catalog can be found at \url{http://www.jamendo.com/}.
+
+The \button{Magnatune} store sells music from independent musicians. They work directly with artists and hand-pick the songs available. Their catalog is composed of high quality, non-\acronym{DRM} (no copy protection) music and covers a variety of genres from Classical and Jazz to Hip Hop and Hard Rock. You can browse the catalog and play songs by choosing \button{Magnatune} in the \button{Stores} list in the side pane. More information about their catalog and subscription service can be found at \url{http://www.magnatune.com/}.
+
+The \button{Ubuntu One Music Store} sells music from major and minor music labels around the world. The store offers non-\acronym{DRM} (no copy protection) songs encoded in either high quality \acronym{MP3} or \acronym{AAC} format. Ubuntu does not come with support for \acronym{MP3} playback, but the store will install the proper codecs automatically for free. You can browse the catalog, play previews, and buy songs by choosing \button{Ubuntu One} in the \button{Stores} list in the side pane.
+
+The Ubuntu One Music Store integrates with the Ubuntu One service. All purchases
+are transferred to your personal cloud storage and then automatically copied to
+all of your computers so an Ubuntu One account is required. The catalog of music
+available for purchase will vary depending on where you live in the world. More
+information about the Ubuntu One Music Store can be found at
+\url{http://one.ubuntu.com/music/}.
+%\marginnote{For more information on ubuntu one see \chaplink{ch:}
+
+\subsection{Audio codecs}
+Different audio files (\eg, \acronym{MP3}, \acronym{WAV}, \acronym{AAC}) require unique tools to decode them and play the contents. These tools are called codecs. Rhythmbox will attempt to detect any missing codecs on your system so you can play all of your audio files. If a codec is missing, it will try to find the codec in online resources and guide you through installation.
+
+\subsection{Rhythmbox support}
+Rhythmbox is used by many users throughout the world. There are a variety of support resources available in many languages.
+
+\begin{itemize}
+  \item Choose the \menu{Help} button for a variety of support options and information about reporting Rhythmbox bugs.
+  \item The Rhythmbox website: \url{http://projects.gnome.org/rhythmbox/}
+  \item The Multimedia \& Video category of Ubuntu Forums: \url{http://ubuntuforums.org/forumdisplay.php?f=334}
+\end{itemize}

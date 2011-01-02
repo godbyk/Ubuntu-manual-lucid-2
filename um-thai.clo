@@ -1,0 +1,17 @@
+%
+% Thai-specific options for the Ubuntu Manual
+%
+
+\ProvidesFile{um-thai.clo}[2010/02/16 v1.0.0 Thai-specific options for the Ubuntu Manual]
+
+% Serif fonts
+\newfontfamily\thaifont[Script=Thai,Language=Thai]{Norasi}% from ttf-thai-tlwg
+
+% Sans serif fonts
+\newfontfamily\thaifontsf[Script=Thai,Language=Thai]{Garuda}% from ttf-thai-tlwg
+
+% Monospaced fonts
+\newfontfamily\thaifonttt[Script=Thai,Language=Thai]{Arundina Sans Mono}% from ttf-thai-arundina
+
+\endinput
+
