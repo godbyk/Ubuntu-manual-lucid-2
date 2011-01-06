@@ -91,7 +91,7 @@ ubuntu-manual-%.tex: revinfo
 	$(color_tex) $(TEXFILE).log
 
 revinfo:
-	bzr version-info --custom --template="\\\revinfo{{revno}}{{date}}" > revision.tex
+#	bzr version-info --custom --template="\\\revinfo{{revno}}{{date}}" > revision.tex
 
 
 #generate_titlepage = \
