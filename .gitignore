@@ -37,3 +37,4 @@ ccicons
 coverpage.pdf
 *.tdo
 titlepage/titlepage-*.svg
+.bzr
