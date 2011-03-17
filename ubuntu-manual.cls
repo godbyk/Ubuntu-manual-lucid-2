@@ -776,8 +776,8 @@
 }
 
 % PDF bookmark names
-\newcommand{\colophoncaption}{Colophon}
-\newcommand{\titlepagecaption}{Title page}
+\newcommand{\colophoncaption}{Kolofonas}
+\newcommand{\titlepagecaption}{Antraštinis puslapis}
 
 % URL for printed book (appears on copyright page)
 \newcommand{\printurl}{http://ubuntu-manual.org/buy/gswu1004e2/\polang}
