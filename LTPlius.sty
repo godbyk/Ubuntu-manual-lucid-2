@@ -63,24 +63,24 @@ additions]
 
 % Babel išplėtimai: non-french spacing ir lietuviškos kabutės
 
-\initiate@active@char{"}
-\@namedef{extraslithuanian}{%
-    \languageshorthands{lithuanian}}
-\expandafter\addto\csname extraslithuanian\endcsname{%
-    \bbl@activate{"}}
+%\initiate@active@char{"}
+%\@namedef{extraslithuanian}{%
+%    \languageshorthands{lithuanian}}
+%\expandafter\addto\csname extraslithuanian\endcsname{%
+%    \bbl@activate{"}}
 
 % Non-french spacing
 \expandafter\addto\csname extraslithuanian\endcsname{%
     \bbl@nonfrenchspacing}
 \expandafter\addto\csname noextraslithuanian\endcsname{%
     \bbl@frenchspacing}
-\addto\noextraslithuanian{\bbl@deactivate{"}}
+%\addto\noextraslithuanian{\bbl@deactivate{"}}
 
 % Išsaugome " simbolį kaip \dq
-\begingroup \catcode`\"12
-\def\x{\endgroup
-\def\dq{"}}
-\x
+%\begingroup \catcode`\"12
+%\def\x{\endgroup
+%\def\dq{"}}
+%\x
 
 % Teisingos lietuviškos kabutės pasiekiamos taip:
 % "` - atidarančios dvigubos kabutės
