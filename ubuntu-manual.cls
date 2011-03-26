@@ -335,7 +335,21 @@
     }%
 }
 
-
+% Use the \runningheadstyle for running heads in the front and main matter
+\renewcommand\mainmatter{%
+  \cleardoublepage%
+  \@mainmattertrue%
+  \fancyhf{}%
+  \ifthenelse{\boolean{@tufte@twoside}}%
+    {% two-side
+      \renewcommand{\chaptermark}[1]{\markboth{##1}{}}%
+      \fancyhead[LE]{\thepage\quad\runningheadstyle{\newlinetospace{\plaintitle}}}% book title
+      \fancyhead[RO]{\runningheadstyle{\newlinetospace{\leftmark}}\quad\thepage}% chapter title
+    }%
+    {% one-side
+      \fancyhead[RE,RO]{\runningheadstyle{\newlinetospace{\plaintitle}}\quad\thepage}% book title
+    }%
+}
 
 
 % Format the chapter and section marks (primarily to remove the \uppercase stuff)

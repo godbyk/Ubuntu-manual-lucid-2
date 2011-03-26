@@ -1,0 +1,46 @@
+%
+% Lithuanian-specific options for the Ubuntu Manual
+%
+
+\ProvidesFile{um-lithuanian.clo}[2011/03/26 v1.0.0 Lithuanian-specific options for the Ubuntu Manual]
+
+% Serif fonts
+%\newfontfamily\lithuanianfont[Script=SSS,Lithuanian=LLL]{RMFONT}% from ttf-RMFONT
+
+% Sans serif fonts
+%\newfontfamily\lithuanianfontsf[Script=SSS,Lithuanian=LLL]{SFFONT}% from ttf-SFFONT
+
+% Monospaced fonts
+%\newfontfamily\lithuanianfonttt[Script=SSS,Lithuanian=LLL]{TTFONT}% from ttf-TTFONT
+
+% Define quotation mark styles
+%\setquotestyle[guillemets]{lithuanian}% Use guillemets for quotations
+%\DeclareQuoteStyle[quotes]{lithuanian}
+%  {\quotedblbase}% „ U+201E - left double outer
+%  {\textquotedblleft}% “ U+201C - right double outer
+%  [0.05em]
+%  {\quotesinglbase}% ‚ U+201A - left single inner
+%  {\textquoteleft}% ‘ U+2018 - right single inner
+%\DeclareQuoteAlias[quotes]{lithuanian}{lithuanian}
+%\DeclareQuoteOption{lithuanian}
+%\ExecuteOptions{lithuanian}
+
+% Set the running head style
+\let\runningheadstyle\relax
+
+% Define translated macros
+%\renewcommand{\dash}{\unskip\,--\,\ignorespaces}
+%\renewcommand{\ie}{\textit{z.\hairsp{}B.}\xspace}
+%\renewcommand{\eg}{\textit{d.\hairsp{}h.}\xspace}
+
+%\renewcommand{\revisionnumbercaption}{Revisionsnummer}
+%\renewcommand{\revisiondatecaption}{Revisionsdatum}
+
+%\renewcommand{\applicationsheadword}{Anwendungen}
+%\renewcommand{\commandlineappheadword}{Befehlszeilenanwendungen}
+
+%\renewcommand{\colophoncaption}{Schlussschrift}
+%\renewcommand{\titlepagecaption}{Titelblatt}
+
+\endinput
+
