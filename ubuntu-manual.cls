@@ -508,7 +508,7 @@
 % Define useful macros
 %
 
-\newcommand{\notecallout}[2][Note]{%
+\newcommand{\notecallout}[2][Pastaba]{%
   \marginnote{\textbf{#1:} #2}
 }
 
