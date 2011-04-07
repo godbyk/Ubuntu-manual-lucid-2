@@ -84,11 +84,11 @@ ubuntu-manual-%.tex: revinfo
 	makeindex ubuntu-manual-lt
 	#texindy -L ${XINDYLANG} -C utf8 ${TEXFILE}.idx
 	#xindy -C utf8 -M texindy -L ${XINDYLANG} ${TEXFILE}.idx
-	#xelatex --output-driver="xdvipdfmx -V 5" -interaction nonstopmode '\def\polang{$(POLANG)}\input{$(TEXFILE)}'
+	xelatex --output-driver="xdvipdfmx -V 5" -interaction nonstopmode '\def\polang{$(POLANG)}\input{$(TEXFILE)}'
 	#makeglossaries -L ${XINDYLANG} $(TEXFILE)
-	#xelatex --output-driver="xdvipdfmx -V 5" -interaction nonstopmode '\def\polang{$(POLANG)}\input{$(TEXFILE)}'
-	#xelatex --output-driver="xdvipdfmx -V 5" -interaction nonstopmode '\def\polang{$(POLANG)}\input{$(TEXFILE)}'
-	#xelatex --output-driver="xdvipdfmx -V 5" -interaction nonstopmode '\def\polang{$(POLANG)}\input{$(TEXFILE)}'
+	xelatex --output-driver="xdvipdfmx -V 5" -interaction nonstopmode '\def\polang{$(POLANG)}\input{$(TEXFILE)}'
+	xelatex --output-driver="xdvipdfmx -V 5" -interaction nonstopmode '\def\polang{$(POLANG)}\input{$(TEXFILE)}'
+	xelatex --output-driver="xdvipdfmx -V 5" -interaction nonstopmode '\def\polang{$(POLANG)}\input{$(TEXFILE)}'
 	$(color_tex) $(TEXFILE).log
 
 revinfo:
